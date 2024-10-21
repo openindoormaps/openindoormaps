@@ -12,9 +12,12 @@
 Many current indoor navigation solutions lack the flexibility and adaptability needed for diverse environments. Often, they are limited in functionality, difficult to customize, or locked behind proprietary systems that restrict user control. Smaller projects, while free, frequently lack the support, scalability, or customization options needed for real-world applications. 
 
 **OpenIndoorMaps** addresses these challenges by: 
+
 - Being **self-hostable**: Full control over your deployment, data, and customization. 
-- Using **open-source technologies**: Built on trusted platforms like OpenStreetMap, OpenLayers, and Nominatim. 
+- **Open-Source Values**: Focus on transparency, accessibility, and community support.
+- Being built on **OpenStreetMap**: Leverages a trusted, community-driven, and open-source platform.
 - Offering a **customizable** and **minimalist** solution: Tailor the map and navigation experience to your venue’s specific needs without unnecessary complexity or overhead. We aim to create a reliable, flexible, and open alternative to both commercial and limited indoor mapping solutions.
+
 ## Key Features 
 - **Indoor Navigation**: Provides detailed maps to guide users through large indoor spaces.
 - **Customizable Admin Panel**: Manage and customize maps, routes, and app settings. 
@@ -23,7 +26,8 @@ Many current indoor navigation solutions lack the flexibility and adaptability n
 ### What It’s **Not**:
 - **Indoor positioning using wireless technologies** like Wi-Fi or Bluetooth is not planned due to current browser limitations. Instead, we focus on more accessible solutions such as QR codes for position identification.
 - **Native mobile apps**: At this stage, **OpenIndoorMaps** will be web-based. Given the lower current demand for indoor maps, a mobile app is not a priority. However, as use cases grow and evolve, this may be reconsidered in the future.
-## Use Cases **OpenIndoorMaps** can be applied in various industries: 
+## Use Cases 
+**OpenIndoorMaps** can be applied in various industries: 
 - **Shopping Malls**: Guide customers through multiple floors and promote store offers. 
 - **Hospitals**: Help patients and visitors find their way through complex layouts. 
 - **Museums**: Provide interactive tours and detailed information on exhibits. 
