@@ -1,4 +1,7 @@
-<h1 align=center>OpenIndoorMaps (Pre-launch)</h1>
+
+<h1 align="center">
+<img src="assets/logo.svg" alt="Logo" align="center" width="50"/>
+OpenIndoorMaps (Pre-launch)</h1>
 <p align=center>
 <img alt="License badge" src="https://img.shields.io/github/license/KnotzerIO/openindoormaps"/>
 <img alt="GitHub last commit badge" src="https://img.shields.io/github/last-commit/KnotzerIO/openindoormaps"/>
