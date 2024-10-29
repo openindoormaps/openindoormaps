@@ -7,6 +7,7 @@
 <img alt="GitHub stars" src="https://img.shields.io/github/stars/KnotzerIO/openindoormaps"/>
 </p>
 </div>
+
 **OpenIndoorMaps** is an open-source project focused on providing a minimalist, self-hostable indoor navigation solution. The goal is to help users navigate complex indoor spaces such as shopping malls, airports, hospitals, and universities, using web-based mapping technologies.
 
 ## Why OpenIndoorMaps? 
