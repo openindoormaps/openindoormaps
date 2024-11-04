@@ -1,12 +1,12 @@
-import { apply } from 'ol-mapbox-style';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import { defaults as defaultControls } from 'ol/control';
-import 'ol/ol.css';
-import { useEffect, useRef } from 'react';
+import { apply } from "ol-mapbox-style";
+import Map from "ol/Map";
+import View from "ol/View";
+import { defaults as defaultControls } from "ol/control";
+import "ol/ol.css";
+import { useEffect, useRef } from "react";
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const key = 'wYonyRi2hNgJVH2qgs81'; //TODO: just for testing, replace with costum server
+  const key = "wYonyRi2hNgJVH2qgs81"; //TODO: just for testing, replace with costum server
   const tileUrl = `https://api.maptiler.com/maps/basic-v2/style.json?key=${key}`;
   useEffect(() => {
     if (!mapContainer.current) return;
@@ -19,7 +19,7 @@ export default function MapComponent() {
       }),
       controls: defaultControls({
         attributionOptions: {
-          className: 'ol-attribution',
+          className: "ol-attribution",
           collapsible: false,
         },
       }),
