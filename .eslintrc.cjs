@@ -22,7 +22,8 @@ module.exports = {
   ignorePatterns: ["!**/.server", "!**/.client"],
 
   // Base config
-  extends: ["eslint:recommended"],
+  extends: ["eslint:recommended", "prettier"],
+  plugins: ['check-file'],
 
   overrides: [
     // React
@@ -34,6 +35,8 @@ module.exports = {
         "plugin:react/jsx-runtime",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
+        "prettier",
+        'plugin:tailwindcss/recommended',
       ],
       settings: {
         react: {
@@ -46,6 +49,22 @@ module.exports = {
         ],
         "import/resolver": {
           typescript: {},
+        },
+        rules: {
+          "@typescript-eslint/explicit-function-return-type": [
+            "error",
+            {
+              allowExpressions: true,
+              allowTypedFunctionExpressions: true,
+            },
+          ],
+          "react/function-component-definition": [
+            "error",
+            {
+              namedComponents: "arrow-function",
+              unnamedComponents: "arrow-function",
+            },
+          ],
         },
       },
     },
@@ -78,6 +97,19 @@ module.exports = {
       files: [".eslintrc.cjs"],
       env: {
         node: true,
+      },
+    },
+
+    {
+      plugins: ['check-file'],
+      files: ['src/**/!(__tests__)/*'],
+      rules: {
+        'check-file/folder-naming-convention': [
+          'error',
+          {
+            '**/*': 'KEBAB_CASE',
+          },
+        ],
       },
     },
   ],
