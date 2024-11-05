@@ -10,7 +10,6 @@
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc",
     "prepare": "husky",
-    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write ."
   },
   "dependencies": {
