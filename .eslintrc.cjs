@@ -1,9 +1,3 @@
-/**
- * This is intended to be a basic starting point for linting in your app.
- * It relies on recommended configs out of the box for simplicity, but you can
- * and should modify this configuration to best suit your team's needs.
- */
-
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
@@ -29,14 +23,15 @@ module.exports = {
     // React
     {
       files: ["**/*.{js,jsx,ts,tsx}"],
-      plugins: ["react", "jsx-a11y"],
+      plugins: ["react", "jsx-a11y", "react-hooks", "tailwindcss", "unicorn"],
       extends: [
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
-        "prettier",
         "plugin:tailwindcss/recommended",
+        "plugin:prettier/recommended",
+        "plugin:unicorn/recommended",
       ],
       settings: {
         react: {
@@ -110,7 +105,6 @@ module.exports = {
         node: true,
       },
     },
-
     {
       plugins: ["check-file"],
       files: ["src/**/!(__tests__)/*"],
