@@ -1,20 +1,20 @@
 <div align=center>
-<img align="center" src="assets/logo.svg" alt="openindoormap" width="100"/> 
-<h1 style="font-family: 'Arial', sans-serif; font-size: 48px; margin: 20px 0; color: #2c3e50;"> OpenIndoorMap (Pre-launch)</h1>
-<img alt="License badge" src="https://img.shields.io/github/license/KnotzerIO/openindoormap"/>
-<img alt="GitHub last commit badge" src="https://img.shields.io/github/last-commit/KnotzerIO/openindoormap"/>
-<img alt="GitHub commit activity badge" src="https://img.shields.io/github/commit-activity/m/KnotzerIO/openindoormap"/>
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/KnotzerIO/openindoormap"/>
+<img align="center" src="assets/logo.svg" alt="openindoormaps" width="100"/> 
+<h1 style="font-family: 'Arial', sans-serif; font-size: 48px; margin: 20px 0; color: #2c3e50;"> OpenIndoorMaps (Pre-launch)</h1>
+<img alt="License badge" src="https://img.shields.io/github/license/KnotzerIO/openindoormaps"/>
+<img alt="GitHub last commit badge" src="https://img.shields.io/github/last-commit/KnotzerIO/openindoormaps"/>
+<img alt="GitHub commit activity badge" src="https://img.shields.io/github/commit-activity/m/KnotzerIO/openindoormaps"/>
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/KnotzerIO/openindoormaps"/>
 </p>
 </div>
 
-**OpenIndoorMap** is an open-source project focused on providing a minimalist, self-hostable indoor navigation solution. The goal is to help users navigate complex indoor spaces such as shopping malls, airports, hospitals, and universities, using web-based mapping technologies.
+**OpenIndoorMaps** is an open-source project focused on providing a minimalist, self-hostable indoor navigation solution. The goal is to help users navigate complex indoor spaces such as shopping malls, airports, hospitals, and universities, using web-based mapping technologies.
 
-## Why OpenIndoorMap?
+## Why OpenIndoorMaps?
 
 Many current indoor navigation solutions lack the flexibility and adaptability needed for diverse environments. Often, they are limited in functionality, difficult to customize, or locked behind proprietary systems that restrict user control. Smaller projects, while free, frequently lack the support, scalability, or customization options needed for real-world applications.
 
-**OpenIndoorMap** addresses these challenges by:
+**OpenIndoorMaps** addresses these challenges by:
 
 - Being **self-hostable**: Full control over your deployment, data, and customization.
 - **Open-Source Values**: Focus on transparency, accessibility, and community support.
@@ -31,11 +31,11 @@ Many current indoor navigation solutions lack the flexibility and adaptability n
 ### What It’s **Not**:
 
 - **Indoor positioning using wireless technologies** like Wi-Fi or Bluetooth is not planned due to current browser limitations. Instead, we focus on more accessible solutions such as QR codes for position identification.
-- **Native mobile apps**: At this stage, **OpenIndoorMap** will be web-based. Given the lower current demand for indoor maps, a mobile app is not a priority. However, as use cases grow and evolve, this may be reconsidered in the future.
+- **Native mobile apps**: At this stage, **OpenIndoorMaps** will be web-based. Given the lower current demand for indoor maps, a mobile app is not a priority. However, as use cases grow and evolve, this may be reconsidered in the future.
 
 ## Use Cases
 
-**OpenIndoorMap** can be applied in various industries:
+**OpenIndoorMaps** can be applied in various industries:
 
 - **Shopping Malls**: Guide customers through multiple floors and promote store offers.
 - **Hospitals**: Help patients and visitors find their way through complex layouts.
