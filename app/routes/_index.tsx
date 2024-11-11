@@ -3,11 +3,11 @@ import MapComponent from "~/components/map-component";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "OpenIndoorMaps" },
+    { title: "OpenIndoorMap" },
     {
       name: "description",
       content:
-        "OpenIndoorMaps is a community-based tool that helps people navigate large indoor spaces like malls, airports, hospitals, and universities. Collaborate and add your building to help others find their way.",
+        "OpenIndoorMap is a community-based tool that helps people navigate large indoor spaces like malls, airports, hospitals, and universities. Collaborate and add your building to help others find their way.",
     },
   ];
 };
