@@ -1,38 +1,35 @@
-import { apply } from "ol-mapbox-style";
-import Map from "ol/Map";
-import View from "ol/View";
-import { defaults as defaultControls } from "ol/control";
-import "ol/ol.css";
 import { useEffect, useRef } from "react";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const key = "wYonyRi2hNgJVH2qgs81"; //TODO: just for testing, replace with costum server
+  const key = "wYonyRi2hNgJVH2qgs81"; //TODO: just for testing, replace with a custom server if needed
   const tileUrl = `https://api.maptiler.com/maps/basic-v2/style.json?key=${key}`;
+
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    const map = new Map({
-      target: mapContainer.current,
-      view: new View({
-        center: [0, 0],
-        zoom: 0,
-      }),
-      controls: defaultControls({
-        attributionOptions: {
-          className: "ol-attribution",
-          collapsible: false,
-        },
-      }),
+    // Initialize MapLibre map
+    const map = new maplibregl.Map({
+      container: mapContainer.current,
+      style: tileUrl, // URL to map style JSON
+      center: [0, 0], // Initial center [longitude, latitude]
+      zoom: 0,
     });
 
-    apply(map, tileUrl);
+    map.addControl(new maplibregl.NavigationControl(), "top-right");
+
     return () => {
-      map.setTarget(undefined);
+      map.remove();
     };
-  });
+  }, [tileUrl]);
+
   return (
-    <>
-      <div ref={mapContainer} className="size-full"></div>
-    </>
+    <div
+      ref={mapContainer}
+      className="size-full"
+      style={{ width: "100%", height: "100%" }}
+    ></div>
   );
 }
