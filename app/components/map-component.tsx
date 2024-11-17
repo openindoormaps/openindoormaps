@@ -10,15 +10,14 @@ export default function MapComponent() {
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    // Initialize MapLibre map
     const map = new maplibregl.Map({
       container: mapContainer.current,
-      style: tileUrl, // URL to map style JSON
-      center: [0, 0], // Initial center [longitude, latitude]
+      style: tileUrl,
+      center: [0, 0],
       zoom: 0,
     });
 
-    map.addControl(new maplibregl.NavigationControl(), "top-right");
+    map.addControl(new maplibregl.NavigationControl(), "bottom-right");
 
     return () => {
       map.remove();
