@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { useEffect, useRef } from "react";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -18,6 +18,16 @@ export default function MapComponent() {
     });
 
     map.addControl(new maplibregl.NavigationControl(), "bottom-right");
+    map.addControl(new maplibregl.FullscreenControl(), "bottom-right");
+    map.addControl(
+      new maplibregl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true,
+        },
+        trackUserLocation: true,
+      }),
+      "bottom-right",
+    );
 
     return () => {
       map.remove();
