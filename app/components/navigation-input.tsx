@@ -4,8 +4,10 @@ import {
   MaplibreGeocoderApi,
   MaplibreGeocoderFeatureResults,
 } from "@maplibre/maplibre-gl-geocoder";
+import { SlidersVertical } from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
 import { MutableRefObject, useState } from "react";
+import NavigationSettings from "./navigation-settings";
 
 /**
  * TODO: Refactor to MapLibre IControl implementation
@@ -23,6 +25,7 @@ export default function NavigationInput({
 }: NavigationInputProperties) {
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const geocoderApi: MaplibreGeocoderApi = {
     forwardGeocode: async (config) => {
@@ -112,9 +115,9 @@ export default function NavigationInput({
     }
   };
   return (
-    <div className="absolute left-4 top-4 z-10 w-80 rounded-lg bg-white p-4 shadow-lg">
-      <div className="flex flex-col gap-3">
-        <div className="relative">
+    <div className="z-10 rounded-lg bg-white p-4 shadow-lg md:absolute md:left-4 md:top-4">
+      <div className="flex items-center justify-center gap-3">
+        <div className="flex w-full flex-col gap-3">
           <input
             type="text"
             autoComplete="off" //? prevent browser keeping the input value after refresh
@@ -123,8 +126,6 @@ export default function NavigationInput({
             value={departure}
             onChange={(event) => setDeparture(event.target.value)}
           />
-        </div>
-        <div className="relative">
           <input
             type="text"
             autoComplete="off"
@@ -133,15 +134,22 @@ export default function NavigationInput({
             value={destination}
             onChange={(event) => setDestination(event.target.value)}
           />
+          <button
+            onClick={handleRouting}
+            className="rounded-md bg-blue-500 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Find Route
+          </button>
         </div>
 
         <button
-          onClick={handleRouting}
-          className="rounded-md bg-blue-500 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          className="flex size-10 items-center justify-center rounded-lg bg-neutral-100 p-2"
+          onClick={() => setIsSettingsOpen(!isSettingsOpen)}
         >
-          Find Route
+          <SlidersVertical className="size-4" />
         </button>
       </div>
+      {isSettingsOpen && <NavigationSettings />}
     </div>
   );
 }
