@@ -4,7 +4,7 @@ import {
   MaplibreGeocoderApi,
   MaplibreGeocoderFeatureResults,
 } from "@maplibre/maplibre-gl-geocoder";
-import { SlidersVertical } from "lucide-react";
+import { Accessibility, SlidersVertical } from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
 import { MutableRefObject, useState } from "react";
 import NavigationSettings from "./navigation-settings";
@@ -26,6 +26,7 @@ export default function NavigationInput({
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isAccessibleRoute, setIsAccessibleRoute] = useState(false);
 
   const geocoderApi: MaplibreGeocoderApi = {
     forwardGeocode: async (config) => {
@@ -116,39 +117,48 @@ export default function NavigationInput({
   };
   return (
     <div className="z-10 rounded-lg bg-white p-4 shadow-lg md:absolute md:left-4 md:top-4">
-      <div className="flex items-center justify-center gap-3">
-        <div className="flex w-full flex-col gap-3">
+      <div className="flex w-full flex-col gap-3">
+        <div className="flex gap-2">
           <input
             type="text"
             autoComplete="off" //? prevent browser keeping the input value after refresh
             placeholder="Departure"
-            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm text-gray-400 focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
             value={departure}
             onChange={(event) => setDeparture(event.target.value)}
           />
+          <button
+            className={`flex size-[38px] items-center justify-center rounded-lg border-4 border-neutral-100 p-[5px] ${isAccessibleRoute && "bg-neutral-100"}`}
+            onClick={() => setIsAccessibleRoute(!isAccessibleRoute)}
+          >
+            <Accessibility className="size-5" />
+          </button>
+        </div>
+
+        <div className="flex gap-2">
           <input
             type="text"
             autoComplete="off"
             placeholder="Destination"
-            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm text-gray-400 focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
             value={destination}
             onChange={(event) => setDestination(event.target.value)}
           />
           <button
-            onClick={handleRouting}
-            className="rounded-md bg-blue-500 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className={`flex size-[38px] items-center justify-center rounded-lg border-4 border-neutral-100 p-[5px] ${isSettingsOpen && "bg-neutral-100"}`}
+            onClick={() => setIsSettingsOpen(!isSettingsOpen)}
           >
-            Find Route
+            <SlidersVertical className="size-5" />
           </button>
         </div>
-
         <button
-          className={`flex size-[38px] items-center justify-center rounded-lg border-4 border-neutral-100 p-2 ${isSettingsOpen && "bg-neutral-100"}`}
-          onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+          onClick={handleRouting}
+          className="rounded-md bg-blue-500 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          <SlidersVertical className="size-4" />
+          Find Route
         </button>
       </div>
+
       {isSettingsOpen && <NavigationSettings />}
     </div>
   );
