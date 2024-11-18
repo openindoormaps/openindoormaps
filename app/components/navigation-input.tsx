@@ -4,16 +4,26 @@ import {
   MaplibreGeocoderApi,
   MaplibreGeocoderFeatureResults,
 } from "@maplibre/maplibre-gl-geocoder";
+import { LngLatBounds } from "maplibre-gl";
 import { MutableRefObject, useState } from "react";
+
+/**
+ * TODO: Refactor to MapLibre IControl implementation
+ * @see https://maplibre.org/maplibre-gl-js/docs/API/interfaces/IControl/
+ */
+
+interface NavigationInputProperties {
+  directions: MutableRefObject<MapLibreGlDirections | undefined>;
+  map: MutableRefObject<maplibregl.Map | undefined>;
+}
 
 export default function NavigationInput({
   directions,
-}: {
-  directions: MutableRefObject<MapLibreGlDirections | undefined>;
-}) {
+  map,
+}: NavigationInputProperties) {
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
-  console.log(departure, destination);
+
   const geocoderApi: MaplibreGeocoderApi = {
     forwardGeocode: async (config) => {
       const features: CarmenGeojsonFeature[] = [];
@@ -64,7 +74,6 @@ export default function NavigationInput({
       const geocodeResult = (await geocoderApi.forwardGeocode({
         query: input,
       })) as MaplibreGeocoderFeatureResults;
-      console.log("Geocode result:", geocodeResult);
       const features = geocodeResult.features as CarmenGeojsonFeature[];
       if (features.length > 0 && features[0].geometry.type === "Point") {
         const center = features[0].geometry.coordinates;
@@ -78,16 +87,25 @@ export default function NavigationInput({
   };
 
   const handleRouting = async () => {
-    console.log("Routing from:", departure, "to:", destination);
     if (!departure || !destination) return;
     try {
-      const [departureResult, destinationResult] = await Promise.all([
+      const [departureCoord, destinationCoord] = await Promise.all([
         geocodeInput(departure),
         geocodeInput(destination),
       ]);
 
-      if (departureResult && destinationResult) {
-        directions.current?.setWaypoints([departureResult, destinationResult]);
+      if (departureCoord && destinationCoord) {
+        directions.current?.setWaypoints([departureCoord, destinationCoord]);
+
+        if (map.current) {
+          const bounds = new LngLatBounds();
+          bounds.extend(departureCoord);
+          bounds.extend(destinationCoord);
+
+          map.current.fitBounds(bounds, {
+            padding: 20,
+          });
+        }
       }
     } catch (error) {
       console.error("Error during routing:", error);

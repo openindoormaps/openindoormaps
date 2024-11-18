@@ -47,7 +47,7 @@ export default function MapComponent() {
   return (
     <>
       <div ref={mapContainer} className="size-full"></div>
-      <NavigationInput directions={directions} />
+      <NavigationInput directions={directions} map={map} />
     </>
   );
 }
