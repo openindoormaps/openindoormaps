@@ -2,16 +2,17 @@ import MapLibreGlDirections, {
   LoadingIndicatorControl,
 } from "@maplibre/maplibre-gl-directions";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import maplibregl from "maplibre-gl";
+import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
+import config from "~/config";
+import GeoJsonLayer from "~/layers/geojson-layer";
+import Tile3dLayer from "~/layers/tile-3d-layer";
 import NavigationInput from "./navigation-input";
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
 
   useState<[number, number]>();
-  const key = "wYonyRi2hNgJVH2qgs81"; //TODO: just for testing, replace with a custom server if needed
-  const tileUrl = `https://api.maptiler.com/maps/basic-v2/style.json?key=${key}`;
   const map = useRef<maplibregl.Map>();
   const directions = useRef<MapLibreGlDirections>();
 
@@ -19,31 +20,26 @@ export default function MapComponent() {
     if (map.current) return;
 
     map.current = new maplibregl.Map({
+      ...config.mapConfig,
       container: mapContainer.current!,
-      style: tileUrl,
-      center: [0, 0],
-      zoom: 0,
     });
 
-    map.current.addControl(new maplibregl.NavigationControl(), "bottom-right");
-    map.current.addControl(new maplibregl.FullscreenControl(), "bottom-right");
-    map.current.addControl(
-      new maplibregl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true,
-        },
-        trackUserLocation: true,
-      }),
-      "bottom-right",
-    );
-
     map.current.on("load", () => {
+      if (!map.current) return;
+      const layers = map.current?.getStyle().layers;
+      if (!layers) return;
+
+      map.current.addLayer(new Tile3dLayer());
+      map.current.addLayer(new GeoJsonLayer());
+
       directions.current = new MapLibreGlDirections(map.current!, {
         requestOptions: { overview: "full", steps: "true" },
       });
-
       map.current?.addControl(new LoadingIndicatorControl(directions.current));
     });
+
+    map.current.addControl(new NavigationControl(), "bottom-right");
+    map.current.addControl(new FullscreenControl(), "bottom-right");
   });
 
   return (
