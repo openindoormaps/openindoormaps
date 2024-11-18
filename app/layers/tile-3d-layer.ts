@@ -1,5 +1,4 @@
 import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
-import config from "~/config";
 
 export default class Tile3dLayer implements CustomLayerInterface {
   id: string = "tile-3d-layer";
@@ -9,18 +8,13 @@ export default class Tile3dLayer implements CustomLayerInterface {
     gl && matrix; // Unused
   };
   onAdd?(map: Map): void {
-    map.addSource("openmaptiles", {
-      url: `https://api.maptiler.com/tiles/v3/tiles.json?key=${config.keys.mapTiler}`,
-      type: "vector",
-    });
-
     map.addLayer({
       id: "3d-buildings",
-      source: "openmaptiles",
+      source: "maptiler_planet",
       "source-layer": "building",
       type: "fill-extrusion",
       minzoom: 15,
-      filter: ["!=", ["get", "hide_3d"], true],
+      filter: ["all", ["!=", "$id", 24_825_537], ["!=", "$id", 16_699_535]],
       paint: {
         "fill-extrusion-color": [
           "interpolate",
