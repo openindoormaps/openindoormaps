@@ -21,4 +21,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  ssr: {
+    noExternal: ["@maplibre/maplibre-gl-geocoder", "maplibre-gl"],
+  },
 });
