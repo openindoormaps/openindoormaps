@@ -21,8 +21,6 @@
     "isbot": "^4.1.0",
     "lucide-react": "^0.460.0",
     "maplibre-gl": "^4.7.1",
-    "ol": "^10.2.1",
-    "ol-mapbox-style": "^12.3.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
