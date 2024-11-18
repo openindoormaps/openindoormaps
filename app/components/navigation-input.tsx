@@ -122,7 +122,7 @@ export default function NavigationInput({
             type="text"
             autoComplete="off" //? prevent browser keeping the input value after refresh
             placeholder="Departure"
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm text-gray-400 focus:border-blue-500 focus:outline-none"
             value={departure}
             onChange={(event) => setDeparture(event.target.value)}
           />
@@ -130,7 +130,7 @@ export default function NavigationInput({
             type="text"
             autoComplete="off"
             placeholder="Destination"
-            className="w-full rounded-md border border-gray-300 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm text-gray-400 focus:border-blue-500 focus:outline-none"
             value={destination}
             onChange={(event) => setDestination(event.target.value)}
           />
@@ -143,7 +143,7 @@ export default function NavigationInput({
         </div>
 
         <button
-          className="flex size-10 items-center justify-center rounded-lg bg-neutral-100 p-2"
+          className={`flex size-[38px] items-center justify-center rounded-lg border-4 border-neutral-100 p-2 ${isSettingsOpen && "bg-neutral-100"}`}
           onClick={() => setIsSettingsOpen(!isSettingsOpen)}
         >
           <SlidersVertical className="size-4" />

@@ -38,7 +38,9 @@ export default function MapComponent() {
     );
 
     map.current.on("load", () => {
-      directions.current = new MapLibreGlDirections(map.current!);
+      directions.current = new MapLibreGlDirections(map.current!, {
+        requestOptions: { overview: "full", steps: "true" },
+      });
 
       map.current?.addControl(new LoadingIndicatorControl(directions.current));
     });
