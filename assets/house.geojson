@@ -1,0 +1,63 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "level": 1,
+        "name": "Bird Exhibit",
+        "height": 0,
+        "base_height": 0,
+        "color": "orange",
+        "type": "exhibit"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [-87.618312, 41.866282],
+            [-87.61832, 41.866674],
+            [-87.618087, 41.866676],
+            [-87.618087, 41.866661],
+            [-87.617423, 41.86667],
+            [-87.617416, 41.8663],
+            [-87.618312, 41.866282]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "id": "06e8fa0b3f851e3ae0e1da5fc17e111e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "indoor_path",
+        "level": 1,
+        "accessible": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-87.618312, 41.866282, 1],
+          [-87.61832, 41.866674, 1],
+          [-87.618087, 41.866676, 1],
+          [-87.617423, 41.86667, 1]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "indoor_connection",
+        "level": 1,
+        "connects": ["Bird Exhibit", "Corridor"]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-87.617423, 41.86667, 1],
+          [-87.617416, 41.8663, 1]
+        ]
+      }
+    }
+  ]
+}
