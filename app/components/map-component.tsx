@@ -40,6 +40,13 @@ export default function MapComponent() {
       // Initialize indoor navigation
       const indoorRoute = new IndoorRoute(map.current);
       indoorRoute.loadGeoJson("assets/museum2.geojson"); // Path relative to public directory
+
+      setTimeout(() => {
+        const start = [-87.617_054_083_12, 41.865_707_497]; // Example start coordinate
+        const end = [-87.618_003_267_02, 41.866_544_956_94]; // Example end coordinate
+        const shortestPath = indoorRoute.findShortestPath(start, end);
+        indoorRoute.visualizePath(shortestPath);
+      }, 200);
     });
 
     // Add controls

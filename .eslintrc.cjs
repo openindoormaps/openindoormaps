@@ -61,6 +61,7 @@ module.exports = {
             },
           ],
           "no-unused-vars": "off",
+          "unicorn/no-array-for-each": "off",
           "unused-imports/no-unused-imports": "error",
           "unused-imports/no-unused-vars": [
             "warn",
