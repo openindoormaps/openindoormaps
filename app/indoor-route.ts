@@ -1,5 +1,3 @@
-/* eslint-disable unicorn/prevent-abbreviations */
-/* eslint-disable unicorn/no-array-for-each */
 //TODO: linter fixen foreach, i(index), dynamic crossings detection
 //TODO Navigation input for indoor routing
 import maplibregl from "maplibre-gl";
