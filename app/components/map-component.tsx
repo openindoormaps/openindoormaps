@@ -39,7 +39,7 @@ export default function MapComponent() {
 
       // Initialize indoor navigation
       const indoorRoute = new IndoorRoute(map.current);
-      indoorRoute.loadGeoJson("assets/museum2.geojson"); // Path relative to public directory
+      indoorRoute.loadGeoJson("assets/museum2.geojson", config.showDebugLayers); // Path relative to public directory
 
       setTimeout(() => {
         const start = [-87.617_054_083_12, 41.865_707_497]; // Example start coordinate

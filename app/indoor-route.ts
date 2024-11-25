@@ -39,7 +39,7 @@ export default class IndoorRoute {
     this.graph = new Graph();
   }
 
-  public async loadGeoJson(url: string) {
+  public async loadGeoJson(url: string, showDebugLayers: boolean) {
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -48,48 +48,49 @@ export default class IndoorRoute {
       const geoJsonData: GeoJSON.FeatureCollection = await response.json();
       this.parseGeoJsonToGraph(geoJsonData);
 
-      //TODO make debug layers toggleble
-      this.map.addSource("indoor-route", {
-        type: "geojson",
-        data: geoJsonData,
-      });
+      if (showDebugLayers) {
+        this.map.addSource("indoor-route", {
+          type: "geojson",
+          data: geoJsonData,
+        });
 
-      this.map.addLayer({
-        id: "indoor-route-line",
-        type: "line",
-        source: "indoor-route",
-        layout: {
-          "line-join": "round",
-          "line-cap": "round",
-        },
-        paint: {
-          "line-color": "#007aff",
-          "line-width": 4,
-        },
-      });
+        this.map.addLayer({
+          id: "indoor-route-line",
+          type: "line",
+          source: "indoor-route",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+          },
+          paint: {
+            "line-color": "#007aff",
+            "line-width": 4,
+          },
+        });
 
-      this.map.addLayer({
-        id: "indoor-route-points",
-        type: "circle",
-        source: "indoor-route",
-        paint: {
-          "circle-radius": 6,
-          "circle-color": "#ff5722",
-        },
-      });
+        this.map.addLayer({
+          id: "indoor-route-points",
+          type: "circle",
+          source: "indoor-route",
+          paint: {
+            "circle-radius": 6,
+            "circle-color": "#ff5722",
+          },
+        });
 
-      this.map.addLayer({
-        id: "crossings-layer",
-        type: "circle",
-        source: "indoor-route",
-        filter: ["==", ["get", "type"], "crossing"], // Only show crossing points
-        paint: {
-          "circle-radius": 8,
-          "circle-color": "#007aff",
-          "circle-stroke-color": "#ffffff",
-          "circle-stroke-width": 2,
-        },
-      });
+        this.map.addLayer({
+          id: "crossings-layer",
+          type: "circle",
+          source: "indoor-route",
+          filter: ["==", ["get", "type"], "crossing"], // Only show crossing points
+          paint: {
+            "circle-radius": 8,
+            "circle-color": "#007aff",
+            "circle-stroke-color": "#ffffff",
+            "circle-stroke-width": 2,
+          },
+        });
+      }
     } catch (error) {
       console.error("Error loading GeoJSON data:", error);
     }
