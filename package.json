@@ -61,7 +61,7 @@
       "eslint --quiet --fix",
       "prettier --write"
     ],
-    "*.{json,js,ts,jsx,tsx,html}": [
+    "*.{json,js,ts,jsx,tsx,html,geojson}": [
       "prettier --write --ignore-unknown"
     ]
   }
