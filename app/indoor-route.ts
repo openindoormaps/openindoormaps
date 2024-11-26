@@ -1,8 +1,7 @@
-//TODO: linter fixen foreach, i(index), dynamic crossings detection
-//TODO Navigation input for indoor routing
+//TODO: Consider using a graph library like graphlib or js-graph-algorithms for more advanced graph operations
 import maplibregl from "maplibre-gl";
 
-type Node = string; // Node identifier, e.g., a stringified coordinate like "[0, 0]"
+type Node = string;
 type Edge = { to: Node; weight: number };
 
 class Graph {
@@ -18,7 +17,7 @@ class Graph {
     this.addNode(from);
     this.addNode(to);
     this.adjacencyList.get(from)?.push({ to, weight });
-    this.adjacencyList.get(to)?.push({ to: from, weight }); // Undirected graph
+    this.adjacencyList.get(to)?.push({ to: from, weight });
   }
 
   getNodes() {
@@ -82,7 +81,7 @@ export default class IndoorRoute {
           id: "crossings-layer",
           type: "circle",
           source: "indoor-route",
-          filter: ["==", ["get", "type"], "crossing"], // Only show crossing points
+          filter: ["==", ["get", "type"], "crossing"],
           paint: {
             "circle-radius": 8,
             "circle-color": "#007aff",
@@ -113,7 +112,7 @@ export default class IndoorRoute {
 
         connections.forEach((connection: number[]) => {
           const to = JSON.stringify(connection);
-          const weight = feature.properties?.weight || 1; // Optionally define weight for crossing
+          const weight = feature.properties?.weight || 1;
           this.graph.addEdge(crossingNode, to, weight);
         });
       }
@@ -125,7 +124,7 @@ export default class IndoorRoute {
     const endNode = JSON.stringify(end);
 
     const path = this.dijkstra(startNode, endNode);
-    return path.map((node) => JSON.parse(node)); // Convert stringified coordinates back to numbers
+    return path.map((node) => JSON.parse(node));
   }
 
   private dijkstra(start: Node, end: Node): Node[] {
@@ -133,7 +132,6 @@ export default class IndoorRoute {
     const previous: Record<Node, Node | null> = {};
     const queue: Node[] = this.graph.getNodes();
 
-    // Initialize distances and previous
     this.graph.getNodes().forEach((node) => {
       distances[node] = Infinity;
       // eslint-disable-next-line unicorn/no-null
@@ -142,11 +140,10 @@ export default class IndoorRoute {
     distances[start] = 0;
 
     while (queue.length > 0) {
-      // Get the node with the smallest distance
       const current = queue
         .sort((a, b) => distances[a] - distances[b])
         .shift()!;
-      if (current === end) break; // Shortest path found
+      if (current === end) break;
 
       this.graph.getEdges(current).forEach(({ to, weight }) => {
         const alt = distances[current] + weight;
@@ -157,7 +154,6 @@ export default class IndoorRoute {
       });
     }
 
-    // Reconstruct path
     const path: Node[] = [];
     let current: Node | null = end;
     while (current) {
@@ -165,7 +161,7 @@ export default class IndoorRoute {
       current = previous[current];
     }
 
-    return path[0] === start ? path : []; // Return path or empty array if no path
+    return path[0] === start ? path : [];
   }
 
   public visualizePath(path: number[][]) {
