@@ -27,29 +27,28 @@ export default function MapComponent() {
     map.current.on("load", () => {
       if (!map.current) return;
 
-      // Add layers
       map.current.addLayer(new Tile3dLayer());
       map.current.addLayer(new GeoJsonLayer());
 
-      // Initialize directions
       directions.current = new MapLibreGlDirections(map.current!, {
         requestOptions: { overview: "full", steps: "true" },
       });
       map.current?.addControl(new LoadingIndicatorControl(directions.current));
 
-      // Initialize indoor navigation
       const indoorRoute = new IndoorRoute(map.current);
-      indoorRoute.loadGeoJson("assets/museum2.geojson", config.showDebugLayers); // Path relative to public directory
+      indoorRoute.loadGeoJson(
+        "assets/geojson/museum-routes.geojson",
+        config.showDebugLayers,
+      );
 
       setTimeout(() => {
-        const start = [-87.617_054_083_12, 41.865_707_497]; // Example start coordinate
-        const end = [-87.618_003_267_02, 41.866_544_956_94]; // Example end coordinate
+        const start = [-87.617_054_083_12, 41.865_707_497];
+        const end = [-87.618_003_267_02, 41.866_544_956_94];
         const shortestPath = indoorRoute.findShortestPath(start, end);
         indoorRoute.visualizePath(shortestPath);
       }, 200);
     });
 
-    // Add controls
     map.current.addControl(new NavigationControl(), "bottom-right");
     map.current.addControl(new FullscreenControl(), "bottom-right");
   });
