@@ -1,7 +1,6 @@
 const config = {
-  keys: {
-    mapTiler: "wYonyRi2hNgJVH2qgs81", //TODO: just for testing, replace with a custom server if needed
-  },
+  geoCodingApi: "https://nominatim.openstreetmap.org",
+  routingApi: "https://router.project-osrm.org/route/v1",
   mapConfig: {
     style:
       "https://api.maptiler.com/maps/basic-v2/style.json?key=wYonyRi2hNgJVH2qgs81",

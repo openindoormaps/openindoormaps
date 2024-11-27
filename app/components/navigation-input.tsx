@@ -4,10 +4,12 @@ import {
   MaplibreGeocoderApi,
   MaplibreGeocoderFeatureResults,
 } from "@maplibre/maplibre-gl-geocoder";
+import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import { Accessibility, SlidersVertical } from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
 import { MutableRefObject, useState } from "react";
 import NavigationSettings from "./navigation-settings";
+import config from "~/config";
 
 /**
  * TODO: Refactor to MapLibre IControl implementation
@@ -29,11 +31,11 @@ export default function NavigationInput({
   const [isAccessibleRoute, setIsAccessibleRoute] = useState(false);
 
   const geocoderApi: MaplibreGeocoderApi = {
-    forwardGeocode: async (config) => {
+    forwardGeocode: async (geoCodingConfig) => {
       const features: CarmenGeojsonFeature[] = [];
       try {
-        const request = `https://nominatim.openstreetmap.org/search?q=${
-          config.query
+        const request = `${config.geoCodingApi}/search?q=${
+          geoCodingConfig.query
         }&format=geojson&polygon_geojson=1&addressdetails=1`;
         const response = await fetch(request);
         const geojson = await response.json();

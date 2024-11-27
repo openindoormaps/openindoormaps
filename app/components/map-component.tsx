@@ -1,7 +1,6 @@
 import MapLibreGlDirections, {
   LoadingIndicatorControl,
 } from "@maplibre/maplibre-gl-directions";
-import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
@@ -31,7 +30,11 @@ export default function MapComponent() {
       map.current.addLayer(new GeoJsonLayer());
 
       directions.current = new MapLibreGlDirections(map.current!, {
-        requestOptions: { overview: "full", steps: "true" },
+        api: config.routingApi,
+        requestOptions: {
+          overview: "full",
+          steps: "true",
+        },
       });
       map.current?.addControl(new LoadingIndicatorControl(directions.current));
 
