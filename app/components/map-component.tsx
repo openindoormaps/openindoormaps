@@ -45,8 +45,8 @@ export default function MapComponent() {
       );
 
       setTimeout(() => {
-        const start = [-87.617_054_083_12, 41.865_707_497];
-        const end = [-87.618_003_267_02, 41.866_544_956_94];
+        const start = [-87.617_902_304_647_52, 41.865_918_557_102_56];
+        const end = [-87.616_170_384_361_15, 41.866_519_609_763_316];
         const shortestPath = indoorRoute.findShortestPath(start, end);
         indoorRoute.visualizePath(shortestPath);
       }, 200);

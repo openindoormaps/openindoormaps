@@ -96,6 +96,22 @@ export default class IndoorRoute {
   }
 
   private parseGeoJsonToGraph(geoJson: GeoJSON.FeatureCollection) {
+    const coordMap = new Map<string, Set<GeoJSON.Position[]>>();
+
+    geoJson.features.forEach((feature) => {
+      if (feature.geometry.type === "LineString" && feature.properties) {
+        const coordinates = feature.geometry.coordinates;
+
+        coordinates.forEach((coord) => {
+          const key = JSON.stringify(coord);
+          if (!coordMap.has(key)) {
+            coordMap.set(key, new Set());
+          }
+          coordMap.get(key)?.add(coordinates);
+        });
+      }
+    });
+
     geoJson.features.forEach((feature) => {
       if (feature.geometry.type === "LineString" && feature.properties) {
         const coordinates = feature.geometry.coordinates;
@@ -104,17 +120,37 @@ export default class IndoorRoute {
         for (let i = 0; i < coordinates.length - 1; i++) {
           const from = JSON.stringify(coordinates[i]);
           const to = JSON.stringify(coordinates[i + 1]);
-          this.graph.addEdge(from, to, weight);
-        }
-      } else if (feature.geometry.type === "Point" && feature.properties) {
-        const crossingNode = JSON.stringify(feature.geometry.coordinates);
-        const connections = feature.properties.connections || [];
 
-        connections.forEach((connection: number[]) => {
-          const to = JSON.stringify(connection);
-          const weight = feature.properties?.weight || 1;
-          this.graph.addEdge(crossingNode, to, weight);
-        });
+          this.graph.addEdge(from, to, weight);
+
+          const fromOverlaps = coordMap.get(from);
+
+          if (fromOverlaps && fromOverlaps.size > 1) {
+            fromOverlaps.forEach((otherCoords) => {
+              if (otherCoords == coordinates) {
+                const idx = otherCoords.findIndex(
+                  (c) => JSON.stringify(c) === from,
+                );
+                if (idx !== -1) {
+                  if (idx > 0) {
+                    this.graph.addEdge(
+                      from,
+                      JSON.stringify(otherCoords[idx - 1]),
+                      weight,
+                    );
+                  }
+                  if (idx < otherCoords.length - 1) {
+                    this.graph.addEdge(
+                      from,
+                      JSON.stringify(otherCoords[idx + 1]),
+                      weight,
+                    );
+                  }
+                }
+              }
+            });
+          }
+        }
       }
     });
   }
