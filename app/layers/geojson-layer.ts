@@ -1,5 +1,6 @@
 import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
 
+//TODO: Change name of class to IndoorMapLayer
 export default class GeoJsonLayer implements CustomLayerInterface {
   id: string = "geojson";
   type = "custom" as const;
