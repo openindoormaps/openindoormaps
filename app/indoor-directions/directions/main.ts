@@ -1,16 +1,18 @@
+import config from "~/config";
 import Graph from "../pathfinding/graph";
 import { Vertex } from "../types";
 
 export default class IndoorDirections {
-  private map: maplibregl.Map;
-  private graph: Graph;
+  protected declare readonly map: maplibregl.Map;
+  private graph: Graph = new Graph();
+  protected _waypoints: GeoJSON.Feature<GeoJSON.Point>[] = [];
 
+  //TODO: add configurations
   constructor(map: maplibregl.Map) {
     this.map = map;
-    this.graph = new Graph();
   }
 
-  public async loadGeoJson(url: string, showDebugLayers: boolean) {
+  public async loadMapData(url: string) {
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -19,7 +21,7 @@ export default class IndoorDirections {
       const geoJsonData: GeoJSON.FeatureCollection = await response.json();
       this.parseGeoJsonToGraph(geoJsonData);
 
-      if (showDebugLayers) {
+      if (config.showDebugLayers) {
         this.map.addSource("indoor-route", {
           type: "geojson",
           data: geoJsonData,
@@ -127,12 +129,21 @@ export default class IndoorDirections {
     });
   }
 
-  public findShortestPath(start: number[], end: number[]): number[][] {
-    const startVertex = JSON.stringify(start);
-    const endVertex = JSON.stringify(end);
+  public setWaypoints(waypoints: [number, number][]) {
+    this._waypoints = waypoints.map((coord) => ({
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: coord,
+      },
+      properties: {},
+    }));
 
-    const path = this.dijkstra(startVertex, endVertex);
-    return path.map((Vertex) => JSON.parse(Vertex));
+    const start = JSON.stringify(waypoints[0]);
+    const end = JSON.stringify(waypoints[1]);
+
+    const path = this.dijkstra(start, end);
+    this.visualizePath(path.map((coord) => JSON.parse(coord)));
   }
 
   private dijkstra(start: Vertex, end: Vertex): Vertex[] {

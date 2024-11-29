@@ -38,18 +38,18 @@ export default function MapComponent() {
       });
       map.current?.addControl(new LoadingIndicatorControl(directions.current));
 
-      const indoorRoute = new IndoorDirections(map.current);
-      indoorRoute.loadGeoJson(
-        "assets/geojson/museum-routes.geojson",
-        config.showDebugLayers,
-      );
-
-      setTimeout(() => {
-        const start = [-87.617_902_304_647_52, 41.865_918_557_102_56];
-        const end = [-87.616_170_384_361_15, 41.866_519_609_763_316];
-        const shortestPath = indoorRoute.findShortestPath(start, end);
-        indoorRoute.visualizePath(shortestPath);
-      }, 200);
+      const indoorDirections = new IndoorDirections(map.current);
+      indoorDirections
+        .loadMapData("assets/geojson/museum-routes.geojson")
+        .then(() => {
+          const start: [number, number] = [
+            -87.617_902_304_647_52, 41.865_918_557_102_56,
+          ];
+          const end: [number, number] = [
+            -87.616_170_384_361_15, 41.866_519_609_763_316,
+          ];
+          indoorDirections.setWaypoints([start, end]);
+        });
     });
 
     map.current.addControl(new NavigationControl(), "bottom-right");
