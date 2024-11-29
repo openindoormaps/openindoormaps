@@ -1,35 +1,7 @@
-//TODO: Consider using a graph library like graphlib or js-graph-algorithms for more advanced graph operations
-import maplibregl from "maplibre-gl";
+import Graph from "../pathfinding/graph";
+import { Vertex } from "../types";
 
-type Node = string;
-type Edge = { to: Node; weight: number };
-
-class Graph {
-  adjacencyList: Map<Node, Edge[]> = new Map();
-
-  addNode(node: Node) {
-    if (!this.adjacencyList.has(node)) {
-      this.adjacencyList.set(node, []);
-    }
-  }
-
-  addEdge(from: Node, to: Node, weight: number) {
-    this.addNode(from);
-    this.addNode(to);
-    this.adjacencyList.get(from)?.push({ to, weight });
-    this.adjacencyList.get(to)?.push({ to: from, weight });
-  }
-
-  getNodes() {
-    return [...this.adjacencyList.keys()];
-  }
-
-  getEdges(node: Node): Edge[] {
-    return this.adjacencyList.get(node) || [];
-  }
-}
-
-export default class IndoorRoute {
+export default class IndoorDirections {
   private map: maplibregl.Map;
   private graph: Graph;
 
@@ -156,22 +128,22 @@ export default class IndoorRoute {
   }
 
   public findShortestPath(start: number[], end: number[]): number[][] {
-    const startNode = JSON.stringify(start);
-    const endNode = JSON.stringify(end);
+    const startVertex = JSON.stringify(start);
+    const endVertex = JSON.stringify(end);
 
-    const path = this.dijkstra(startNode, endNode);
-    return path.map((node) => JSON.parse(node));
+    const path = this.dijkstra(startVertex, endVertex);
+    return path.map((Vertex) => JSON.parse(Vertex));
   }
 
-  private dijkstra(start: Node, end: Node): Node[] {
-    const distances: Record<Node, number> = {};
-    const previous: Record<Node, Node | null> = {};
-    const queue: Node[] = this.graph.getNodes();
+  private dijkstra(start: Vertex, end: Vertex): Vertex[] {
+    const distances: Record<Vertex, number> = {};
+    const previous: Record<Vertex, Vertex | null> = {};
+    const queue: Vertex[] = this.graph.getVertexs();
 
-    this.graph.getNodes().forEach((node) => {
-      distances[node] = Infinity;
+    this.graph.getVertexs().forEach((Vertex) => {
+      distances[Vertex] = Infinity;
       // eslint-disable-next-line unicorn/no-null
-      previous[node] = null;
+      previous[Vertex] = null;
     });
     distances[start] = 0;
 
@@ -190,8 +162,8 @@ export default class IndoorRoute {
       });
     }
 
-    const path: Node[] = [];
-    let current: Node | null = end;
+    const path: Vertex[] = [];
+    let current: Vertex | null = end;
     while (current) {
       path.unshift(current);
       current = previous[current];

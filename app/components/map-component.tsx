@@ -8,7 +8,7 @@ import config from "~/config";
 import GeoJsonLayer from "~/layers/geojson-layer";
 import Tile3dLayer from "~/layers/tile-3d-layer";
 import NavigationInput from "./navigation-input";
-import IndoorRoute from "~/indoor-route";
+import IndoorDirections from "~/indoor-directions/directions/main";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ export default function MapComponent() {
       });
       map.current?.addControl(new LoadingIndicatorControl(directions.current));
 
-      const indoorRoute = new IndoorRoute(map.current);
+      const indoorRoute = new IndoorDirections(map.current);
       indoorRoute.loadGeoJson(
         "assets/geojson/museum-routes.geojson",
         config.showDebugLayers,
