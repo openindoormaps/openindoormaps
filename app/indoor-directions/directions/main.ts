@@ -6,6 +6,7 @@ export default class IndoorDirections {
   protected declare readonly map: maplibregl.Map;
   private graph: Graph = new Graph();
   protected _waypoints: GeoJSON.Feature<GeoJSON.Point>[] = [];
+  protected routelines: GeoJSON.Feature<GeoJSON.LineString>[][] = [];
 
   //TODO: add configurations
   constructor(map: maplibregl.Map) {
@@ -130,20 +131,29 @@ export default class IndoorDirections {
   }
 
   public setWaypoints(waypoints: [number, number][]) {
-    this._waypoints = waypoints.map((coord) => ({
-      type: "Feature",
-      geometry: {
-        type: "Point",
-        coordinates: coord,
-      },
-      properties: {},
-    }));
-
     const start = JSON.stringify(waypoints[0]);
     const end = JSON.stringify(waypoints[1]);
 
-    const path = this.dijkstra(start, end);
-    this.visualizePath(path.map((coord) => JSON.parse(coord)));
+    const routes = this.dijkstra(start, end);
+
+    this.routelines = routes.map((route, idx) => {
+      const next = routes[idx + 1];
+      if (next) {
+        return [
+          {
+            type: "Feature",
+            geometry: {
+              type: "LineString",
+              coordinates: [JSON.parse(route), JSON.parse(next)],
+            },
+            properties: {},
+          },
+        ];
+      }
+      return [];
+    });
+
+    this.draw();
   }
 
   private dijkstra(start: Vertex, end: Vertex): Vertex[] {
@@ -183,29 +193,21 @@ export default class IndoorDirections {
     return path[0] === start ? path : [];
   }
 
-  public visualizePath(path: number[][]) {
-    const geoJsonPath: GeoJSON.FeatureCollection = {
+  protected draw() {
+    const features = [...this._waypoints, ...this.routelines.flat()];
+    const geoJson: GeoJSON.FeatureCollection = {
       type: "FeatureCollection",
-      features: [
-        {
-          type: "Feature",
-          geometry: {
-            type: "LineString",
-            coordinates: path,
-          },
-          properties: {},
-        },
-      ],
+      features,
     };
 
     if (this.map.getSource("shortest-path")) {
       (this.map.getSource("shortest-path") as maplibregl.GeoJSONSource).setData(
-        geoJsonPath,
+        geoJson,
       );
     } else {
       this.map.addSource("shortest-path", {
         type: "geojson",
-        data: geoJsonPath,
+        data: geoJson,
       });
 
       this.map.addLayer({
