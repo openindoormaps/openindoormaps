@@ -81,6 +81,8 @@ module.exports = {
         ],
         "unicorn/prevent-abbreviations": "off",
         "unicorn/no-array-for-each": "off",
+        "unicorn/no-null": "off",
+        "no-nested-ternary": "error",
       },
     },
   ],
