@@ -10,6 +10,5 @@ const config = {
     bearing: 20,
     antialias: true,
   } as maplibregl.MapOptions,
-  showDebugLayers: false,
 };
 export default config;
