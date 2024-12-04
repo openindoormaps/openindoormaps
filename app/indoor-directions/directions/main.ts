@@ -132,10 +132,20 @@ export default class IndoorDirections {
   }
 
   protected calculateDirections() {
-    const routes = this.pathFinder.dijkstra(
-      this._waypoints[0].geometry.coordinates,
-      this._waypoints.at(-1)?.geometry.coordinates ?? [],
-    );
+    const routes: GeoJSON.Position[] = [];
+
+    for (let i = 0; i < this._waypoints.length - 1; i++) {
+      const start = this._waypoints[i].geometry.coordinates;
+      const end = this._waypoints[i + 1].geometry.coordinates;
+
+      const segmentRoute = this.pathFinder.dijkstra(start, end);
+
+      if (i === 0) {
+        routes.push(...segmentRoute);
+      } else {
+        routes.push(...segmentRoute.slice(1));
+      }
+    }
 
     this.routelines.push(this.buildRouteLines(routes));
   }

@@ -45,10 +45,14 @@ export default function MapComponent() {
           const start: [number, number] = [
             -87.617_902_304_647_52, 41.865_918_557_102_56,
           ];
-          const end: [number, number] = [
-            -87.616_170_384_361_15, 41.866_519_609_763_316,
+          const stop: [number, number] = [
+            -87.617_065_170_513_3, 41.866_509_880_990_35,
           ];
-          indoorDirections.setWaypoints([start, end]);
+          const end: [number, number] = [
+            -87.616_149_747_016_3, 41.865_913_642_382_54,
+          ];
+
+          indoorDirections.setWaypoints([start, stop, end]);
         });
     });
 
