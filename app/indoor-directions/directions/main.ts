@@ -53,6 +53,25 @@ export default class IndoorDirections {
     }
   }
 
+  private calculateDistance(
+    coord1: GeoJSON.Position,
+    coord2: GeoJSON.Position,
+  ) {
+    const [lon1, lat1] = coord1;
+    const [lon2, lat2] = coord2;
+    const R = 6371; // Earth's radius in kilometers
+    const dLat = ((lat2 - lat1) * Math.PI) / 180;
+    const dLon = ((lon2 - lon1) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((lat1 * Math.PI) / 180) *
+        Math.cos((lat2 * Math.PI) / 180) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
   private parseGeoJsonToGraph(geoJson: GeoJSON.FeatureCollection) {
     const coordMap = new Map<string, Set<GeoJSON.Position[]>>();
     const graph = new Graph();
@@ -74,16 +93,20 @@ export default class IndoorDirections {
     geoJson.features.forEach((feature) => {
       if (feature.geometry.type === "LineString" && feature.properties) {
         const coordinates = feature.geometry.coordinates;
-        const weight = feature.properties.weight || 1;
 
         for (let i = 0; i < coordinates.length - 1; i++) {
           const from = JSON.stringify(coordinates[i]);
           const to = JSON.stringify(coordinates[i + 1]);
 
+          // Calculate distance as weight
+          const weight = this.calculateDistance(
+            coordinates[i],
+            coordinates[i + 1],
+          );
+
           graph.addEdge(from, to, weight);
 
           const fromOverlaps = coordMap.get(from);
-
           if (fromOverlaps && fromOverlaps.size > 1) {
             fromOverlaps.forEach((otherCoords) => {
               if (otherCoords == coordinates) {
@@ -115,7 +138,6 @@ export default class IndoorDirections {
 
     this.pathFinder.setGraph(graph);
   }
-
   /**
    * Replaces all the waypoints with the specified ones and re-fetches the routes.
    *
