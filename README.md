@@ -9,6 +9,7 @@
 </div>
 
 **OpenIndoorMaps** is an open-source project focused on providing a minimalist, self-hostable indoor navigation solution. The goal is to help users navigate complex indoor spaces such as shopping malls, airports, hospitals, and universities, using web-based mapping technologies.
+![image](https://github.com/user-attachments/assets/3b74c3ec-ff70-46df-b40a-cf849713bfad)
 
 ## Why OpenIndoorMaps?
 
