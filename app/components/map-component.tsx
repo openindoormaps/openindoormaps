@@ -5,7 +5,7 @@ import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 import config from "~/config";
-import GeoJsonLayer from "~/layers/geojson-layer";
+import IndoorMapLayer from "~/layers/indoor-map-layer";
 import Tile3dLayer from "~/layers/tile-3d-layer";
 import NavigationInput from "./navigation-input";
 import IndoorDirections from "~/indoor-directions/directions/main";
@@ -23,7 +23,7 @@ export default function MapComponent() {
 
     map.on("load", () => {
       map.addLayer(new Tile3dLayer());
-      map.addLayer(new GeoJsonLayer());
+      map.addLayer(new IndoorMapLayer());
 
       directions.current = new MapLibreGlDirections(map, {
         api: config.routingApi,
