@@ -16,29 +16,25 @@ export default function MapComponent() {
   const directions = useRef<MapLibreGlDirections>();
 
   useEffect(() => {
-    if (map.current) return;
-
-    map.current = new maplibregl.Map({
+    const map = new maplibregl.Map({
       ...config.mapConfig,
       container: mapContainer.current!,
     });
 
-    map.current.on("load", () => {
-      if (!map.current) return;
+    map.on("load", () => {
+      map.addLayer(new Tile3dLayer());
+      map.addLayer(new GeoJsonLayer());
 
-      map.current.addLayer(new Tile3dLayer());
-      map.current.addLayer(new GeoJsonLayer());
-
-      directions.current = new MapLibreGlDirections(map.current!, {
+      directions.current = new MapLibreGlDirections(map, {
         api: config.routingApi,
         requestOptions: {
           overview: "full",
           steps: "true",
         },
       });
-      map.current?.addControl(new LoadingIndicatorControl(directions.current));
+      map.addControl(new LoadingIndicatorControl(directions.current));
 
-      const indoorDirections = new IndoorDirections(map.current);
+      const indoorDirections = new IndoorDirections(map);
       indoorDirections
         .loadMapData("assets/geojson/museum-routes.geojson")
         .then(() => {
@@ -56,8 +52,8 @@ export default function MapComponent() {
         });
     });
 
-    map.current.addControl(new NavigationControl(), "bottom-right");
-    map.current.addControl(new FullscreenControl(), "bottom-right");
+    map.addControl(new NavigationControl(), "bottom-right");
+    map.addControl(new FullscreenControl(), "bottom-right");
   });
 
   return (
