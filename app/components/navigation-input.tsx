@@ -9,15 +9,10 @@ import {
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import { Accessibility, SlidersVertical } from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import config from "~/config";
 import useMapStore from "~/store/use-map-store";
 import NavigationSettings from "./navigation-settings";
-
-/**
- * TODO: Refactor to MapLibre IControl implementation
- * @see https://maplibre.org/maplibre-gl-js/docs/API/interfaces/IControl/
- */
 
 export default function NavigationInput() {
   const map = useMapStore((state) => state.mapInstance);
@@ -27,8 +22,7 @@ export default function NavigationInput() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isAccessibleRoute, setIsAccessibleRoute] = useState(false);
 
-  useEffect(() => {
-    if (!map) return;
+  map?.on("load", () => {
     directions.current = new MapLibreGlDirections(map, {
       api: config.routingApi,
       requestOptions: {

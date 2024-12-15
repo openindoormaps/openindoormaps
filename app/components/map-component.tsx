@@ -17,12 +17,11 @@ export default function MapComponent() {
       ...config.mapConfig,
       container: mapContainer.current!,
     });
+    setMapInstance(map);
 
     map.on("load", () => {
       map.addLayer(new Tile3dLayer());
       map.addLayer(new IndoorMapLayer());
-
-      setMapInstance(map);
 
       const indoorDirections = new IndoorDirections(map);
       indoorDirections
@@ -44,7 +43,6 @@ export default function MapComponent() {
 
     map.addControl(new NavigationControl(), "bottom-right");
     map.addControl(new FullscreenControl(), "bottom-right");
-
     return () => {
       map.remove();
     };
