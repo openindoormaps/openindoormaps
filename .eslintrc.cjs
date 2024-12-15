@@ -83,6 +83,7 @@ module.exports = {
         "unicorn/no-array-for-each": "off",
         "unicorn/no-null": "off",
         "no-nested-ternary": "error",
+        "unicorn/prefer-module": "off",
       },
     },
   ],

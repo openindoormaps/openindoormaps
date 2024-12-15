@@ -1,44 +1,29 @@
-import MapLibreGlDirections, {
-  LoadingIndicatorControl,
-} from "@maplibre/maplibre-gl-directions";
 import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 import config from "~/config";
-import GeoJsonLayer from "~/layers/geojson-layer";
-import Tile3dLayer from "~/layers/tile-3d-layer";
-import NavigationInput from "./navigation-input";
 import IndoorDirections from "~/indoor-directions/directions/main";
+import IndoorMapLayer from "~/layers/indoor-map-layer";
+import Tile3dLayer from "~/layers/tile-3d-layer";
+import useMapStore from "~/stores/use-map-store";
+import NavigationInput from "./navigation-input";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<maplibregl.Map>();
-  const directions = useRef<MapLibreGlDirections>();
+  const setMapInstance = useMapStore((state) => state.setMapInstance);
 
   useEffect(() => {
-    if (map.current) return;
-
-    map.current = new maplibregl.Map({
+    const map = new maplibregl.Map({
       ...config.mapConfig,
       container: mapContainer.current!,
     });
+    setMapInstance(map);
 
-    map.current.on("load", () => {
-      if (!map.current) return;
+    map.on("load", () => {
+      map.addLayer(new Tile3dLayer());
+      map.addLayer(new IndoorMapLayer());
 
-      map.current.addLayer(new Tile3dLayer());
-      map.current.addLayer(new GeoJsonLayer());
-
-      directions.current = new MapLibreGlDirections(map.current!, {
-        api: config.routingApi,
-        requestOptions: {
-          overview: "full",
-          steps: "true",
-        },
-      });
-      map.current?.addControl(new LoadingIndicatorControl(directions.current));
-
-      const indoorDirections = new IndoorDirections(map.current);
+      const indoorDirections = new IndoorDirections(map);
       indoorDirections
         .loadMapData("assets/geojson/museum-routes.geojson")
         .then(() => {
@@ -56,13 +41,16 @@ export default function MapComponent() {
         });
     });
 
-    map.current.addControl(new NavigationControl(), "bottom-right");
-    map.current.addControl(new FullscreenControl(), "bottom-right");
+    map.addControl(new NavigationControl(), "bottom-right");
+    map.addControl(new FullscreenControl(), "bottom-right");
+    return () => {
+      map.remove();
+    };
   });
 
   return (
     <div className="flex size-full flex-col">
-      <NavigationInput directions={directions} map={map} />
+      <NavigationInput />
       <div ref={mapContainer} className="size-full"></div>
     </div>
   );
