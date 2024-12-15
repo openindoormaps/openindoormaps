@@ -1,4 +1,6 @@
-import MapLibreGlDirections from "@maplibre/maplibre-gl-directions";
+import MapLibreGlDirections, {
+  LoadingIndicatorControl,
+} from "@maplibre/maplibre-gl-directions";
 import {
   CarmenGeojsonFeature,
   MaplibreGeocoderApi,
@@ -7,28 +9,35 @@ import {
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import { Accessibility, SlidersVertical } from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
-import { MutableRefObject, useState } from "react";
-import NavigationSettings from "./navigation-settings";
+import { useEffect, useRef, useState } from "react";
 import config from "~/config";
+import useMapStore from "~/store/use-map-store";
+import NavigationSettings from "./navigation-settings";
 
 /**
  * TODO: Refactor to MapLibre IControl implementation
  * @see https://maplibre.org/maplibre-gl-js/docs/API/interfaces/IControl/
  */
 
-interface NavigationInputProperties {
-  directions: MutableRefObject<MapLibreGlDirections | undefined>;
-  map: MutableRefObject<maplibregl.Map | undefined>;
-}
-
-export default function NavigationInput({
-  directions,
-  map,
-}: NavigationInputProperties) {
+export default function NavigationInput() {
+  const map = useMapStore((state) => state.mapInstance);
+  const directions = useRef<MapLibreGlDirections>();
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isAccessibleRoute, setIsAccessibleRoute] = useState(false);
+
+  useEffect(() => {
+    if (!map) return;
+    directions.current = new MapLibreGlDirections(map, {
+      api: config.routingApi,
+      requestOptions: {
+        overview: "full",
+        steps: "true",
+      },
+    });
+    map?.addControl(new LoadingIndicatorControl(directions.current));
+  });
 
   const geocoderApi: MaplibreGeocoderApi = {
     forwardGeocode: async (geoCodingConfig) => {
@@ -103,12 +112,12 @@ export default function NavigationInput({
       if (departureCoord && destinationCoord) {
         directions.current?.setWaypoints([departureCoord, destinationCoord]);
 
-        if (map.current) {
+        if (map) {
           const bounds = new LngLatBounds();
           bounds.extend(departureCoord);
           bounds.extend(destinationCoord);
 
-          map.current.fitBounds(bounds, {
+          map.fitBounds(bounds, {
             padding: 20,
           });
         }

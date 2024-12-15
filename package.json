@@ -23,7 +23,8 @@
     "maplibre-gl": "^4.7.1",
     "nanoid": "^5.0.9",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",

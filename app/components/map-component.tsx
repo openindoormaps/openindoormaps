@@ -1,19 +1,16 @@
-import MapLibreGlDirections, {
-  LoadingIndicatorControl,
-} from "@maplibre/maplibre-gl-directions";
 import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 import config from "~/config";
+import IndoorDirections from "~/indoor-directions/directions/main";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
 import Tile3dLayer from "~/layers/tile-3d-layer";
+import useMapStore from "~/store/use-map-store";
 import NavigationInput from "./navigation-input";
-import IndoorDirections from "~/indoor-directions/directions/main";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<maplibregl.Map>();
-  const directions = useRef<MapLibreGlDirections>();
+  const setMapInstance = useMapStore((state) => state.setMapInstance);
 
   useEffect(() => {
     const map = new maplibregl.Map({
@@ -25,14 +22,7 @@ export default function MapComponent() {
       map.addLayer(new Tile3dLayer());
       map.addLayer(new IndoorMapLayer());
 
-      directions.current = new MapLibreGlDirections(map, {
-        api: config.routingApi,
-        requestOptions: {
-          overview: "full",
-          steps: "true",
-        },
-      });
-      map.addControl(new LoadingIndicatorControl(directions.current));
+      setMapInstance(map);
 
       const indoorDirections = new IndoorDirections(map);
       indoorDirections
@@ -54,11 +44,15 @@ export default function MapComponent() {
 
     map.addControl(new NavigationControl(), "bottom-right");
     map.addControl(new FullscreenControl(), "bottom-right");
+
+    return () => {
+      map.remove();
+    };
   });
 
   return (
     <div className="flex size-full flex-col">
-      <NavigationInput directions={directions} map={map} />
+      <NavigationInput />
       <div ref={mapContainer} className="size-full"></div>
     </div>
   );
