@@ -9,6 +9,7 @@ import config from "~/config";
 import useMapStore from "~/stores/use-map-store";
 import NavigationSettings from "./navigation-settings";
 import { geocodeInput } from "~/utils/geocoding";
+import { Toggle } from "./ui/toggle";
 
 export default function NavigationInput() {
   const map = useMapStore((state) => state.mapInstance);
@@ -62,16 +63,16 @@ export default function NavigationInput() {
             type="text"
             autoComplete="off" //? prevent browser keeping the input value after refresh
             placeholder="Departure"
-            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-md bg-gray-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
             value={departure}
             onChange={(event) => setDeparture(event.target.value)}
           />
-          <button
-            className={`flex size-[38px] items-center justify-center rounded-lg border-4 border-neutral-100 p-[5px] ${isAccessibleRoute && "bg-neutral-100"}`}
+          <Toggle
+            variant="outline"
             onClick={() => setIsAccessibleRoute(!isAccessibleRoute)}
           >
-            <Accessibility className="size-5" />
-          </button>
+            <Accessibility />
+          </Toggle>
         </div>
 
         <div className="flex gap-2">
@@ -79,16 +80,16 @@ export default function NavigationInput() {
             type="text"
             autoComplete="off"
             placeholder="Destination"
-            className="w-full rounded-md bg-neutral-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
+            className="w-full rounded-md bg-gray-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
             value={destination}
             onChange={(event) => setDestination(event.target.value)}
           />
-          <button
-            className={`flex size-[38px] items-center justify-center rounded-lg border-4 border-neutral-100 p-[5px] ${isSettingsOpen && "bg-neutral-100"}`}
+          <Toggle
+            variant="outline"
             onClick={() => setIsSettingsOpen(!isSettingsOpen)}
           >
-            <SlidersVertical className="size-5" />
-          </button>
+            <SlidersVertical />
+          </Toggle>
         </div>
         <button
           onClick={handleRouting}
