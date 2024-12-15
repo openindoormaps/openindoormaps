@@ -5,7 +5,7 @@ import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
 import Tile3dLayer from "~/layers/tile-3d-layer";
-import useMapStore from "~/store/use-map-store";
+import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
 
 export default function MapComponent() {

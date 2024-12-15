@@ -11,7 +11,7 @@ import { Accessibility, SlidersVertical } from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
 import { useRef, useState } from "react";
 import config from "~/config";
-import useMapStore from "~/store/use-map-store";
+import useMapStore from "~/stores/use-map-store";
 import NavigationSettings from "./navigation-settings";
 
 export default function NavigationInput() {
@@ -72,8 +72,7 @@ export default function NavigationInput() {
     },
 
     //TODO: add logic
-    reverseGeocode: async (config) => {
-      config;
+    reverseGeocode: async () => {
       return {} as MaplibreGeocoderFeatureResults;
     },
   };
