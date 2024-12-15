@@ -7,6 +7,8 @@ import IndoorMapLayer from "~/layers/indoor-map-layer";
 import Tile3dLayer from "~/layers/tile-3d-layer";
 import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
+import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
+import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -43,6 +45,11 @@ export default function MapComponent() {
 
     map.addControl(new NavigationControl(), "bottom-right");
     map.addControl(new FullscreenControl(), "bottom-right");
+    map.addControl(
+      new MaplibreInspect({
+        popup: new maplibregl.Popup(),
+      }),
+    );
     return () => {
       map.remove();
     };
