@@ -15,6 +15,7 @@
   "dependencies": {
     "@maplibre/maplibre-gl-directions": "^0.7.1",
     "@maplibre/maplibre-gl-geocoder": "^1.7.0",
+    "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-toggle": "^1.1.1",
     "@remix-run/node": "^2.13.1",
     "@remix-run/react": "^2.13.1",

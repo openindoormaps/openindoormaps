@@ -10,6 +10,7 @@ import useMapStore from "~/stores/use-map-store";
 import NavigationSettings from "./navigation-settings";
 import { geocodeInput } from "~/utils/geocoding";
 import { Toggle } from "./ui/toggle";
+import { Button } from "./ui/button";
 
 export default function NavigationInput() {
   const map = useMapStore((state) => state.mapInstance);
@@ -91,12 +92,10 @@ export default function NavigationInput() {
             <SlidersVertical />
           </Toggle>
         </div>
-        <button
-          onClick={handleRouting}
-          className="rounded-md bg-blue-500 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
+        <Button variant="primary" onClick={handleRouting}>
+          {" "}
           Find Route
-        </button>
+        </Button>
       </div>
 
       {isSettingsOpen && <NavigationSettings />}
