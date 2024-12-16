@@ -47,7 +47,10 @@ export default function MapComponent() {
     map.addControl(new FullscreenControl(), "bottom-right");
     map.addControl(
       new MaplibreInspect({
-        popup: new maplibregl.Popup(),
+        popup: new maplibregl.Popup({
+          closeOnClick: false,
+        }),
+        blockHoverPopupOnClick: true,
       }),
     );
     return () => {
