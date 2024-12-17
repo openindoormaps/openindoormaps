@@ -27,19 +27,16 @@ export default function MapComponent() {
 
       const indoorDirections = new IndoorDirections(map);
       indoorDirections
-        .loadMapData("assets/geojson/museum-routes.geojson")
+        .loadMapData("assets/geojson/indoor-routes.geojson")
         .then(() => {
           const start: [number, number] = [
-            -87.617_902_304_647_52, 41.865_918_557_102_56,
-          ];
-          const stop: [number, number] = [
-            -87.617_065_170_513_3, 41.866_509_880_990_35,
+            3.110_255_339_660_966_5, 45.759_180_103_714_186,
           ];
           const end: [number, number] = [
-            -87.616_149_747_016_3, 41.865_913_642_382_54,
+            3.111_802_160_097_454_4, 45.758_458_704_536_62,
           ];
 
-          indoorDirections.setWaypoints([start, stop, end]);
+          indoorDirections.setWaypoints([start, end]);
         });
     });
 
