@@ -86,8 +86,8 @@ const snappointColor: NonNullable<
  * @param sourceName A name of the source used by the instance and layers names' prefix
  */
 export default function layersFactory(
-  pointsScalingFactor = 1,
-  linesScalingFactor = 1,
+  pointsScalingFactor = 0.3,
+  linesScalingFactor = 0.3,
   sourceName = "maplibre-gl-indoor-directions",
 ): LayerSpecification[] {
   const pointCasingCircleRadius: NonNullable<

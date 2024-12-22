@@ -14,7 +14,13 @@ export default class Tile3dLayer implements CustomLayerInterface {
       "source-layer": "building",
       type: "fill-extrusion",
       minzoom: 15,
-      filter: ["all", ["!=", "$id", 24_825_537], ["!=", "$id", 16_699_535]],
+      filter: [
+        "all",
+        ["!=", "$id", 975_937],
+        ["!=", "$id", 62_840_057],
+        ["!=", "$id", 62_840_217],
+        ["!=", "$id", 18_068_852],
+      ],
       paint: {
         "fill-extrusion-color": [
           "interpolate",
