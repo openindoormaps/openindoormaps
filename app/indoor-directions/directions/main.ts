@@ -1,8 +1,13 @@
 import Graph from "../pathfinding/graph";
 import PathFinder from "../pathfinding/pathfinder";
 import { MapLibreGlDirectionsConfiguration } from "../types";
+import {
+  IndoorDirectionsEvented,
+  IndoorDirectionsRoutingEvent,
+  IndoorDirectionsWaypointEvent,
+} from "./events";
 import { buildConfiguration, buildPoint, buildRouteLines } from "./utils";
-export default class IndoorDirections {
+export default class IndoorDirections extends IndoorDirectionsEvented {
   protected declare readonly map: maplibregl.Map;
   private readonly pathFinder: PathFinder;
 
@@ -18,6 +23,7 @@ export default class IndoorDirections {
     map: maplibregl.Map,
     configuration?: Partial<MapLibreGlDirectionsConfiguration>,
   ) {
+    super(map);
     this.map = map;
 
     this.configuration = buildConfiguration(configuration);
@@ -144,36 +150,64 @@ export default class IndoorDirections {
    * @param waypoints The coordinates at which the waypoints should be added
    */
   public setWaypoints(waypoints: [number, number][]) {
+    // this.abortController?.abort();
+
     this._waypoints = waypoints.map((coord) => buildPoint(coord, "WAYPOINT"));
     this.assignWaypointsCategories();
 
-    //TODO: this.fire();
+    const waypointEvent = new IndoorDirectionsWaypointEvent(
+      "setwaypoints",
+      undefined,
+    );
+    this.fire(waypointEvent);
 
-    this.calculateDirections();
     this.draw();
+
+    try {
+      this.calculateDirections(waypointEvent);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  protected calculateDirections() {
+  protected calculateDirections(originalEvent: IndoorDirectionsWaypointEvent) {
+    //this.abortController?.abort();
+
     const routes: GeoJSON.Position[] = [];
 
-    for (let i = 0; i < this._waypoints.length - 1; i++) {
-      const start = this._waypoints[i].geometry.coordinates;
-      const end = this._waypoints[i + 1].geometry.coordinates;
+    if (this._waypoints.length >= 2) {
+      this.fire(
+        new IndoorDirectionsRoutingEvent("calculateroutesstart", originalEvent),
+      );
 
-      const segmentRoute = this.pathFinder.dijkstra(start, end);
+      for (let i = 0; i < this._waypoints.length - 1; i++) {
+        const start = this._waypoints[i].geometry.coordinates;
+        const end = this._waypoints[i + 1].geometry.coordinates;
 
-      if (i === 0) {
-        routes.push(...segmentRoute);
-      } else {
-        routes.push(...segmentRoute.slice(1));
+        const segmentRoute = this.pathFinder.dijkstra(start, end);
+
+        if (i === 0) {
+          routes.push(...segmentRoute);
+        } else {
+          routes.push(...segmentRoute.slice(1));
+        }
       }
+
+      this.fire(
+        new IndoorDirectionsRoutingEvent("calculateroutesend", originalEvent),
+      );
+
+      this.routelines = [this.buildRouteLines(routes)];
+    } else {
+      this.routelines = [];
     }
 
-    this.routelines.push(this.buildRouteLines(routes));
+    this.draw();
   }
 
   protected draw() {
     const features = [...this._waypoints, ...this.routelines.flat()];
+
     const geoJson: GeoJSON.FeatureCollection = {
       type: "FeatureCollection",
       features,
