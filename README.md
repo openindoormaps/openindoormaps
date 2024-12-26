@@ -38,10 +38,11 @@ Many current indoor navigation solutions lack the flexibility and adaptability n
 - **Airports**: Navigate gates, baggage claims, and facilities. 
 - **Libraries**: Help users find books, study rooms, and resources. 
 - **Parking Garages**: Direct drivers to available spaces and exits.
+
 ## Contributing
 We are about to start development soon, and we welcome anyone who is interested or has great ideas! If you have suggestions, feel free to: 
 1. **Create an Issue**: Share your thoughts or feature ideas by opening an issue and describing your concept. 
-2. **Join the Discussion**: Engage with the community, suggest improvements, or ask questions.
+2. **Join Our Community**: We have a Discord channel for discussions and collaboration. Please join us [here](https://discord.gg/znGgpCGDGQ).
 
 ## License
 This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
