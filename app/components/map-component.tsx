@@ -26,18 +26,18 @@ export default function MapComponent() {
       map.addLayer(new IndoorMapLayer());
 
       const indoorDirections = new IndoorDirections(map);
-      indoorDirections
-        .loadMapData("assets/geojson/indoor-routes.geojson")
-        .then(() => {
-          const start: [number, number] = [
-            3.110_255_339_660_966_5, 45.759_180_103_714_186,
-          ];
-          const end: [number, number] = [
-            3.111_802_160_097_454_4, 45.758_458_704_536_62,
-          ];
+      indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
 
-          indoorDirections.setWaypoints([start, end]);
-        });
+      const start: [number, number] = [
+        3.110_255_339_660_966_5, 45.759_180_103_714_186,
+      ];
+      const end: [number, number] = [
+        3.111_802_160_097_454_4, 45.758_458_704_536_62,
+      ];
+
+      setTimeout(() => {
+        indoorDirections.setWaypoints([start, end]);
+      }, 1500);
     });
 
     map.addControl(new NavigationControl(), "bottom-right");
