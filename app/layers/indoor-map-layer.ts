@@ -16,7 +16,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     map.addSource("indoor-map", {
       type: "geojson",
-      data: "assets/geojson/demo-map.geojson",
+      data: "https://raw.githubusercontent.com/map-gl-indoor/map-gl-indoor/refs/heads/main/examples/maps/caserne.geojson",
     });
 
     map.addLayer({

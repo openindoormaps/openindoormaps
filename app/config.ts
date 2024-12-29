@@ -4,7 +4,7 @@ const config = {
   mapConfig: {
     style:
       "https://api.maptiler.com/maps/basic-v2/style.json?key=wYonyRi2hNgJVH2qgs81",
-    center: [3.110_97, 45.758_887],
+    center: [5.725_353_7, 45.184_351_9],
     zoom: 17,
   } as maplibregl.MapOptions,
 };
