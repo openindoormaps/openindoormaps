@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
-import Tile3dLayer from "~/layers/tile-3d-layer";
 import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
 import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
@@ -22,7 +21,6 @@ export default function MapComponent() {
     setMapInstance(map);
 
     map.on("load", () => {
-      map.addLayer(new Tile3dLayer());
       map.addLayer(new IndoorMapLayer());
 
       const indoorDirections = new IndoorDirections(map);

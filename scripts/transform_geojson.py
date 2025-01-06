@@ -10,21 +10,35 @@ def transform_geojson(input_file, output_file):
     
     # Transform each feature
     for feature in data['features']:
+        # Skip features with level_id 0 or 2
+        level = feature['properties'].get('level')
+        if level in ['0', '2']:
+            continue
+            
+        # Set level 1 to null
+        level = None
+            
+        # Restructure geometry to ensure correct order
+        new_geometry = {
+            "coordinates": feature['geometry']['coordinates'],
+            "type": feature['geometry']['type']
+        }
+        
         new_feature = {
             "type": "Feature",
             "properties": {
-                "name": "null",
-                "alt_name": "null",
-                "category": "null",
-                "restriction": "null",
-                "accessibility": "null",
-                "display_point": "null",
-                "feature_type": "corridor",
-                "level_id": feature['properties'].get('level', 'null'),
-                "show": "true",
+                "name": None,
+                "alt_name": None,
+                "category": None,
+                "restriction": None,
+                "accessibility": None,
+                "display_point": None,
+                "feature_type": "unit",
+                "level_id": level,
+                "show": True,
                 "area": 0
             },
-            "geometry": feature['geometry']
+            "geometry": new_geometry
         }
         new_features.append(new_feature)
     
