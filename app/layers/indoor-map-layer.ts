@@ -3,11 +3,32 @@ import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
 export default class IndoorMapLayer implements CustomLayerInterface {
   id: string = "geojson";
   type = "custom" as const;
+  private map: Map | null = null;
 
   render: CustomRenderMethod = (gl, matrix) => {
     gl && matrix; // Unused
   };
-  onAdd?(map: Map): void {
+
+  setFloorLevel(level: number) {
+    if (!this.map) return;
+    
+    const source = this.map.getSource('indoor-map') as maplibregl.GeoJSONSource;
+    fetch('assets/geojson/demo-map.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const filteredFeatures = data.features.filter(
+          (feature: any) => feature.properties.level_id === level
+        );
+        
+        source.setData({
+          type: 'FeatureCollection',
+          features: filteredFeatures
+        });
+      });
+  }
+
+  onAdd(map: Map): void {
+    this.map = map;
     const colors = {
       unit: "#f3f3f3",
       corridor: "#d6d5d1",
@@ -16,7 +37,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     map.addSource("indoor-map", {
       type: "geojson",
-      data: "assets/geojson/caserne.geojson",
+      data: "assets/geojson/demo-map.geojson",
     });
 
     map.addLayer({

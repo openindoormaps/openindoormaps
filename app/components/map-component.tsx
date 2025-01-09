@@ -4,14 +4,18 @@ import { useEffect, useRef } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
+import Tile3dLayer from "~/layers/tile-3d-layer";
 import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
 import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
+import useFloorStore from "~/stores/floor-store";
 
-export default function MapComponent() {
+const MapComponent = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
+  const { currentFloor, setCurrentFloor } = useFloorStore();
   const setMapInstance = useMapStore((state) => state.setMapInstance);
+  let indoorMapLayer: IndoorMapLayer;
 
   useEffect(() => {
     const map = new maplibregl.Map({
@@ -19,9 +23,11 @@ export default function MapComponent() {
       container: mapContainer.current!,
     });
     setMapInstance(map);
+    indoorMapLayer = new IndoorMapLayer();
 
     map.on("load", () => {
-      map.addLayer(new IndoorMapLayer());
+      map.addLayer(new Tile3dLayer());
+      map.addLayer(indoorMapLayer);
 
       const indoorDirections = new IndoorDirections(map);
       indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
@@ -38,6 +44,38 @@ export default function MapComponent() {
       }, 1500);
     });
 
+    // Add floor control buttons
+    const floorControl = new maplibregl.NavigationControl({
+      showCompass: false,
+      showZoom: false,
+      visualizePitch: false
+    });
+    
+    map.addControl(floorControl, 'bottom-right');
+    
+    // Custom floor controls
+    const upButton = document.createElement('button');
+    upButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-floor-up';
+    upButton.innerHTML = '&#8593;'; // Up arrow
+    upButton.onclick = () => {
+      const nextFloor = currentFloor + 1;
+      if (nextFloor <= 2) {
+        setCurrentFloor(nextFloor);
+        indoorMapLayer.setFloorLevel(nextFloor);
+      }
+    };
+
+    const downButton = document.createElement('button');
+    downButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-floor-down';
+    downButton.innerHTML = '&#8595;'; // Down arrow
+    downButton.onclick = () => {
+      setCurrentFloor(2);
+      indoorMapLayer.setFloorLevel(2);
+    };
+
+    floorControl._container.appendChild(upButton);
+    floorControl._container.appendChild(downButton);
+
     map.addControl(new NavigationControl(), "bottom-right");
     map.addControl(new FullscreenControl(), "bottom-right");
     map.addControl(
@@ -51,7 +89,7 @@ export default function MapComponent() {
     return () => {
       map.remove();
     };
-  });
+  }, []);
 
   return (
     <div className="flex size-full flex-col">
@@ -59,4 +97,6 @@ export default function MapComponent() {
       <div ref={mapContainer} className="size-full"></div>
     </div>
   );
-}
+};
+
+export default MapComponent;
