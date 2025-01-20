@@ -1,5 +1,14 @@
 import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
 
+interface IndoorFeatureProperties {
+  level_id: number | null;
+  [key: string]: unknown;
+}
+
+interface IndoorFeature extends GeoJSON.Feature {
+  properties: IndoorFeatureProperties;
+}
+
 export default class IndoorMapLayer implements CustomLayerInterface {
   id: string = "geojson";
   type = "custom" as const;
@@ -11,18 +20,18 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
   setFloorLevel(level: number) {
     if (!this.map) return;
-    
-    const source = this.map.getSource('indoor-map') as maplibregl.GeoJSONSource;
-    fetch('assets/geojson/demo-map.geojson')
-      .then(response => response.json())
-      .then(data => {
+
+    const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
+    fetch("assets/geojson/demo-map.geojson")
+      .then((response) => response.json())
+      .then((data) => {
         const filteredFeatures = data.features.filter(
-          (feature: any) => feature.properties.level_id === level
+          (feature: IndoorFeature) => feature.properties.level_id === level,
         );
-        
+
         source.setData({
-          type: 'FeatureCollection',
-          features: filteredFeatures
+          type: "FeatureCollection",
+          features: filteredFeatures,
         });
       });
   }
