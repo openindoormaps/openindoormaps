@@ -9,35 +9,50 @@ interface IndoorFeature extends GeoJSON.Feature {
   properties: IndoorFeatureProperties;
 }
 
+interface GeoJSONData {
+  type: "FeatureCollection";
+  features: IndoorFeature[];
+}
+
 export default class IndoorMapLayer implements CustomLayerInterface {
   id: string = "geojson";
   type = "custom" as const;
   private map: Map | null = null;
+  private cachedData: GeoJSONData | null = null;
 
   render: CustomRenderMethod = (gl, matrix) => {
     gl && matrix; // Unused
   };
 
-  setFloorLevel(level: number) {
-    if (!this.map) return;
+  private async loadAndCacheData(): Promise<void> {
+    if (this.cachedData) return;
 
-    const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
-    fetch("assets/geojson/demo-map.geojson")
-      .then((response) => response.json())
-      .then((data) => {
-        const filteredFeatures = data.features.filter(
-          (feature: IndoorFeature) => feature.properties.level_id === level,
-        );
-
-        source.setData({
-          type: "FeatureCollection",
-          features: filteredFeatures,
-        });
-      });
+    try {
+      const response = await fetch("assets/geojson/demo-map.geojson");
+      this.cachedData = await response.json();
+    } catch (error) {
+      console.error("Failed to load GeoJSON data:", error);
+    }
   }
 
-  onAdd(map: Map): void {
+  setFloorLevel(level: number) {
+    if (!this.map || !this.cachedData) return;
+
+    const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
+    const filteredFeatures = this.cachedData.features.filter(
+      (feature: IndoorFeature) => feature.properties.level_id === level,
+    );
+
+    source.setData({
+      type: "FeatureCollection",
+      features: filteredFeatures,
+    });
+  }
+
+  async onAdd(map: Map): Promise<void> {
     this.map = map;
+    await this.loadAndCacheData();
+
     const colors = {
       unit: "#f3f3f3",
       corridor: "#d6d5d1",
@@ -46,7 +61,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     map.addSource("indoor-map", {
       type: "geojson",
-      data: "assets/geojson/demo-map.geojson",
+      data: this.cachedData || "assets/geojson/demo-map.geojson",
     });
 
     map.addLayer({
