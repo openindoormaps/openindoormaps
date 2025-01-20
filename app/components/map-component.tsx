@@ -9,7 +9,7 @@ import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
 import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
-import { FloorUpDownControl } from "./ui/floor-up-down-control";
+import { FloorSelector } from "./ui/floor-selector";
 
 function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -66,10 +66,7 @@ function MapComponent() {
       <NavigationInput />
       <div ref={mapContainer} className="size-full">
         {map && indoorMapLayer.current && (
-          <FloorUpDownControl
-            map={map}
-            indoorMapLayer={indoorMapLayer.current!}
-          />
+          <FloorSelector indoorMapLayer={indoorMapLayer.current} />
         )}
       </div>
     </div>
