@@ -11,7 +11,7 @@ import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
 import useFloorStore from "~/stores/floor-store";
 
-const MapComponent = () => {
+function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const { currentFloor, setCurrentFloor } = useFloorStore();
   const setMapInstance = useMapStore((state) => state.setMapInstance);
@@ -48,33 +48,33 @@ const MapComponent = () => {
     const floorControl = new maplibregl.NavigationControl({
       showCompass: false,
       showZoom: false,
-      visualizePitch: false
+      visualizePitch: false,
     });
-    
-    map.addControl(floorControl, 'bottom-right');
-    
+
+    map.addControl(floorControl, "bottom-right");
+
     // Custom floor controls
-    const upButton = document.createElement('button');
-    upButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-floor-up';
-    upButton.innerHTML = '&#8593;'; // Up arrow
-    upButton.onclick = () => {
+    const upButton = document.createElement("button");
+    upButton.className = "maplibregl-ctrl-icon maplibregl-ctrl-floor-up";
+    upButton.innerHTML = "&#8593;"; // Up arrow
+    upButton.addEventListener("click", () => {
       const nextFloor = currentFloor + 1;
       if (nextFloor <= 2) {
         setCurrentFloor(nextFloor);
         indoorMapLayer.setFloorLevel(nextFloor);
       }
-    };
+    });
 
-    const downButton = document.createElement('button');
-    downButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-floor-down';
-    downButton.innerHTML = '&#8595;'; // Down arrow
-    downButton.onclick = () => {
+    const downButton = document.createElement("button");
+    downButton.className = "maplibregl-ctrl-icon maplibregl-ctrl-floor-down";
+    downButton.innerHTML = "&#8595;"; // Down arrow
+    downButton.addEventListener("click", () => {
       setCurrentFloor(2);
       indoorMapLayer.setFloorLevel(2);
-    };
+    });
 
-    floorControl._container.appendChild(upButton);
-    floorControl._container.appendChild(downButton);
+    floorControl._container.append(upButton);
+    floorControl._container.append(downButton);
 
     map.addControl(new NavigationControl(), "bottom-right");
     map.addControl(new FullscreenControl(), "bottom-right");
@@ -97,6 +97,6 @@ const MapComponent = () => {
       <div ref={mapContainer} className="size-full"></div>
     </div>
   );
-};
+}
 
 export default MapComponent;
