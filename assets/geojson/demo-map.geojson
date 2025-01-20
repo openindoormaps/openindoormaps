@@ -257,6 +257,25 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
+        "level_id": 1,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111006411223598, 45.759187029922956, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
         "level_id": 0,
         "show": true,
         "area": 0
@@ -4239,6 +4258,38 @@
       "geometry": {
         "coordinates": [3.111145898037488, 45.75878907580245, 0],
         "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": 1,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [3.111227324319476, 45.758756327119094],
+            [3.111280381916194, 45.75877369313591],
+            [3.111219917845058, 45.75887354408245],
+            [3.111166855517786, 45.75885618580557],
+            [3.111212816375218, 45.75878028034374],
+            [3.111218738097205, 45.75878221834003],
+            [3.111223837320994, 45.75877379892459],
+            [3.111217915643531, 45.75877186085546],
+            [3.111227324319476, 45.758756327119094],
+            [3.111227324319476, 45.758756327119094]
+          ]
+        ],
+        "type": "Polygon"
       }
     },
     {
