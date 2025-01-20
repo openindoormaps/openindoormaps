@@ -11,7 +11,7 @@
         "accessibility": "null",
         "display_point": "null",
         "feature_type": "corridor",
-        "level_id": "null",
+        "level_id": null,
         "show": "true",
         "area": 0
       },
@@ -209,7 +209,7 @@
         "accessibility": "null",
         "display_point": "null",
         "feature_type": "unknown",
-        "level_id": "null",
+        "level_id": 0,
         "show": "true",
         "area": 0
       },
@@ -238,7 +238,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -257,7 +257,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -341,7 +341,7 @@
         "accessibility": "null",
         "display_point": "null",
         "feature_type": "unkown",
-        "level_id": "null",
+        "level_id": 0,
         "show": "true",
         "area": 0
       },
@@ -360,7 +360,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -390,7 +390,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -424,7 +424,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -472,7 +472,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -520,7 +520,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -539,7 +539,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -587,7 +587,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -606,7 +606,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -634,7 +634,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -653,7 +653,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -701,7 +701,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -720,7 +720,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -750,7 +750,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -798,7 +798,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -817,7 +817,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -849,7 +849,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -897,7 +897,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -916,7 +916,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -948,7 +948,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -996,7 +996,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1015,7 +1015,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1047,7 +1047,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1095,7 +1095,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1114,7 +1114,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1146,7 +1146,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1194,7 +1194,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1213,7 +1213,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1245,7 +1245,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1293,7 +1293,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1312,7 +1312,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1342,7 +1342,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1390,7 +1390,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1409,7 +1409,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1442,7 +1442,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1490,7 +1490,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1509,7 +1509,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1557,7 +1557,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1605,7 +1605,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1653,7 +1653,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1685,7 +1685,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1733,7 +1733,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1752,7 +1752,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1780,7 +1780,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1828,7 +1828,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1847,7 +1847,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1875,7 +1875,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1923,7 +1923,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1942,7 +1942,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -1970,7 +1970,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2018,7 +2018,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2037,7 +2037,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2065,7 +2065,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2113,7 +2113,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2132,7 +2132,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2163,7 +2163,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2211,7 +2211,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2230,7 +2230,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2258,7 +2258,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2306,7 +2306,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2325,7 +2325,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2355,7 +2355,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2403,7 +2403,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2422,7 +2422,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2450,7 +2450,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2498,7 +2498,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2517,7 +2517,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2551,7 +2551,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2599,7 +2599,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2618,7 +2618,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2648,7 +2648,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2696,7 +2696,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2715,7 +2715,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2743,7 +2743,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2791,7 +2791,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2810,7 +2810,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2840,7 +2840,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2888,7 +2888,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2907,7 +2907,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2935,7 +2935,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -2983,7 +2983,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3002,7 +3002,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3040,7 +3040,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3088,7 +3088,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3107,7 +3107,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3137,7 +3137,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3185,7 +3185,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3204,7 +3204,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3232,7 +3232,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3280,7 +3280,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3299,7 +3299,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3327,7 +3327,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3375,7 +3375,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3394,7 +3394,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3422,7 +3422,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3470,7 +3470,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3489,7 +3489,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3517,7 +3517,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3565,7 +3565,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3584,7 +3584,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3612,7 +3612,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3660,7 +3660,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3679,7 +3679,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3707,7 +3707,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3755,7 +3755,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3774,7 +3774,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3804,7 +3804,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3852,7 +3852,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3871,7 +3871,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3899,7 +3899,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3947,7 +3947,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3966,7 +3966,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -3994,7 +3994,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4042,7 +4042,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4061,7 +4061,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4089,7 +4089,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4137,7 +4137,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4156,7 +4156,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4184,7 +4184,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4232,7 +4232,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4251,7 +4251,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4283,7 +4283,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4331,7 +4331,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4350,7 +4350,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4378,7 +4378,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4426,7 +4426,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4445,7 +4445,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4481,7 +4481,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4529,7 +4529,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4548,7 +4548,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4576,7 +4576,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4624,7 +4624,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4643,7 +4643,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4673,7 +4673,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4721,7 +4721,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4740,7 +4740,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4776,7 +4776,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4824,7 +4824,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4843,7 +4843,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4879,7 +4879,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4927,7 +4927,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4946,7 +4946,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -4974,7 +4974,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5022,7 +5022,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5041,7 +5041,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5071,7 +5071,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5119,7 +5119,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5138,7 +5138,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5168,7 +5168,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5216,7 +5216,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5235,7 +5235,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5269,7 +5269,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5317,7 +5317,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5336,7 +5336,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5392,7 +5392,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5440,7 +5440,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5459,7 +5459,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5497,7 +5497,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5545,7 +5545,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5564,7 +5564,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5598,7 +5598,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5646,7 +5646,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5665,7 +5665,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5699,7 +5699,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5747,7 +5747,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5766,7 +5766,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5806,7 +5806,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5854,7 +5854,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5873,7 +5873,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5921,7 +5921,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -5957,7 +5957,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -6005,7 +6005,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -6024,7 +6024,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -6054,7 +6054,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },
@@ -6102,7 +6102,7 @@
         "accessibility": null,
         "display_point": null,
         "feature_type": "unit",
-        "level_id": null,
+        "level_id": 0,
         "show": true,
         "area": 0
       },

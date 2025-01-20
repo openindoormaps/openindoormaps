@@ -1,6 +1,6 @@
 import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
@@ -9,27 +9,28 @@ import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
 import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
-import useFloorStore from "~/stores/floor-store";
+import { FloorUpDownControl } from "./ui/floor-up-down-control";
 
 function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const { currentFloor, setCurrentFloor } = useFloorStore();
+  const [map, setMap] = useState<maplibregl.Map | null>(null);
   const setMapInstance = useMapStore((state) => state.setMapInstance);
-  let indoorMapLayer: IndoorMapLayer;
+  const indoorMapLayer = useRef<IndoorMapLayer | null>(null);
 
   useEffect(() => {
-    const map = new maplibregl.Map({
+    const mapInstance = new maplibregl.Map({
       ...config.mapConfig,
       container: mapContainer.current!,
     });
-    setMapInstance(map);
-    indoorMapLayer = new IndoorMapLayer();
+    setMapInstance(mapInstance);
+    setMap(mapInstance);
+    indoorMapLayer.current = new IndoorMapLayer();
 
-    map.on("load", () => {
-      map.addLayer(new Tile3dLayer());
-      map.addLayer(indoorMapLayer);
+    mapInstance.on("load", () => {
+      mapInstance.addLayer(new Tile3dLayer());
+      mapInstance.addLayer(indoorMapLayer.current!);
 
-      const indoorDirections = new IndoorDirections(map);
+      const indoorDirections = new IndoorDirections(mapInstance);
       indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
 
       const start: [number, number] = [
@@ -44,41 +45,9 @@ function MapComponent() {
       }, 1500);
     });
 
-    // Add floor control buttons
-    const floorControl = new maplibregl.NavigationControl({
-      showCompass: false,
-      showZoom: false,
-      visualizePitch: false,
-    });
-
-    map.addControl(floorControl, "bottom-right");
-
-    // Custom floor controls
-    const upButton = document.createElement("button");
-    upButton.className = "maplibregl-ctrl-icon maplibregl-ctrl-floor-up";
-    upButton.innerHTML = "&#8593;"; // Up arrow
-    upButton.addEventListener("click", () => {
-      const nextFloor = currentFloor + 1;
-      if (nextFloor <= 2) {
-        setCurrentFloor(nextFloor);
-        indoorMapLayer.setFloorLevel(nextFloor);
-      }
-    });
-
-    const downButton = document.createElement("button");
-    downButton.className = "maplibregl-ctrl-icon maplibregl-ctrl-floor-down";
-    downButton.innerHTML = "&#8595;"; // Down arrow
-    downButton.addEventListener("click", () => {
-      setCurrentFloor(2);
-      indoorMapLayer.setFloorLevel(2);
-    });
-
-    floorControl._container.append(upButton);
-    floorControl._container.append(downButton);
-
-    map.addControl(new NavigationControl(), "bottom-right");
-    map.addControl(new FullscreenControl(), "bottom-right");
-    map.addControl(
+    mapInstance.addControl(new NavigationControl(), "bottom-right");
+    mapInstance.addControl(new FullscreenControl(), "bottom-right");
+    mapInstance.addControl(
       new MaplibreInspect({
         popup: new maplibregl.Popup({
           closeOnClick: false,
@@ -86,15 +55,23 @@ function MapComponent() {
         blockHoverPopupOnClick: true,
       }),
     );
+
     return () => {
-      map.remove();
+      mapInstance.remove();
     };
   }, []);
 
   return (
     <div className="flex size-full flex-col">
       <NavigationInput />
-      <div ref={mapContainer} className="size-full"></div>
+      <div ref={mapContainer} className="size-full">
+        {map && indoorMapLayer.current && (
+          <FloorUpDownControl
+            map={map}
+            indoorMapLayer={indoorMapLayer.current!}
+          />
+        )}
+      </div>
     </div>
   );
 }

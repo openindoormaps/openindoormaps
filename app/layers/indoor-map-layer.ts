@@ -40,7 +40,9 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
     const filteredFeatures = this.cachedData.features.filter(
-      (feature: IndoorFeature) => feature.properties.level_id === level,
+      (feature: IndoorFeature) =>
+        feature.properties.level_id === level ||
+        feature.properties.level_id === null,
     );
 
     source.setData({
