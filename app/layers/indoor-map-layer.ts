@@ -51,6 +51,24 @@ export default class IndoorMapLayer implements CustomLayerInterface {
     });
   }
 
+  async getAvailableFloors(): Promise<number[]> {
+    await this.loadAndCacheData();
+
+    const floors = new Set<number>();
+    this.cachedData!.features.forEach((feature) => {
+      if (feature.properties.level_id !== null) {
+        floors.add(feature.properties.level_id);
+      }
+    });
+
+    // Always include ground floor
+    const uniqueFloors = [...floors];
+    if (!uniqueFloors.includes(0)) {
+      uniqueFloors.push(0);
+    }
+    return uniqueFloors;
+  }
+
   async onAdd(map: Map): Promise<void> {
     this.map = map;
     await this.loadAndCacheData();
