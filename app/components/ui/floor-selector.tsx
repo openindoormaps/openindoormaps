@@ -23,9 +23,9 @@ export function FloorSelector({ indoorMapLayer }: FloorSelectorProps) {
     setCurrentFloor(floor);
     indoorMapLayer.setFloorLevel(floor);
   };
-
+  //TODO position
   return (
-    <div className="absolute right-4 top-4 z-10">
+    <div className="absolute right-10 top-2 z-10">
       <select
         value={currentFloor}
         onChange={handleFloorChange}
