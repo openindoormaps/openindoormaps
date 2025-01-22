@@ -23,4 +23,8 @@ export default class Graph {
   getEdges(Vertex: Vertex): Edge[] {
     return this.adjacencyList.get(Vertex) || [];
   }
+
+  hasVertex(Vertex: Vertex) {
+    return this.adjacencyList.has(Vertex);
+  }
 }

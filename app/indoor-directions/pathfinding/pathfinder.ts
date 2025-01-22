@@ -8,6 +8,7 @@ export default class Pathfinder {
   constructor(graph?: Graph) {
     this.graph = graph ?? new Graph();
   }
+
   public dijkstra(
     start: Vertex | GeoJSON.Position,
     end: Vertex | GeoJSON.Position,
@@ -15,13 +16,15 @@ export default class Pathfinder {
     start = JSON.stringify(start);
     end = JSON.stringify(end);
 
+    start = this.validateVertex(start);
+    end = this.validateVertex(end);
+
     const distances: Record<Vertex, number> = {};
     const previous: Record<Vertex, Vertex | null> = {};
     const queue: Vertex[] = this.graph.getVertexs();
 
     this.graph.getVertexs().forEach((Vertex) => {
       distances[Vertex] = Infinity;
-      // eslint-disable-next-line unicorn/no-null
       previous[Vertex] = null;
     });
     distances[start] = 0;
@@ -49,7 +52,16 @@ export default class Pathfinder {
     }
 
     const pathCoords = path.map((coord) => JSON.parse(coord));
+
     return pathCoords;
+  }
+
+  private validateVertex(position: Vertex): Vertex {
+    if (this.graph.hasVertex(position)) {
+      return position;
+    } else {
+      throw new Error(`Vertex not found in navigation graph: ${position}`);
+    }
   }
 
   public setGraph(graph: Graph) {
