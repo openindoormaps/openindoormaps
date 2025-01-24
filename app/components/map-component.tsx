@@ -29,10 +29,10 @@ export default function MapComponent() {
       indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
 
       const start: [number, number] = [
-        3.110_255_339_660_966_5, 45.759_180_103_714_186,
+        3.110_772_024_310_851, 45.759_202_787_191_39,
       ];
       const end: [number, number] = [
-        3.111_802_160_097_454_4, 45.758_458_704_536_62,
+        3.111_602_028_063_193, 45.758_724_877_591_61,
       ];
 
       setTimeout(() => {

@@ -6,7 +6,12 @@ import {
   IndoorDirectionsRoutingEvent,
   IndoorDirectionsWaypointEvent,
 } from "./events";
-import { buildConfiguration, buildPoint, buildRouteLines } from "./utils";
+import {
+  buildConfiguration,
+  buildPoint,
+  buildRouteLines,
+  buildSnaplines,
+} from "./utils";
 export default class IndoorDirections extends IndoorDirectionsEvented {
   protected declare readonly map: maplibregl.Map;
   private readonly pathFinder: PathFinder;
@@ -14,10 +19,13 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
   protected readonly configuration: MapLibreGlDirectionsConfiguration;
 
   protected buildPoint = buildPoint;
+  protected buildSnaplines = buildSnaplines;
   protected buildRouteLines = buildRouteLines;
 
   protected _waypoints: GeoJSON.Feature<GeoJSON.Point>[] = [];
+  protected snappoints: GeoJSON.Feature<GeoJSON.Point>[] = [];
   protected routelines: GeoJSON.Feature<GeoJSON.LineString>[][] = [];
+  private coordMap: Map<string, Set<GeoJSON.Position[]>> = new Map();
 
   constructor(
     map: maplibregl.Map,
@@ -44,6 +52,33 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
     this.configuration.layers.forEach((layer) => {
       this.map.addLayer(layer);
     });
+  }
+
+  protected get waypointsCoordinates(): [number, number][] {
+    return this._waypoints.map((waypoint) => {
+      return [
+        waypoint.geometry.coordinates[0],
+        waypoint.geometry.coordinates[1],
+      ];
+    });
+  }
+
+  protected get snappointsCoordinates(): [number, number][] {
+    return this.snappoints.map((snappoint) => {
+      return [
+        snappoint.geometry.coordinates[0],
+        snappoint.geometry.coordinates[1],
+      ];
+    });
+  }
+
+  protected get snaplines() {
+    return this.snappoints.length > 1
+      ? this.buildSnaplines(
+          this.waypointsCoordinates,
+          this.snappointsCoordinates,
+        )
+      : [];
   }
 
   public async loadMapData(url: string) {
@@ -78,9 +113,44 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
     return R * c;
   }
 
+  private findNearestGraphPoint(
+    point: GeoJSON.Position,
+    coordMap: Map<string, Set<GeoJSON.Position[]>>,
+  ): GeoJSON.Position | null {
+    let nearest: GeoJSON.Position | null = null;
+    let minDistance = Infinity;
+
+    coordMap.forEach((_, coordStr) => {
+      const coord = JSON.parse(coordStr);
+      const distance = this.calculateDistance(point, coord);
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearest = coord;
+      }
+    });
+
+    return nearest;
+  }
+
+  private updateSnapPoints() {
+    this.snappoints = this._waypoints.map((waypoint) => {
+      const nearest = this.findNearestGraphPoint(
+        waypoint.geometry.coordinates,
+        this.coordMap,
+      );
+
+      return this.buildPoint(
+        nearest || waypoint.geometry.coordinates,
+        "SNAPPOINT",
+      );
+    });
+  }
+
   private parseGeoJsonToGraph(geoJson: GeoJSON.FeatureCollection) {
     const coordMap = new Map<string, Set<GeoJSON.Position[]>>();
     const graph = new Graph();
+
+    this.coordMap = coordMap;
 
     geoJson.features.forEach((feature) => {
       if (feature.geometry.type === "LineString" && feature.properties) {
@@ -159,6 +229,9 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
       "setwaypoints",
       undefined,
     );
+
+    this.updateSnapPoints();
+
     this.fire(waypointEvent);
 
     this.draw();
@@ -175,14 +248,14 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
 
     const routes: GeoJSON.Position[] = [];
 
-    if (this._waypoints.length >= 2) {
+    if (this.snappoints.length >= 2) {
       this.fire(
         new IndoorDirectionsRoutingEvent("calculateroutesstart", originalEvent),
       );
 
-      for (let i = 0; i < this._waypoints.length - 1; i++) {
-        const start = this._waypoints[i].geometry.coordinates;
-        const end = this._waypoints[i + 1].geometry.coordinates;
+      for (let i = 0; i < this.snappoints.length - 1; i++) {
+        const start = this.snappoints[i].geometry.coordinates;
+        const end = this.snappoints[i + 1].geometry.coordinates;
 
         const segmentRoute = this.pathFinder.dijkstra(start, end);
 
@@ -206,7 +279,12 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
   }
 
   protected draw() {
-    const features = [...this._waypoints, ...this.routelines.flat()];
+    const features = [
+      ...this._waypoints,
+      ...this.snappoints,
+      ...this.snaplines,
+      ...this.routelines.flat(),
+    ];
 
     const geoJson: GeoJSON.FeatureCollection = {
       type: "FeatureCollection",

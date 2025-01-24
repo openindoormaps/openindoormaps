@@ -10,7 +10,7 @@ export const colors = {
   congestionLow: "#42c74c",
   congestionHigh: "#d72359",
   hoverpoint: "#30a856",
-  snappoint: "#cb3373",
+  snappoint: "#3665ff",
   snappointHighlight: "#e50d3f",
   waypointFoot: "#3665ff",
   waypointFootHighlight: "#0942ff",
