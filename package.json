@@ -26,6 +26,7 @@
     "isbot": "^4.1.0",
     "lucide-react": "^0.460.0",
     "maplibre-gl": "^4.7.1",
+    "minisearch": "^7.1.1",
     "nanoid": "^5.0.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

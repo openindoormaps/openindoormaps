@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable unused-imports/no-unused-imports */
 import MapLibreGlDirections, {
   LoadingIndicatorControl,
 } from "@maplibre/maplibre-gl-directions";
@@ -11,10 +13,14 @@ import NavigationSettings from "./navigation-settings";
 import { geocodeInput } from "~/utils/geocoding";
 import { Toggle } from "./ui/toggle";
 import { Button } from "./ui/button";
+import { indoorGeocodeInput } from "~/utils/indoor-geocoding";
+import IndoorDirections from "~/indoor-directions/directions/main";
+import building from "~/mock/building.json";
 
 export default function NavigationInput() {
   const map = useMapStore((state) => state.mapInstance);
   const directions = useRef<MapLibreGlDirections>();
+  const indoorDirections = useRef<IndoorDirections>();
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -29,9 +35,27 @@ export default function NavigationInput() {
       },
     });
     map?.addControl(new LoadingIndicatorControl(directions.current));
+
+    indoorDirections.current = new IndoorDirections(map);
+    indoorDirections.current.loadMapData(
+      building.indoor_routes as GeoJSON.FeatureCollection,
+    );
   });
 
   const handleRouting = async () => {
+    console.log("Routing from", departure, "to", destination);
+    if (!departure || !destination) return;
+    const departureCoord = indoorGeocodeInput(departure);
+    const destinationCoord = indoorGeocodeInput(destination);
+
+    if (departureCoord && destinationCoord) {
+      indoorDirections.current?.setWaypoints([
+        departureCoord,
+        destinationCoord,
+      ]);
+    }
+
+    /*
     if (!departure || !destination) return;
     try {
       const [departureCoord, destinationCoord] = await Promise.all([
@@ -55,6 +79,7 @@ export default function NavigationInput() {
     } catch (error) {
       console.error("Error during routing:", error);
     }
+      */
   };
   return (
     <div className="z-10 rounded-lg bg-white p-4 shadow-lg md:absolute md:left-4 md:top-4">
