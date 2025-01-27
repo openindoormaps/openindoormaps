@@ -1,0 +1,1126 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111006411223598, 45.759187029922956, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "null",
+        "alt_name": "null",
+        "category": "null",
+        "restriction": "null",
+        "accessibility": "null",
+        "display_point": "null",
+        "feature_type": "unkown",
+        "level_id": "null",
+        "show": "true",
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110519048836336, 45.75901825468585, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110934116838614, 45.75914879501935, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111732470702062, 45.758434287431086, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.1118270050686307, 45.75840262209062],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111816101677729, 45.75842810063061],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111647660650497, 45.758649614439, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111602028063193, 45.75872487759161, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111540963125903, 45.75882564561655, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111479544727975, 45.75892705685783, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111418664753733, 45.7590276384921, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.11137257803924, 45.75910381912777, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111342286876983, 45.759153908462814, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111289237295439, 45.7592435442647, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110496200598685, 45.759114896372104, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110558608861606, 45.75913310551703, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110615032283205, 45.75915758334208, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110665479034525, 45.75916800083878, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110709818199201, 45.75918853077931, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110772024310851, 45.75920278719139, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110873436603026, 45.75923589498439, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110949898032679, 45.759260855414716, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111006028893293, 45.75928522838003, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111081152392415, 45.75930586702128, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110605992132437, 45.7590234474521, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110660582305143, 45.75903522815701, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110708145558758, 45.75905066669748, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110755409281881, 45.75906610772013, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.1108264468034, 45.759089415441935, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110891921956396, 45.75911685646044, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110998609503304, 45.75903248181336, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111076557974151, 45.75905795548913, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.11101378798383, 45.75900738214464, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111091734710352, 45.759032858678495, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111029070131844, 45.75898211477081, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111107015102154, 45.75900759418178, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111044863580426, 45.75895600594087, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.11112232277002, 45.75898228833099, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111068710242864, 45.75891659155069, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111145058523375, 45.75894236475353, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111145898037488, 45.75878907580245, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111223612902815, 45.75881493501903, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111177812312832, 45.758890587258044, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111362481815323, 45.758674044744126, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111331894239504, 45.75867320837901, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111308720241816, 45.75865658993845, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111230608836377, 45.758621901825826, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111281277944136, 45.75853832662328, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111284074154466, 45.758502763581056, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111318255497418, 45.75847736044911, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111413088760343, 45.75850851944149, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111458579215172, 45.75852358026989, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111385349820131, 45.758581481821686, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110351708926032, 45.75902604745943, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110280681286863, 45.75906894046145, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110187764857442, 45.75914089527778, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.11034721380926, 45.759190161361545, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.111258320644063, 45.75857618805069, 0],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": null,
+        "alt_name": null,
+        "category": null,
+        "restriction": null,
+        "accessibility": null,
+        "display_point": null,
+        "feature_type": "unit",
+        "level_id": null,
+        "show": true,
+        "area": 0
+      },
+      "geometry": {
+        "coordinates": [3.110827524190838, 45.75922090640794, 0],
+        "type": "Point"
+      }
+    }
+  ]
+}

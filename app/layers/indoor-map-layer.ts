@@ -1,8 +1,13 @@
 import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
 
 export default class IndoorMapLayer implements CustomLayerInterface {
-  id: string = "geojson";
+  id: string = "indoor-map";
   type = "custom" as const;
+  private indoorMapData: GeoJSON.GeoJSON;
+
+  constructor(indoorMapData: GeoJSON.GeoJSON) {
+    this.indoorMapData = indoorMapData;
+  }
 
   render: CustomRenderMethod = (gl, matrix) => {
     gl && matrix; // Unused
@@ -16,7 +21,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     map.addSource("indoor-map", {
       type: "geojson",
-      data: "assets/geojson/demo-map.geojson",
+      data: this.indoorMapData,
     });
 
     map.addLayer({

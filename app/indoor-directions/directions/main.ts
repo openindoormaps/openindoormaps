@@ -81,19 +81,6 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
       : [];
   }
 
-  public async loadMapData(url: string) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Failed to load GeoJSON: ${response.statusText}`);
-      }
-      const geoJsonData: GeoJSON.FeatureCollection = await response.json();
-      this.parseGeoJsonToGraph(geoJsonData);
-    } catch (error) {
-      console.error("Error loading GeoJSON data:", error);
-    }
-  }
-
   private calculateDistance(
     coord1: GeoJSON.Position,
     coord2: GeoJSON.Position,
@@ -146,7 +133,7 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
     });
   }
 
-  private parseGeoJsonToGraph(geoJson: GeoJSON.FeatureCollection) {
+  public loadMapData(geoJson: GeoJSON.FeatureCollection) {
     const coordMap = new Map<string, Set<GeoJSON.Position[]>>();
     const graph = new Graph();
 

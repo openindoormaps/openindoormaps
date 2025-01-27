@@ -9,9 +9,12 @@ import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
 import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
+import building from "~/mock/building.json";
+import POIsLayer from "~/layers/pois-layer";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
+
   const setMapInstance = useMapStore((state) => state.setMapInstance);
 
   useEffect(() => {
@@ -23,10 +26,13 @@ export default function MapComponent() {
 
     map.on("load", () => {
       map.addLayer(new Tile3dLayer());
-      map.addLayer(new IndoorMapLayer());
+      map.addLayer(new IndoorMapLayer(building.indoor_map as GeoJSON.GeoJSON));
+      map.addLayer(new POIsLayer(building.pois as GeoJSON.GeoJSON));
 
       const indoorDirections = new IndoorDirections(map);
-      indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
+      indoorDirections.loadMapData(
+        building.indoor_routes as GeoJSON.FeatureCollection,
+      );
 
       const start: [number, number] = [
         3.110_772_024_310_851, 45.759_202_787_191_39,
