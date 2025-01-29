@@ -12,26 +12,26 @@ import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
 import { FloorSelector } from "./ui/floor-selector";
 import { FloorUpDownControl } from "./ui/floor-up-down-control";
 
-function MapComponent() {
+export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<maplibregl.Map | null>(null);
-  const setMapInstance = useMapStore((state) => state.setMapInstance);
+  const setmap = useMapStore((state) => state.setMap);
   const indoorMapLayer = useRef<IndoorMapLayer | null>(null);
 
   useEffect(() => {
-    const mapInstance = new maplibregl.Map({
+    const map = new maplibregl.Map({
       ...config.mapConfig,
       container: mapContainer.current!,
     });
-    setMapInstance(mapInstance);
-    setMap(mapInstance);
+    setmap(map);
+    setMap(map);
     indoorMapLayer.current = new IndoorMapLayer();
 
-    mapInstance.on("load", () => {
-      mapInstance.addLayer(new Tile3dLayer());
-      mapInstance.addLayer(indoorMapLayer.current!);
+    map.on("load", () => {
+      map.addLayer(new Tile3dLayer());
+      map.addLayer(indoorMapLayer.current!);
 
-      const indoorDirections = new IndoorDirections(mapInstance);
+      const indoorDirections = new IndoorDirections(map);
       indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
 
       const start: [number, number] = [
@@ -46,9 +46,9 @@ function MapComponent() {
       }, 1500);
     });
 
-    mapInstance.addControl(new NavigationControl(), "bottom-right");
-    mapInstance.addControl(new FullscreenControl(), "bottom-right");
-    mapInstance.addControl(
+    map.addControl(new NavigationControl(), "bottom-right");
+    map.addControl(new FullscreenControl(), "bottom-right");
+    map.addControl(
       new MaplibreInspect({
         popup: new maplibregl.Popup({
           closeOnClick: false,
@@ -58,7 +58,7 @@ function MapComponent() {
     );
 
     return () => {
-      mapInstance.remove();
+      map.remove();
     };
   }, []);
 
@@ -79,5 +79,3 @@ function MapComponent() {
     </div>
   );
 }
-
-export default MapComponent;

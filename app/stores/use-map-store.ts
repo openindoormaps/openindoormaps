@@ -1,13 +1,13 @@
 import { create } from "zustand";
 
 interface MapStore {
-  mapInstance: maplibregl.Map | null;
-  setMapInstance: (map: maplibregl.Map) => void;
+  map: maplibregl.Map | null;
+  setMap: (map: maplibregl.Map) => void;
 }
 
 const useMapStore = create<MapStore>((set) => ({
-  mapInstance: null,
-  setMapInstance: (map: maplibregl.Map) => set({ mapInstance: map }),
+  map: null,
+  setMap: (map: maplibregl.Map) => set({ map: map }),
 }));
 
 export default useMapStore;
