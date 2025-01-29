@@ -122,9 +122,6 @@ export default class IndoorMapLayer implements CustomLayerInterface {
       id: "indoor-map-fill-extrusion",
       type: "fill-extrusion",
       source: "indoor-map",
-      layout: {
-        "fill-sort-key": 1,
-      },
       filter: ["all", ["==", "feature_type", "corridor"]],
       paint: {
         "fill-extrusion-color": colors.corridor,
