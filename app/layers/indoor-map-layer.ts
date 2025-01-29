@@ -18,28 +18,28 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   id: string = "geojson";
   type = "custom" as const;
   private map: Map | null = null;
-  private cachedData: GeoJSONData | null = null;
+  private savedData: GeoJSONData | null = null;
 
   render: CustomRenderMethod = (gl, matrix) => {
     gl && matrix; // Unused
   };
 
-  private async loadAndCacheData(): Promise<void> {
-    if (this.cachedData) return;
+  private async loadAndSaveData(): Promise<void> {
+    if (this.savedData) return;
 
     try {
       const response = await fetch("assets/geojson/demo-map.geojson");
-      this.cachedData = await response.json();
+      this.savedData = await response.json();
     } catch (error) {
       console.error("Failed to load GeoJSON data:", error);
     }
   }
 
   setFloorLevel(level: number) {
-    if (!this.map || !this.cachedData) return;
+    if (!this.map || !this.savedData) return;
 
     const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
-    const filteredFeatures = this.cachedData.features.filter(
+    const filteredFeatures = this.savedData.features.filter(
       (feature: IndoorFeature) =>
         feature.properties.level_id === level ||
         feature.properties.level_id === null,
@@ -52,10 +52,10 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   }
 
   async getAvailableFloors(): Promise<number[]> {
-    await this.loadAndCacheData();
+    await this.loadAndSaveData();
 
     const floors = new Set<number>();
-    this.cachedData!.features.forEach((feature) => {
+    this.savedData!.features.forEach((feature) => {
       if (feature.properties.level_id !== null) {
         floors.add(feature.properties.level_id);
       }
@@ -71,7 +71,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
   async onAdd(map: Map): Promise<void> {
     this.map = map;
-    await this.loadAndCacheData();
+    await this.loadAndSaveData();
 
     const colors = {
       unit: "#f3f3f3",
@@ -81,7 +81,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     map.addSource("indoor-map", {
       type: "geojson",
-      data: this.cachedData || "assets/geojson/demo-map.geojson",
+      data: this.savedData || "assets/geojson/demo-map.geojson",
     });
 
     map.addLayer({
