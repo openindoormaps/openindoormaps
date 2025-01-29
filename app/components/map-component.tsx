@@ -1,6 +1,6 @@
 import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
@@ -14,22 +14,19 @@ import { FloorUpDownControl } from "./ui/floor-up-down-control";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState<maplibregl.Map | null>(null);
-  const setmap = useMapStore((state) => state.setMap);
-  const indoorMapLayer = useRef<IndoorMapLayer | null>(null);
+  const setMapInstance = useMapStore((state) => state.setMapInstance);
+  const indoorMapLayer = new IndoorMapLayer();
 
   useEffect(() => {
     const map = new maplibregl.Map({
       ...config.mapConfig,
       container: mapContainer.current!,
     });
-    setmap(map);
-    setMap(map);
-    indoorMapLayer.current = new IndoorMapLayer();
+    setMapInstance(map);
 
     map.on("load", () => {
       map.addLayer(new Tile3dLayer());
-      map.addLayer(indoorMapLayer.current!);
+      map.addLayer(indoorMapLayer);
 
       const indoorDirections = new IndoorDirections(map);
       indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
@@ -55,27 +52,21 @@ export default function MapComponent() {
         }),
         blockHoverPopupOnClick: true,
       }),
+      "bottom-right",
     );
 
     return () => {
       map.remove();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="flex size-full flex-col">
       <NavigationInput />
-      <div ref={mapContainer} className="size-full">
-        {map && indoorMapLayer.current && (
-          <div>
-            <FloorSelector indoorMapLayer={indoorMapLayer.current} />
-            <FloorUpDownControl
-              map={map}
-              indoorMapLayer={indoorMapLayer.current!}
-            />
-          </div>
-        )}
-      </div>
+      <FloorSelector indoorMapLayer={indoorMapLayer} />
+      <FloorUpDownControl indoorMapLayer={indoorMapLayer} />
+      <div ref={mapContainer} className="size-full" />
     </div>
   );
 }

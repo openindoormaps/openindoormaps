@@ -5,7 +5,7 @@ interface FloorState {
   setCurrentFloor: (floor: number) => void;
 }
 
-export const useFloorStore = create<FloorState>((set) => ({
+const useFloorStore = create<FloorState>((set) => ({
   currentFloor: 0,
   setCurrentFloor: (floor) => set({ currentFloor: floor }),
 }));

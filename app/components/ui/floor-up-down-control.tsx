@@ -1,19 +1,18 @@
-import { Map, NavigationControl } from "maplibre-gl";
+import { NavigationControl } from "maplibre-gl";
 import { useEffect } from "react";
-import useFloorStore from "~/stores/floor-store";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
+import useFloorStore from "~/stores/floor-store";
+import useMapStore from "~/stores/use-map-store";
 
 interface FloorUpDownControlProps {
-  map: Map;
   indoorMapLayer: IndoorMapLayer;
 }
 
 export function FloorUpDownControl({
-  map,
   indoorMapLayer,
 }: FloorUpDownControlProps) {
+  const map = useMapStore((state) => state.mapInstance);
   const { currentFloor, setCurrentFloor } = useFloorStore();
-
   useEffect(() => {
     const floorControl = new NavigationControl({
       showCompass: false,
@@ -21,7 +20,7 @@ export function FloorUpDownControl({
       visualizePitch: false,
     });
 
-    map.addControl(floorControl, "bottom-right");
+    map?.addControl(floorControl, "bottom-right");
 
     const upButton = document.createElement("button");
     upButton.className = "maplibregl-ctrl-icon maplibregl-ctrl-floor-up";
@@ -47,7 +46,7 @@ export function FloorUpDownControl({
     floorControl._container.append(downButton);
 
     return () => {
-      map.removeControl(floorControl);
+      map?.removeControl(floorControl);
     };
   }, [map, currentFloor, setCurrentFloor, indoorMapLayer]);
 
