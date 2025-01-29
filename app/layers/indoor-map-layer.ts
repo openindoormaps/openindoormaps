@@ -1,13 +1,78 @@
 import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
 
+interface IndoorFeatureProperties {
+  level_id: number | null;
+  [key: string]: unknown;
+}
+
+interface IndoorFeature extends GeoJSON.Feature {
+  properties: IndoorFeatureProperties;
+}
+
+interface GeoJSONData {
+  type: "FeatureCollection";
+  features: IndoorFeature[];
+}
+
 export default class IndoorMapLayer implements CustomLayerInterface {
   id: string = "geojson";
   type = "custom" as const;
+  private map: Map | null = null;
+  private savedData: GeoJSONData | null = null;
 
   render: CustomRenderMethod = (gl, matrix) => {
     gl && matrix; // Unused
   };
-  onAdd?(map: Map): void {
+
+  private async loadAndSaveData(): Promise<void> {
+    if (this.savedData) return;
+
+    try {
+      const response = await fetch("assets/geojson/demo-map.geojson");
+      this.savedData = await response.json();
+    } catch (error) {
+      console.error("Failed to load GeoJSON data:", error);
+    }
+  }
+
+  setFloorLevel(level: number) {
+    if (!this.map || !this.savedData) return;
+
+    const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
+    const filteredFeatures = this.savedData.features.filter(
+      (feature: IndoorFeature) =>
+        feature.properties.level_id === level ||
+        feature.properties.level_id === null,
+    );
+
+    source.setData({
+      type: "FeatureCollection",
+      features: filteredFeatures,
+    });
+  }
+
+  async getAvailableFloors(): Promise<number[]> {
+    await this.loadAndSaveData();
+
+    const floors = new Set<number>();
+    this.savedData!.features.forEach((feature) => {
+      if (feature.properties.level_id !== null) {
+        floors.add(feature.properties.level_id);
+      }
+    });
+
+    // Always include ground floor
+    const uniqueFloors = [...floors];
+    if (!uniqueFloors.includes(0)) {
+      uniqueFloors.push(0);
+    }
+    return uniqueFloors;
+  }
+
+  async onAdd(map: Map): Promise<void> {
+    this.map = map;
+    await this.loadAndSaveData();
+
     const colors = {
       unit: "#f3f3f3",
       corridor: "#d6d5d1",
@@ -16,7 +81,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     map.addSource("indoor-map", {
       type: "geojson",
-      data: "assets/geojson/demo-map.geojson",
+      data: this.savedData || "assets/geojson/demo-map.geojson",
     });
 
     map.addLayer({

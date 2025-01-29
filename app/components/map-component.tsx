@@ -9,10 +9,13 @@ import useMapStore from "~/stores/use-map-store";
 import NavigationInput from "./navigation-input";
 import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
+import { FloorSelector } from "./ui/floor-selector";
+import { FloorUpDownControl } from "./ui/floor-up-down-control";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const setMapInstance = useMapStore((state) => state.setMapInstance);
+  const indoorMapLayer = new IndoorMapLayer();
 
   useEffect(() => {
     const map = new maplibregl.Map({
@@ -23,7 +26,7 @@ export default function MapComponent() {
 
     map.on("load", () => {
       map.addLayer(new Tile3dLayer());
-      map.addLayer(new IndoorMapLayer());
+      map.addLayer(indoorMapLayer);
 
       const indoorDirections = new IndoorDirections(map);
       indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
@@ -49,16 +52,21 @@ export default function MapComponent() {
         }),
         blockHoverPopupOnClick: true,
       }),
+      "bottom-right",
     );
+
     return () => {
       map.remove();
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="flex size-full flex-col">
       <NavigationInput />
-      <div ref={mapContainer} className="size-full"></div>
+      <FloorSelector indoorMapLayer={indoorMapLayer} />
+      <FloorUpDownControl indoorMapLayer={indoorMapLayer} />
+      <div ref={mapContainer} className="size-full" />
     </div>
   );
 }
