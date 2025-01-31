@@ -10,16 +10,15 @@ export default class Tile3dLayer implements CustomLayerInterface {
   onAdd?(map: Map): void {
     map.addLayer({
       id: "3d-buildings",
-      source: "maptiler_planet",
+      source: "openmaptiles",
       "source-layer": "building",
       type: "fill-extrusion",
       minzoom: 15,
       filter: [
         "all",
-        ["!=", "$id", 975_937],
-        ["!=", "$id", 62_840_057],
-        ["!=", "$id", 62_840_217],
-        ["!=", "$id", 18_068_852],
+        ["!=", "$id", 9_759_363],
+        ["!=", "$id", 628_389_902],
+        ["!=", "$id", 180_688_523],
       ],
       paint: {
         "fill-extrusion-color": [
