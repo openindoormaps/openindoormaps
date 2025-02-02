@@ -6163,11 +6163,11 @@
       {
         "type": "Feature",
         "geometry": {
-          "coordinates": [3.111006411223598, 45.759187029922956],
+          "coordinates": [3.110519048836336, 45.75901825468585],
           "type": "Point"
         },
         "properties": {
-          "id": 1,
+          "id": 2,
           "name": "Classroom 1",
           "type": "classroom",
           "floor": 1,
@@ -6178,27 +6178,12 @@
       {
         "type": "Feature",
         "geometry": {
-          "coordinates": [3.110519048836336, 45.75901825468585],
-          "type": "Point"
-        },
-        "properties": {
-          "id": 2,
-          "name": "Classroom 2",
-          "type": "classroom",
-          "floor": 1,
-          "metadata": {},
-          "building_id": "BUILDING_001"
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "coordinates": [3.110934116838614, 45.75914879501935],
+          "coordinates": [3.1111658050375013, 45.7592725241702],
           "type": "Point"
         },
         "properties": {
           "id": 3,
-          "name": "Classroom 3",
+          "name": "Exit",
           "type": "classroom",
           "floor": 1,
           "metadata": {},
@@ -6288,8 +6273,8 @@
         },
         "properties": {
           "id": 9,
-          "name": "Classroom 9",
-          "type": "classroom",
+          "name": "Science Lab",
+          "type": "laboratory",
           "floor": 1,
           "metadata": {},
           "building_id": "BUILDING_001"
@@ -6558,8 +6543,8 @@
         },
         "properties": {
           "id": 27,
-          "name": "Classroom 27",
-          "type": "classroom",
+          "name": "Computer Room",
+          "type": "computer_lab",
           "floor": 1,
           "metadata": {},
           "building_id": "BUILDING_001"
@@ -6633,8 +6618,8 @@
         },
         "properties": {
           "id": 32,
-          "name": "Classroom 32",
-          "type": "classroom",
+          "name": "Principal’s Office",
+          "type": "administrative",
           "floor": 1,
           "metadata": {},
           "building_id": "BUILDING_001"
@@ -6768,7 +6753,7 @@
         },
         "properties": {
           "id": 41,
-          "name": "Classroom 41",
+          "name": "Library",
           "type": "classroom",
           "floor": 1,
           "metadata": {},
@@ -6783,7 +6768,7 @@
         },
         "properties": {
           "id": 42,
-          "name": "Classroom 42",
+          "name": "Teachers Room",
           "type": "classroom",
           "floor": 1,
           "metadata": {},
@@ -6948,8 +6933,8 @@
         },
         "properties": {
           "id": 53,
-          "name": "Classroom 53",
-          "type": "classroom",
+          "name": "Gymnasium",
+          "type": "gymnasium",
           "floor": 1,
           "metadata": {},
           "building_id": "BUILDING_001"
@@ -6978,8 +6963,8 @@
         },
         "properties": {
           "id": 55,
-          "name": "Classroom 55",
-          "type": "classroom",
+          "name": "Nurse's Office",
+          "type": "health",
           "floor": 1,
           "metadata": {},
           "building_id": "BUILDING_001"
@@ -6993,8 +6978,8 @@
         },
         "properties": {
           "id": 56,
-          "name": "Classroom 56",
-          "type": "classroom",
+          "name": "Common Room",
+          "type": "room",
           "floor": 1,
           "metadata": {},
           "building_id": "BUILDING_001"
@@ -7008,8 +6993,8 @@
         },
         "properties": {
           "id": 57,
-          "name": "Classroom 57",
-          "type": "classroom",
+          "name": "Cafeteria",
+          "type": "cafeteria",
           "floor": 1,
           "metadata": {},
           "building_id": "BUILDING_001"

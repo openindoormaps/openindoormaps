@@ -7,6 +7,7 @@ import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import {
   Accessibility,
   Apple,
+  ArrowLeft,
   BookOpen,
   BriefcaseMedical,
   Coffee,
@@ -15,12 +16,15 @@ import {
   Search,
   SlidersVertical,
 } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
-import { indoorGeocodeInput } from "~/utils/indoor-geocoding";
+import {
+  getSearchSuggestions,
+  indoorGeocodeInput,
+} from "~/utils/indoor-geocoding";
 import NavigationSettings from "./navigation-settings";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
@@ -35,6 +39,10 @@ export default function DiscoveryPanel() {
   const [departure, setDeparture] = useState("");
   const [destination, setDestination] = useState("");
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const [suggestions, setSuggestions] = useState<
+    Array<{ name: string; coordinates: number[] }>
+  >([]);
 
   const pointsOfInterest = [
     {
@@ -125,56 +133,113 @@ export default function DiscoveryPanel() {
     }
       */
   };
+
+  useEffect(() => {
+    setSuggestions(getSearchSuggestions(searchQuery));
+  }, [searchQuery]);
+
+  const handleSearchFocus = () => {
+    setIsSearching(true);
+  };
+
+  const handleBackClick = () => {
+    setIsSearching(false);
+    setSearchQuery("");
+  };
+
+  function handleSuggestionClick(suggestion: {
+    name: string;
+    coordinates: number[];
+  }) {
+    setSearchQuery(suggestion.name);
+    setIsSearching(false);
+
+    map?.flyTo({
+      center: [suggestion.coordinates[0], suggestion.coordinates[1]],
+      zoom: 20,
+      duration: 1000,
+    });
+  }
+
   return (
-    <Card className="z-10 bg-white shadow-lg md:absolute md:left-4 md:top-4">
+    <Card className="z-10 max-w-sm bg-white shadow-lg md:absolute md:left-4 md:top-4">
       <CardContent className="p-4">
         <div className="relative mb-6 flex items-center">
           <div className="relative grow">
-            <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-              size={18}
-            />
+            {isSearching ? (
+              <Button
+                size="sm"
+                variant="ghost"
+                className="absolute left-3 top-1/2 -translate-y-1/2 p-0"
+                onClick={handleBackClick}
+              >
+                <ArrowLeft size={20} className="text-gray-500" />
+              </Button>
+            ) : (
+              <Search
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                size={18}
+              />
+            )}
             <Input
               type="text"
               placeholder="Search indoor locations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="rounded-full border-gray-300 px-10 py-4 text-lg shadow-sm"
+              onFocus={handleSearchFocus}
+              className="w-72 rounded-full border-gray-300 px-10 py-4 text-lg shadow-sm"
             />
-            <Button
-              size="sm"
-              variant="ghost"
-              className="absolute right-3 top-1/2 -translate-y-1/2"
-            ></Button>
           </div>
-          <Toggle
-            variant="outline"
-            size="icon"
-            pressed={isSettingsOpen}
-            onPressedChange={setIsSettingsOpen}
-            className="ml-2 rounded-full p-2"
-          >
-            <SlidersVertical size={18} />
-          </Toggle>
+          {!isSearching && (
+            <Toggle
+              variant="outline"
+              size="icon"
+              pressed={isSettingsOpen}
+              onPressedChange={setIsSettingsOpen}
+              className="ml-2 rounded-full p-2"
+            >
+              <SlidersVertical size={18} />
+            </Toggle>
+          )}
         </div>
 
-        <div className="grid grid-cols-4 justify-items-center gap-1">
-          {pointsOfInterest.map((poi, index) => (
-            <div className="flex flex-col items-center" key={index}>
+        {isSearching ? (
+          <div className="w-72 space-y-2">
+            {suggestions.map((suggestion, index) => (
               <Button
-                className={`size-10 rounded-full shadow-sm ${poi.colors} transition-shadow duration-200 hover:shadow-md`}
+                key={index}
                 variant="ghost"
-                size="icon"
-                title={poi.name}
+                className="w-full justify-start text-left text-gray-700 hover:bg-gray-100"
+                onClick={() => {
+                  handleSuggestionClick(suggestion);
+                }}
               >
-                <poi.icon size={16} />
+                {suggestion.name}
               </Button>
-              <span className="mt-1 max-w-[100px] truncate text-xs text-gray-600">
-                {poi.name}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+            {suggestions.length === 0 && searchQuery && (
+              <p className="p-2 text-sm text-gray-500">No results found</p>
+            )}
+          </div>
+        ) : (
+          <div className="grid grid-cols-4 justify-items-center gap-1">
+            {pointsOfInterest.map((poi, index) => (
+              <div className="flex flex-col items-center" key={index}>
+                <Button
+                  className={`size-10 rounded-full shadow-sm ${poi.colors} transition-shadow duration-200 hover:shadow-md`}
+                  variant="ghost"
+                  size="icon"
+                  title={poi.name}
+                >
+                  <poi.icon size={16} />
+                </Button>
+                <span className="mt-1 max-w-[80px] hyphens-auto break-words text-center text-xs text-gray-600">
+                  {poi.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
 
         {isSettingsOpen && <NavigationSettings />}
       </CardContent>
