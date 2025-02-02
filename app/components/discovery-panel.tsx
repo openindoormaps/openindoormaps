@@ -21,15 +21,13 @@ import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
-import {
-  getSearchSuggestions,
-  indoorGeocodeInput,
-} from "~/utils/indoor-geocoding";
+
 import NavigationSettings from "./navigation-settings";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Toggle } from "./ui/toggle";
+import { IndoorGeocoder, POIFeature } from "~/utils/indoor-geocoding";
 
 export default function DiscoveryPanel() {
   const map = useMapStore((state) => state.mapInstance);
@@ -43,6 +41,10 @@ export default function DiscoveryPanel() {
   const [suggestions, setSuggestions] = useState<
     Array<{ name: string; coordinates: number[] }>
   >([]);
+
+  const indoorGeocoder = new IndoorGeocoder(
+    building.pois.features as POIFeature[],
+  );
 
   const pointsOfInterest = [
     {
@@ -96,8 +98,8 @@ export default function DiscoveryPanel() {
   const handleRouting = async () => {
     console.log("Routing from", departure, "to", destination);
     if (!departure || !destination) return;
-    const departureCoord = indoorGeocodeInput(departure);
-    const destinationCoord = indoorGeocodeInput(destination);
+    const departureCoord = indoorGeocoder.indoorGeocodeInput(departure);
+    const destinationCoord = indoorGeocoder.indoorGeocodeInput(destination);
 
     if (departureCoord && destinationCoord) {
       indoorDirections.current?.setWaypoints([
@@ -135,8 +137,8 @@ export default function DiscoveryPanel() {
   };
 
   useEffect(() => {
-    setSuggestions(getSearchSuggestions(searchQuery));
-  }, [searchQuery]);
+    setSuggestions(indoorGeocoder.getSearchSuggestions(searchQuery));
+  }, [searchQuery, indoorGeocoder]);
 
   const handleSearchFocus = () => {
     setIsSearching(true);

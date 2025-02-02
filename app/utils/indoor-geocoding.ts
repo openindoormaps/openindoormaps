@@ -1,53 +1,109 @@
-import MiniSearch from "minisearch";
-import building from "~/mock/building.json";
+import MiniSearch, { SearchResult } from "minisearch";
 
-//TODO: consider refactor it to a class
-//workaround bc properties are nested
-const enhancedPOIs = building.pois.features.map((feature) => {
-  const { properties, geometry } = feature;
-  return {
-    geometry,
-    ...properties,
-  };
-});
+interface POIProperties {
+  id: number;
+  name: string;
+  type: string;
+  floor: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  metadata: Record<string, any>;
+  building_id: string;
+}
 
-const miniSearch = new MiniSearch({
-  fields: ["name"],
-  storeFields: ["name", "type", "geometry"],
-  searchOptions: {},
-});
+export interface POIFeature extends GeoJSON.Feature<GeoJSON.Point> {
+  properties: POIProperties;
+}
 
-miniSearch.addAll(enhancedPOIs);
-export const indoorGeocodeInput = (input: string) => {
-  const results = miniSearch.search(input);
+/**
+ * IndoorGeocoder encapsulates search functionality using MiniSearch.
+ * It is designed to handle cases where MiniSearch may return a large set of results.
+ * The class uses a cutoff threshold to filter out results that are significantly less relevant
+ * compared to the top result, ensuring that only the most pertinent suggestions are provided.
+ */
+export class IndoorGeocoder {
+  private miniSearch: MiniSearch;
+  private cutoffThreshold: number;
 
-  return results[0].geometry.coordinates;
-};
+  constructor(pois: POIFeature[], cutoffThreshold: number = 0.3) {
+    this.cutoffThreshold = cutoffThreshold;
+    this.miniSearch = new MiniSearch({
+      fields: ["name"],
+      storeFields: ["name", "type", "geometry"],
+    });
 
-export const getSearchSuggestions = (
-  query: string,
-): Array<{ name: string; coordinates: number[] }> => {
-  if (!query) return [];
+    const flattenPOIs = pois.map((feature: POIFeature) => ({
+      ...feature.properties,
+      geometry: feature.geometry,
+    }));
 
-  const results = miniSearch.search(query, {
-    prefix: true,
-  });
+    this.miniSearch.addAll(flattenPOIs);
+  }
 
-  if (results.length === 0) return [];
+  /**
+   * Given an input string, returns the coordinates of the top search result.
+   * If MiniSearch returns too many results, only the best match is used.
+   *
+   * @param input - The search input.
+   * @returns The coordinates of the top search result.
+   */
+  public indoorGeocodeInput(input: string) {
+    const results = this.miniSearch.search(input);
+    if (results.length === 0) {
+      throw new Error("No results found.");
+    }
+    return results[0].geometry.coordinates;
+  }
 
-  const topScore = results[0].score;
+  /**
+   * Provides search suggestions based on a query string.
+   * Uses a cutoff logic to filter out suggestions that have a score difference
+   * exceeding a specified threshold relative to the top result.
+   *
+   * This is particularly useful when MiniSearch returns a very large set of results,
+   * some of which are only marginally relevant.
+   *
+   * @param query - The query string.
+   * @returns An array of suggestions with name and coordinates.
+   */
+  public getSearchSuggestions(
+    query: string,
+    maxResults: number = 5,
+  ): Array<{ name: string; coordinates: number[] }> {
+    if (!query) return [];
 
-  const cutoffIndex = results.findIndex((result, index) => {
-    if (index === 0) return false;
-    const scoreDiff = topScore - result.score;
-    return scoreDiff > topScore * 0.3;
-  });
+    const results = this.miniSearch.search(query, { prefix: true });
+    if (results.length === 0) return [];
 
-  const relevantResults =
-    cutoffIndex > 0 ? results.slice(0, cutoffIndex) : results.slice(0, 5);
+    const topScore = results[0].score;
+    const cutoffIndex = this.getCutoffIndex(results, topScore);
 
-  return relevantResults.map((result) => ({
-    name: result.name,
-    coordinates: result.geometry.coordinates,
-  }));
-};
+    // If a cutoff is determined, use only the more relevant results.
+    // Otherwise, default to the top 5 results.
+    const relevantResults =
+      cutoffIndex > 0 ? results.slice(0, cutoffIndex) : results.slice(0, 5);
+
+    return relevantResults
+      .map((result) => ({
+        name: result.name,
+        coordinates: result.geometry.coordinates,
+      }))
+      .slice(0, maxResults);
+  }
+
+  /**
+   * Determines the cutoff index for the results array based on the score difference.
+   * If the difference between the top score and a result exceeds the defined threshold,
+   * that result (and any subsequent results) are considered less relevant and are excluded.
+   *
+   * @param results - The search results array.
+   * @param topScore - The score of the top result.
+   * @returns The index at which the score difference exceeds the threshold.
+   */
+  private getCutoffIndex(results: SearchResult[], topScore: number): number {
+    return results.findIndex((result, index) => {
+      if (index === 0) return false; // Always include the top result.
+      const scoreDiff = topScore - result.score;
+      return scoreDiff > topScore * this.cutoffThreshold;
+    });
+  }
+}
