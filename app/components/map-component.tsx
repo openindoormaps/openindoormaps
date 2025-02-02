@@ -9,7 +9,7 @@ import POIsLayer from "~/layers/pois-layer";
 import Tile3dLayer from "~/layers/tile-3d-layer";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
-import NavigationInput from "./navigation-input";
+import DiscoveryPanel from "./discovery-panel";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -46,7 +46,7 @@ export default function MapComponent() {
 
   return (
     <div className="flex size-full flex-col">
-      <NavigationInput />
+      <DiscoveryPanel />
       <div ref={mapContainer} className="size-full"></div>
     </div>
   );
