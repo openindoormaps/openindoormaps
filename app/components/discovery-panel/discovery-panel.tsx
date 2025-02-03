@@ -77,6 +77,12 @@ export default function DiscoveryPanel() {
     setMode("detail");
   }, []);
 
+  const handleBackClick = useCallback(() => {
+    setMode("discovery");
+    setSelectedPOI(null);
+    indoorDirections.current?.clear();
+  }, []);
+
   return (
     <Card className="z-10 w-full max-w-[23.5rem] rounded-xl bg-white shadow-lg md:absolute md:left-4 md:top-4">
       <CardContent className="p-4">
@@ -90,12 +96,12 @@ export default function DiscoveryPanel() {
           <LocationDetail
             selectedPOI={selectedPOI}
             handleDirectionsClick={() => setMode("navigation")}
-            handleBackClick={() => setMode("discovery")}
+            handleBackClick={handleBackClick}
           />
         )}
         {mode === "navigation" && (
           <NavigationView
-            handleBackClick={() => setMode("discovery")}
+            handleBackClick={handleBackClick}
             selectedPOI={selectedPOI}
             indoorGeocoder={indoorGeocoder}
             indoorDirections={indoorDirections.current!}

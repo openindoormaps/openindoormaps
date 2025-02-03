@@ -308,4 +308,12 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
       }
     });
   }
+
+  /**
+   * Clears the map from all the instance's traces: waypoints, snappoints, routes, etc.
+   */
+  clear() {
+    this.setWaypoints([]);
+    this.routelines = [];
+  }
 }
