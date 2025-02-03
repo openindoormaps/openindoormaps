@@ -43,6 +43,11 @@ export default function NavigationView({
   }, [activeInput, activeQuery, indoorGeocoder]);
 
   const handleSuggestionClick = (suggestion: POI) => {
+    const newDeparture =
+      activeInput === "departure" ? suggestion.name : departureLocation;
+    const newDestination =
+      activeInput === "destination" ? suggestion.name : destinationLocation;
+
     if (activeInput === "departure") {
       setDepartureLocation(suggestion.name);
     } else if (activeInput === "destination") {
@@ -50,26 +55,28 @@ export default function NavigationView({
     }
     setSuggestions([]);
     setActiveInput(null);
-    handleRouting();
+
+    console.log(newDeparture, newDestination);
+    handleRouting(newDeparture, newDestination);
   };
+
+  function handleRouting(departureValue: string, destinationValue: string) {
+    if (!departureValue || !destinationValue) return;
+    const departureCoord =
+      indoorGeocoder.indoorGeocodeInput(departureValue).coordinates;
+    const destinationCoord =
+      indoorGeocoder.indoorGeocodeInput(destinationValue).coordinates;
+
+    if (departureCoord && destinationCoord) {
+      indoorDirections.setWaypoints([departureCoord, destinationCoord]);
+    }
+  }
 
   function handleSwapLocations() {
     setDepartureLocation(destinationLocation);
     setDestinationLocation(departureLocation);
   }
 
-  function handleRouting() {
-    console.log("Routing from", departureLocation, "to", destinationLocation);
-    if (!departureLocation || !destinationLocation) return;
-    const departureCoord =
-      indoorGeocoder.indoorGeocodeInput(departureLocation).coordinates;
-    const destinationCoord =
-      indoorGeocoder.indoorGeocodeInput(destinationLocation).coordinates;
-
-    if (departureCoord && destinationCoord) {
-      indoorDirections.setWaypoints([departureCoord, destinationCoord]);
-    }
-  }
   return (
     <>
       <Button
