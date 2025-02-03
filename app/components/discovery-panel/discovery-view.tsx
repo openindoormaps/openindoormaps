@@ -6,7 +6,7 @@ import { CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { Toggle } from "../ui/toggle";
 import { useEffect, useState } from "react";
-import { IndoorGeocoder } from "~/utils/indoor-geocoding";
+import { IndoorGeocoder } from "~/utils/indoor-geocoder";
 import useMapStore from "~/stores/use-map-store";
 import { POI } from "~/types/poi";
 
@@ -23,9 +23,7 @@ export default function DiscoveryView({
 
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
-  const [suggestions, setSuggestions] = useState<
-    Array<{ name: string; coordinates: number[] }>
-  >([]);
+  const [suggestions, setSuggestions] = useState<Array<POI>>([]);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const handleBackClick = () => {
@@ -34,7 +32,7 @@ export default function DiscoveryView({
   };
 
   useEffect(() => {
-    const newSuggestions = indoorGeocoder.getSearchSuggestions(searchQuery);
+    const newSuggestions = indoorGeocoder.getAutocompleteResults(searchQuery);
     setSuggestions(newSuggestions);
   }, [searchQuery, indoorGeocoder]);
 
@@ -58,13 +56,9 @@ export default function DiscoveryView({
   function handleTopLocationsClick(topLocationName: string) {
     setSearchQuery(topLocationName);
 
-    const poi = {
-      name: topLocationName,
-      coordinates: indoorGeocoder.indoorGeocodeInput(topLocationName),
-    };
+    const poi = indoorGeocoder.indoorGeocodeInput(topLocationName);
 
     onSelectPOI(poi);
-
     navigateToPOI(poi.coordinates);
   }
 

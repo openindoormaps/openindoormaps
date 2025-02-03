@@ -1,4 +1,5 @@
 import MiniSearch, { SearchResult } from "minisearch";
+import { POI } from "~/types/poi";
 
 interface POIProperties {
   id: number;
@@ -46,13 +47,16 @@ export class IndoorGeocoder {
    * @param input - The search input.
    * @returns The coordinates of the top search result.
    */
-  public indoorGeocodeInput(input: string) {
+  public indoorGeocodeInput(input: string): POI {
     const results = this.miniSearch.search(input);
     if (results.length === 0) {
       throw new Error("No results found.");
     }
-
-    return results[0].geometry.coordinates;
+    const topResult = results[0];
+    return {
+      name: topResult.name,
+      coordinates: topResult.geometry.coordinates,
+    };
   }
 
   /**
@@ -66,10 +70,10 @@ export class IndoorGeocoder {
    * @param query - The query string.
    * @returns An array of suggestions with name and coordinates.
    */
-  public getSearchSuggestions(
+  public getAutocompleteResults(
     query: string,
     maxResults: number = 5,
-  ): Array<{ name: string; coordinates: number[] }> {
+  ): Array<POI> {
     if (!query) return [];
 
     const results = this.miniSearch.search(query, { prefix: true });

@@ -11,7 +11,7 @@ import IndoorDirections from "~/indoor-directions/directions/main";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 
-import { IndoorGeocoder, POIFeature } from "~/utils/indoor-geocoding";
+import { IndoorGeocoder, POIFeature } from "~/utils/indoor-geocoder";
 import NavigationSettings from "../navigation-settings";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
@@ -56,8 +56,10 @@ export default function DiscoveryPanel() {
   const handleRouting = async () => {
     console.log("Routing from", departure, "to", destination);
     if (!departure || !destination) return;
-    const departureCoord = indoorGeocoder.indoorGeocodeInput(departure);
-    const destinationCoord = indoorGeocoder.indoorGeocodeInput(destination);
+    const departureCoord =
+      indoorGeocoder.indoorGeocodeInput(departure).coordinates;
+    const destinationCoord =
+      indoorGeocoder.indoorGeocodeInput(destination).coordinates;
 
     if (departureCoord && destinationCoord) {
       indoorDirections.current?.setWaypoints([
