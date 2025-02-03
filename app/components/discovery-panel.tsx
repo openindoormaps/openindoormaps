@@ -4,30 +4,20 @@ import MapLibreGlDirections, {
   LoadingIndicatorControl,
 } from "@maplibre/maplibre-gl-directions";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import {
-  Accessibility,
-  Apple,
-  ArrowLeft,
-  BookOpen,
-  BriefcaseMedical,
-  Coffee,
-  Dumbbell,
-  Footprints,
-  Search,
-  SlidersVertical,
-} from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, Search, SlidersVertical } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 
+import { IndoorGeocoder, POIFeature } from "~/utils/indoor-geocoding";
 import NavigationSettings from "./navigation-settings";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Toggle } from "./ui/toggle";
-import { IndoorGeocoder, POIFeature } from "~/utils/indoor-geocoding";
+import topLocations from "~/mock/top-locations";
 
 export default function DiscoveryPanel() {
   const map = useMapStore((state) => state.mapInstance);
@@ -42,42 +32,9 @@ export default function DiscoveryPanel() {
     Array<{ name: string; coordinates: number[] }>
   >([]);
 
-  const indoorGeocoder = new IndoorGeocoder(
-    building.pois.features as POIFeature[],
-  );
-
-  const pointsOfInterest = [
-    {
-      name: "Library",
-      icon: BookOpen,
-      colors: "bg-blue-100 text-blue-700",
-    },
-    {
-      name: "Gymnasium",
-      icon: Dumbbell,
-      colors: "bg-emerald-100 text-emerald-700",
-    },
-    {
-      name: "Nurse's Office",
-      icon: BriefcaseMedical,
-      colors: "bg-red-100 text-red-700",
-    },
-    {
-      name: "Teachers Room",
-      icon: Apple,
-      colors: "bg-purple-100 text-purple-700",
-    },
-    {
-      name: "Cafeteria",
-      icon: Coffee,
-      colors: "bg-amber-100 text-amber-700",
-    },
-    {
-      name: "Exit",
-      icon: Footprints,
-      colors: "bg-slate-100 text-slate-700",
-    },
-  ];
+  const indoorGeocoder = useMemo(() => {
+    return new IndoorGeocoder(building.pois.features as POIFeature[]);
+  }, []);
 
   map?.on("load", () => {
     directions.current = new MapLibreGlDirections(map, {
@@ -140,10 +97,6 @@ export default function DiscoveryPanel() {
     setSuggestions(indoorGeocoder.getSearchSuggestions(searchQuery));
   }, [searchQuery, indoorGeocoder]);
 
-  const handleSearchFocus = () => {
-    setIsSearching(true);
-  };
-
   const handleBackClick = () => {
     setIsSearching(false);
     setSearchQuery("");
@@ -188,7 +141,7 @@ export default function DiscoveryPanel() {
               placeholder="Search indoor locations..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              onFocus={handleSearchFocus}
+              onFocus={() => setIsSearching(true)}
               className="w-72 rounded-full border-gray-300 px-10 py-4 text-lg shadow-sm"
             />
           </div>
@@ -225,7 +178,7 @@ export default function DiscoveryPanel() {
           </div>
         ) : (
           <div className="grid grid-cols-4 justify-items-center gap-1">
-            {pointsOfInterest.map((poi, index) => (
+            {topLocations.map((poi, index) => (
               <div className="flex flex-col items-center" key={index}>
                 <Button
                   className={`size-10 rounded-full shadow-sm ${poi.colors} transition-shadow duration-200 hover:shadow-md`}
