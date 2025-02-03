@@ -30,8 +30,8 @@ function useDirections(map: maplibregl.Map | null) {
   }, [map]);
 
   return {
-    directions: directionsRef.current!,
-    indoorDirections: indoorDirectionsRef.current!,
+    directions: directionsRef.current,
+    indoorDirections: indoorDirectionsRef.current,
   };
 }
 

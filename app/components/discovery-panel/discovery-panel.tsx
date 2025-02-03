@@ -1,4 +1,3 @@
-import { LoadingIndicatorControl } from "@maplibre/maplibre-gl-directions";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
 import { useState } from "react";
 import building from "~/mock/building.json";
@@ -18,16 +17,12 @@ export default function DiscoveryPanel() {
   const map = useMapStore((state) => state.mapInstance);
   const [mode, setMode] = useState<UIMode>("discovery");
   const [selectedPOI, setSelectedPOI] = useState<POI | null>(null);
-  const { directions, indoorDirections } = useDirections(map);
+  const { indoorDirections } = useDirections(map);
   const indoorGeocoder = useIndoorGeocoder();
 
-  map?.on("load", () => {
-    map?.addControl(new LoadingIndicatorControl(directions));
-
-    indoorDirections.loadMapData(
-      building.indoor_routes as GeoJSON.FeatureCollection,
-    );
-  });
+  indoorDirections?.loadMapData(
+    building.indoor_routes as GeoJSON.FeatureCollection,
+  );
 
   /* 
   * Code for outdoor routing
@@ -65,7 +60,7 @@ export default function DiscoveryPanel() {
   function handleBackClick() {
     setMode("discovery");
     setSelectedPOI(null);
-    indoorDirections.clear();
+    indoorDirections?.clear();
   }
 
   return (
@@ -89,7 +84,7 @@ export default function DiscoveryPanel() {
             handleBackClick={handleBackClick}
             selectedPOI={selectedPOI}
             indoorGeocoder={indoorGeocoder}
-            indoorDirections={indoorDirections}
+            indoorDirections={indoorDirections!}
           />
         )}
       </CardContent>
