@@ -40,8 +40,8 @@ export default function MapComponent() {
         ];
         setTimeout(() => {
           indoorDirections.setWaypoints([start, end]);
-        }, 2000);
-      }, 1500); //TODO adjust the timeout
+        }, 1050);
+      }, 1);
     });
 
     map.addControl(new NavigationControl(), "bottom-right");
