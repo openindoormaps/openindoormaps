@@ -125,7 +125,7 @@ export default function DiscoveryView({
           {topLocations.map((topLocation, index) => (
             <div className="flex flex-col items-center" key={index}>
               <Button
-                className={`size-10 rounded-full shadow-sm ${topLocation.colors} transition-shadow duration-200 hover:shadow-md`}
+                className={`rounded-full shadow-sm ${topLocation.colors} transition-shadow duration-200 hover:shadow-md`}
                 variant="ghost"
                 size="icon"
                 title={topLocation.name}

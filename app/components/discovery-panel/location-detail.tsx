@@ -30,8 +30,8 @@ export default function LocationDetail({
             <DropdownMenuTrigger asChild>
               <Button
                 variant="ghost"
-                size="sm"
-                className="size-full rounded-full p-2 hover:bg-gray-200"
+                size="icon"
+                className="rounded-full p-2 hover:bg-gray-200"
               >
                 <Share2 size={16} />
               </Button>
@@ -49,12 +49,12 @@ export default function LocationDetail({
             </DropdownMenuContent>
           </DropdownMenu>
           <Button
-            size="sm"
             variant="ghost"
             onClick={handleBackClick}
-            className="size-full rounded-full p-2 hover:bg-gray-200"
+            size="icon"
+            className="rounded-full p-2 hover:bg-gray-200"
           >
-            <X size={16} className="text-gray-500" />
+            <X size={16} />
           </Button>
         </div>
       </div>
