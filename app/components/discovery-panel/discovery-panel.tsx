@@ -20,8 +20,9 @@ import { Toggle } from "../ui/toggle";
 import topLocations from "~/mock/top-locations";
 import DiscoveryView from "./discovery-view";
 import { POI } from "~/types/poi";
+import LocationDetail from "./location-detail";
 
-type UIMode = "discovery" | "detail" | "routing";
+type UIMode = "discovery" | "detail" | "navigation";
 
 export default function DiscoveryPanel() {
   const map = useMapStore((state) => state.mapInstance);
@@ -103,13 +104,22 @@ export default function DiscoveryPanel() {
   }, []);
 
   return (
-    <Card className="z-10 max-w-sm rounded-xl bg-white shadow-lg md:absolute md:left-4 md:top-4">
-      {mode === "discovery" && (
-        <DiscoveryView
-          indoorGeocoder={indoorGeocoder}
-          onSelectPOI={handleSelectPOI}
-        />
-      )}
+    <Card className="z-10 w-full max-w-[23.5rem] rounded-xl bg-white shadow-lg md:absolute md:left-4 md:top-4">
+      <CardContent className="p-4">
+        {mode === "discovery" && (
+          <DiscoveryView
+            indoorGeocoder={indoorGeocoder}
+            onSelectPOI={handleSelectPOI}
+          />
+        )}
+        {mode === "detail" && selectedPOI && (
+          <LocationDetail
+            selectedPOI={selectedPOI}
+            handleDirectionsClick={() => setMode("navigation")}
+            handleBackClick={() => setMode("discovery")}
+          />
+        )}
+      </CardContent>
     </Card>
   );
 }

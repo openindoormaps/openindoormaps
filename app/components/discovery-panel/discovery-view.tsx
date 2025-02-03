@@ -1,14 +1,13 @@
 import { ArrowLeft, Search, SlidersVertical } from "lucide-react";
-import topLocations from "~/mock/top-locations";
-import NavigationSettings from "../navigation-settings";
-import { Button } from "../ui/button";
-import { CardContent } from "../ui/card";
-import { Input } from "../ui/input";
-import { Toggle } from "../ui/toggle";
 import { useEffect, useState } from "react";
-import { IndoorGeocoder } from "~/utils/indoor-geocoder";
+import topLocations from "~/mock/top-locations";
 import useMapStore from "~/stores/use-map-store";
 import { POI } from "~/types/poi";
+import { IndoorGeocoder } from "~/utils/indoor-geocoder";
+import NavigationSettings from "../navigation-settings";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Toggle } from "../ui/toggle";
 
 interface DiscoveryViewProps {
   indoorGeocoder: IndoorGeocoder;
@@ -63,7 +62,7 @@ export default function DiscoveryView({
   }
 
   return (
-    <CardContent className="p-4">
+    <>
       <div className="relative mb-6 flex items-center">
         <div className="relative grow">
           {isSearching ? (
@@ -73,7 +72,7 @@ export default function DiscoveryView({
               className="absolute left-3 top-1/2 -translate-y-1/2 p-0"
               onClick={handleBackClick}
             >
-              <ArrowLeft size={20} className="text-gray-500" />
+              <ArrowLeft size={18} className="text-gray-500" />
             </Button>
           ) : (
             <Search
@@ -87,7 +86,7 @@ export default function DiscoveryView({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setIsSearching(true)}
-            className="w-72 rounded-full border-gray-300 px-10 py-4 text-lg shadow-sm"
+            className="h-10 w-full min-w-72 rounded-full border-gray-300 px-10 py-4 text-lg shadow-sm"
           />
         </div>
         {!isSearching && (
@@ -96,9 +95,9 @@ export default function DiscoveryView({
             size="icon"
             pressed={isSettingsOpen}
             onPressedChange={setIsSettingsOpen}
-            className="ml-2 rounded-full p-2"
+            className="ml-2 rounded-full border border-gray-300"
           >
-            <SlidersVertical size={18} />
+            <SlidersVertical size={16} />
           </Toggle>
         )}
       </div>
@@ -145,6 +144,6 @@ export default function DiscoveryView({
       )}
 
       {isSettingsOpen && <NavigationSettings />}
-    </CardContent>
+    </>
   );
 }
