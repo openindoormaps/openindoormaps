@@ -84,7 +84,8 @@ export default function NavigationView({
       bounds = bounds.extend(coord);
     }
     map?.fitBounds(bounds, {
-      padding: 20,
+      padding: 50,
+      speed: 0.8,
     });
   }
 

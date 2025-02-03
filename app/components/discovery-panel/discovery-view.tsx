@@ -4,7 +4,7 @@ import topLocations from "~/mock/top-locations";
 import useMapStore from "~/stores/use-map-store";
 import { POI } from "~/types/poi";
 import { IndoorGeocoder } from "~/utils/indoor-geocoder";
-import NavigationSettings from "../navigation-settings";
+import NavigationSettings from "./navigation-settings";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Toggle } from "../ui/toggle";

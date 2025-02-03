@@ -1,7 +1,7 @@
 import { Accessibility, Building2, Map } from "lucide-react";
 import { useState } from "react";
-import { Toggle } from "./ui/toggle";
-
+import { Toggle } from "../ui/toggle";
+//TODO: improve ui
 export default function NavigationSettings() {
   const [includeOutdoor, setIncludeOutdoor] = useState(false);
   const [isAccessibleRoute, setIsAccessibleRoute] = useState(false);
@@ -11,6 +11,7 @@ export default function NavigationSettings() {
       <Toggle
         variant="outline"
         onClick={() => setIsAccessibleRoute(!isAccessibleRoute)}
+        disabled
       >
         <Accessibility /> Accessibility
       </Toggle>
@@ -37,13 +38,17 @@ export default function NavigationSettings() {
               : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           }`}
           title="Include outdoor navigation"
+          disabled
         >
           <Map size={18} />
           <span>Outdoor</span>
         </button>
       </div>
       <span className="text-sm font-medium text-gray-700">Language</span>
-      <select className="w-full rounded-md bg-gray-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none">
+      <select
+        className="w-full rounded-md bg-gray-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
+        disabled
+      >
         <option value="en">English</option>
         <option value="de">Deutsch</option>
         <option value="es">Español</option>
