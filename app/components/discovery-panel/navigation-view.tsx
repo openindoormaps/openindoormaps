@@ -6,17 +6,20 @@ import { useState, useEffect } from "react";
 import { IndoorGeocoder } from "~/utils/indoor-geocoder";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import { ArrowLeft, ArrowUpDown, Circle, Dot, MapPin } from "lucide-react";
+import IndoorDirections from "~/indoor-directions/directions/main";
 
 interface NavigationViewProps {
   handleBackClick: () => void;
   selectedPOI: POI | null;
   indoorGeocoder: IndoorGeocoder;
+  indoorDirections: IndoorDirections;
 }
 
 export default function NavigationView({
   handleBackClick,
   selectedPOI,
   indoorGeocoder,
+  indoorDirections,
 }: NavigationViewProps) {
   const [activeInput, setActiveInput] = useState<
     "departure" | "destination" | null
@@ -47,6 +50,7 @@ export default function NavigationView({
     }
     setSuggestions([]);
     setActiveInput(null);
+    handleRouting();
   };
 
   function handleSwapLocations() {
@@ -54,6 +58,18 @@ export default function NavigationView({
     setDestinationLocation(departureLocation);
   }
 
+  function handleRouting() {
+    console.log("Routing from", departureLocation, "to", destinationLocation);
+    if (!departureLocation || !destinationLocation) return;
+    const departureCoord =
+      indoorGeocoder.indoorGeocodeInput(departureLocation).coordinates;
+    const destinationCoord =
+      indoorGeocoder.indoorGeocodeInput(destinationLocation).coordinates;
+
+    if (departureCoord && destinationCoord) {
+      indoorDirections.setWaypoints([departureCoord, destinationCoord]);
+    }
+  }
   return (
     <>
       <Button

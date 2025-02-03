@@ -125,6 +125,7 @@ export default function DiscoveryPanel() {
             handleBackClick={() => setMode("discovery")}
             selectedPOI={selectedPOI}
             indoorGeocoder={indoorGeocoder}
+            indoorDirections={indoorDirections.current!}
           />
         )}
       </CardContent>
