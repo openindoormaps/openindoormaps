@@ -4,7 +4,7 @@ import MapLibreGlDirections, {
   LoadingIndicatorControl,
 } from "@maplibre/maplibre-gl-directions";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import { ArrowLeft, Search, SlidersVertical } from "lucide-react";
+import { ArrowLeft, LucideProps, Search, SlidersVertical } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
@@ -18,6 +18,7 @@ import { Card, CardContent } from "./ui/card";
 import { Input } from "./ui/input";
 import { Toggle } from "./ui/toggle";
 import topLocations from "~/mock/top-locations";
+import { s } from "node_modules/vite/dist/node/types.d-aGj9QkWt";
 
 export default function DiscoveryPanel() {
   const map = useMapStore((state) => state.mapInstance);
@@ -116,6 +117,23 @@ export default function DiscoveryPanel() {
     });
   }
 
+  // eslint-disable-next-line unicorn/consistent-function-scoping
+  function handleTopLocationsClick(poi: {
+    name: string;
+    icon: React.ForwardRefExoticComponent<
+      Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+    >;
+    colors: string;
+  }) {
+    setSearchQuery(poi.name);
+
+    map?.flyTo({
+      center: indoorGeocoder.indoorGeocodeInput(poi.name),
+      zoom: 20,
+      duration: 1000,
+    });
+  }
+
   return (
     <Card className="z-10 max-w-sm bg-white shadow-lg md:absolute md:left-4 md:top-4">
       <CardContent className="p-4">
@@ -185,6 +203,9 @@ export default function DiscoveryPanel() {
                   variant="ghost"
                   size="icon"
                   title={poi.name}
+                  onClick={() => {
+                    handleTopLocationsClick(poi);
+                  }}
                 >
                   <poi.icon size={16} />
                 </Button>
