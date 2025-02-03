@@ -8,6 +8,7 @@ import NavigationSettings from "../navigation-settings";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Toggle } from "../ui/toggle";
+import SuggestionsList from "./suggestions-list";
 
 interface DiscoveryViewProps {
   indoorGeocoder: IndoorGeocoder;
@@ -103,23 +104,11 @@ export default function DiscoveryView({
       </div>
 
       {isSearching ? (
-        <div className="w-72 space-y-2">
-          {suggestions.map((suggestion, index) => (
-            <Button
-              key={index}
-              variant="ghost"
-              className="w-full justify-start text-left text-gray-700 hover:bg-gray-100"
-              onClick={() => {
-                handleSuggestionClick(suggestion);
-              }}
-            >
-              {suggestion.name}
-            </Button>
-          ))}
-          {suggestions.length === 0 && searchQuery && (
-            <p className="p-2 text-sm text-gray-500">No results found</p>
-          )}
-        </div>
+        <SuggestionsList
+          suggestions={suggestions}
+          searchQuery={searchQuery}
+          onSuggestionClick={handleSuggestionClick}
+        />
       ) : (
         <div className="grid grid-cols-4 justify-items-center gap-1">
           {topLocations.map((topLocation, index) => (

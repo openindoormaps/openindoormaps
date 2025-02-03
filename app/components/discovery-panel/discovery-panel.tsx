@@ -21,6 +21,7 @@ import topLocations from "~/mock/top-locations";
 import DiscoveryView from "./discovery-view";
 import { POI } from "~/types/poi";
 import LocationDetail from "./location-detail";
+import NavigationView from "./navigation-view";
 
 type UIMode = "discovery" | "detail" | "navigation";
 
@@ -117,6 +118,13 @@ export default function DiscoveryPanel() {
             selectedPOI={selectedPOI}
             handleDirectionsClick={() => setMode("navigation")}
             handleBackClick={() => setMode("discovery")}
+          />
+        )}
+        {mode === "navigation" && (
+          <NavigationView
+            handleBackClick={() => setMode("discovery")}
+            selectedPOI={selectedPOI}
+            indoorGeocoder={indoorGeocoder}
           />
         )}
       </CardContent>
