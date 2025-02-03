@@ -28,19 +28,20 @@ export default function MapComponent() {
       map.addLayer(new Tile3dLayer());
       map.addLayer(indoorMapLayer);
 
-      const indoorDirections = new IndoorDirections(map);
-      indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
-
-      const start: [number, number] = [
-        3.110_255_339_660_966_5, 45.759_180_103_714_186,
-      ];
-      const end: [number, number] = [
-        3.111_802_160_097_454_4, 45.758_458_704_536_62,
-      ];
-
       setTimeout(() => {
-        indoorDirections.setWaypoints([start, end]);
-      }, 1500);
+        const indoorDirections = new IndoorDirections(map);
+        indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
+
+        const start: [number, number] = [
+          3.110_255_339_660_966_5, 45.759_180_103_714_186,
+        ];
+        const end: [number, number] = [
+          3.111_802_160_097_454_4, 45.758_458_704_536_62,
+        ];
+        setTimeout(() => {
+          indoorDirections.setWaypoints([start, end]);
+        }, 2000);
+      }, 1500); //TODO adjust the timeout
     });
 
     map.addControl(new NavigationControl(), "bottom-right");
