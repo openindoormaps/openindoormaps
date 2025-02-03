@@ -9,7 +9,7 @@ import POIsLayer from "~/layers/pois-layer";
 import Tile3dLayer from "~/layers/tile-3d-layer";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
-import DiscoveryPanel from "./discovery-panel";
+import DiscoveryPanel from "./discovery-panel/discovery-panel";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);

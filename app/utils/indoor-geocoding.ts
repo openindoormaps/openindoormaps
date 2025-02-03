@@ -51,6 +51,7 @@ export class IndoorGeocoder {
     if (results.length === 0) {
       throw new Error("No results found.");
     }
+
     return results[0].geometry.coordinates;
   }
 
