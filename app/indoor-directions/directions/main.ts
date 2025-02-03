@@ -72,6 +72,10 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
     });
   }
 
+  public get routelinesCoordinates() {
+    return this.routelines;
+  }
+
   protected get snaplines() {
     return this.snappoints.length > 1
       ? this.buildSnaplines(

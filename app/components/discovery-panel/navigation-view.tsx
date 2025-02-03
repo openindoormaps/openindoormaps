@@ -1,12 +1,14 @@
+import { Separator } from "@radix-ui/react-dropdown-menu";
+import { ArrowLeft, ArrowUpDown, Circle, Dot, MapPin } from "lucide-react";
+import { LngLatBounds } from "maplibre-gl";
+import { useEffect, useState } from "react";
+import IndoorDirections from "~/indoor-directions/directions/main";
+import useMapStore from "~/stores/use-map-store";
 import { POI } from "~/types/poi";
+import { IndoorGeocoder } from "~/utils/indoor-geocoder";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import SuggestionsList from "./suggestions-list";
-import { useState, useEffect } from "react";
-import { IndoorGeocoder } from "~/utils/indoor-geocoder";
-import { Separator } from "@radix-ui/react-dropdown-menu";
-import { ArrowLeft, ArrowUpDown, Circle, Dot, MapPin } from "lucide-react";
-import IndoorDirections from "~/indoor-directions/directions/main";
 
 interface NavigationViewProps {
   handleBackClick: () => void;
@@ -29,6 +31,7 @@ export default function NavigationView({
     selectedPOI?.name || "",
   );
   const [suggestions, setSuggestions] = useState<POI[]>([]);
+  const map = useMapStore((state) => state.mapInstance);
 
   const activeQuery =
     activeInput === "departure" ? departureLocation : destinationLocation;
@@ -70,6 +73,19 @@ export default function NavigationView({
     if (departureCoord && destinationCoord) {
       indoorDirections.setWaypoints([departureCoord, destinationCoord]);
     }
+
+    map?.setPitch(0);
+
+    const coordinates = indoorDirections.routelinesCoordinates[0][0].geometry
+      .coordinates as [number, number][];
+
+    let bounds = new LngLatBounds(coordinates[0], coordinates[0]);
+    for (const coord of coordinates) {
+      bounds = bounds.extend(coord);
+    }
+    map?.fitBounds(bounds, {
+      padding: 20,
+    });
   }
 
   function handleSwapLocations() {
