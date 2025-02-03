@@ -1,25 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable unused-imports/no-unused-imports */
 import MapLibreGlDirections, {
   LoadingIndicatorControl,
 } from "@maplibre/maplibre-gl-directions";
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import { ArrowLeft, LucideProps, Search, SlidersVertical } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import config from "~/config";
 import IndoorDirections from "~/indoor-directions/directions/main";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 
-import { IndoorGeocoder, POIFeature } from "~/utils/indoor-geocoder";
-import NavigationSettings from "../navigation-settings";
-import { Button } from "../ui/button";
-import { Card, CardContent } from "../ui/card";
-import { Input } from "../ui/input";
-import { Toggle } from "../ui/toggle";
-import topLocations from "~/mock/top-locations";
-import DiscoveryView from "./discovery-view";
 import { POI } from "~/types/poi";
+import { IndoorGeocoder, POIFeature } from "~/utils/indoor-geocoder";
+import { Card, CardContent } from "../ui/card";
+import DiscoveryView from "./discovery-view";
 import LocationDetail from "./location-detail";
 import NavigationView from "./navigation-view";
 
@@ -31,9 +23,6 @@ export default function DiscoveryPanel() {
   const indoorDirections = useRef<IndoorDirections>();
   const [mode, setMode] = useState<UIMode>("discovery");
   const [selectedPOI, setSelectedPOI] = useState<POI | null>(null);
-
-  const [departure, setDeparture] = useState("");
-  const [destination, setDestination] = useState("");
 
   const indoorGeocoder = useMemo(() => {
     return new IndoorGeocoder(building.pois.features as POIFeature[]);
@@ -55,23 +44,8 @@ export default function DiscoveryPanel() {
     );
   });
 
-  const handleRouting = async () => {
-    console.log("Routing from", departure, "to", destination);
-    if (!departure || !destination) return;
-    const departureCoord =
-      indoorGeocoder.indoorGeocodeInput(departure).coordinates;
-    const destinationCoord =
-      indoorGeocoder.indoorGeocodeInput(destination).coordinates;
-
-    if (departureCoord && destinationCoord) {
-      indoorDirections.current?.setWaypoints([
-        departureCoord,
-        destinationCoord,
-      ]);
-    }
-
-    /*
-    * Code for outdoor routing
+  /* 
+  * Code for outdoor routing
     if (!departure || !destination) return;
     try {
       const [departureCoord, destinationCoord] = await Promise.all([
@@ -96,7 +70,6 @@ export default function DiscoveryPanel() {
       console.error("Error during routing:", error);
     }
       */
-  };
 
   const handleSelectPOI = useCallback((poi: POI) => {
     setSelectedPOI(poi);
