@@ -2,7 +2,7 @@ import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
 import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import config from "~/config";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
 import POIsLayer from "~/layers/pois-layer";
@@ -12,19 +12,23 @@ import useMapStore from "~/stores/use-map-store";
 import DiscoveryPanel from "./discovery-panel/discovery-panel";
 import { FloorSelector } from "./ui/floor-selector";
 import { FloorUpDownControl } from "./ui/floor-up-down-control";
+import { IndoorMapGeoJSON } from "~/types/geojson";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
 
   const setMapInstance = useMapStore((state) => state.setMapInstance);
-  const indoorMapLayer = new IndoorMapLayer(
-    building.indoor_map as GeoJSON.GeoJSON,
+  const indoorMapLayer = useMemo(
+    () => new IndoorMapLayer(building.indoor_map as IndoorMapGeoJSON),
+    [],
   );
 
   useEffect(() => {
+    if (!mapContainer.current) return;
+
     const map = new maplibregl.Map({
       ...config.mapConfig,
-      container: mapContainer.current!,
+      container: mapContainer.current,
     });
     setMapInstance(map);
 
@@ -49,8 +53,7 @@ export default function MapComponent() {
     return () => {
       map.remove();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [indoorMapLayer, setMapInstance]);
 
   return (
     <div className="flex size-full flex-col">
