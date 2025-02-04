@@ -1,18 +1,82 @@
 import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
 
+interface IndoorFeatureProperties {
+  level_id: number | null;
+  [key: string]: unknown;
+}
+
+interface IndoorFeature extends GeoJSON.Feature {
+  properties: IndoorFeatureProperties;
+}
+
+interface GeoJSONData {
+  type: "FeatureCollection";
+  features: IndoorFeature[];
+}
+
 export default class IndoorMapLayer implements CustomLayerInterface {
   id: string = "indoor-map";
   type = "custom" as const;
-  private indoorMapData: GeoJSON.GeoJSON;
+  private map: Map | null = null;
+  private indoorMapData: GeoJSONData;
 
-  constructor(indoorMapData: GeoJSON.GeoJSON) {
+  constructor(indoorMapData: GeoJSONData) {
     this.indoorMapData = indoorMapData;
   }
 
   render: CustomRenderMethod = (gl, matrix) => {
     gl && matrix; // Unused
   };
-  onAdd?(map: Map): void {
+
+  private async loadAndSaveData(): Promise<void> {
+    if (this.indoorMapData) return;
+
+    try {
+      const response = await fetch("assets/geojson/demo-map.geojson");
+      this.indoorMapData = await response.json();
+    } catch (error) {
+      console.error("Failed to load GeoJSON data:", error);
+    }
+  }
+
+  setFloorLevel(level: number) {
+    if (!this.map || !this.indoorMapData) return;
+
+    const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
+    const filteredFeatures = this.indoorMapData.features.filter(
+      (feature: IndoorFeature) =>
+        feature.properties.level_id === level ||
+        feature.properties.level_id === null,
+    );
+
+    source.setData({
+      type: "FeatureCollection",
+      features: filteredFeatures,
+    });
+  }
+
+  async getAvailableFloors(): Promise<number[]> {
+    await this.loadAndSaveData();
+
+    const floors = new Set<number>();
+    this.indoorMapData!.features.forEach((feature) => {
+      if (feature.properties.level_id !== null) {
+        floors.add(feature.properties.level_id);
+      }
+    });
+
+    // Always include ground floor
+    const uniqueFloors = [...floors];
+    if (!uniqueFloors.includes(0)) {
+      uniqueFloors.push(0);
+    }
+    return uniqueFloors;
+  }
+
+  async onAdd(map: Map): Promise<void> {
+    this.map = map;
+    await this.loadAndSaveData();
+
     const colors = {
       unit: "#f3f3f3",
       corridor: "#d6d5d1",
