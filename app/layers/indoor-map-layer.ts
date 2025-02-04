@@ -1,43 +1,19 @@
 import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
-
-interface IndoorFeatureProperties {
-  level_id: number | null;
-  [key: string]: unknown;
-}
-
-interface IndoorFeature extends GeoJSON.Feature {
-  properties: IndoorFeatureProperties;
-}
-
-interface GeoJSONData {
-  type: "FeatureCollection";
-  features: IndoorFeature[];
-}
+import { IndoorFeature, IndoorMapGeoJSON } from "~/types/geojson";
 
 export default class IndoorMapLayer implements CustomLayerInterface {
   id: string = "indoor-map";
   type = "custom" as const;
   private map: Map | null = null;
-  private indoorMapData: GeoJSONData;
+  private indoorMapData: IndoorMapGeoJSON;
 
-  constructor(indoorMapData: GeoJSONData) {
+  constructor(indoorMapData: IndoorMapGeoJSON) {
     this.indoorMapData = indoorMapData;
   }
 
   render: CustomRenderMethod = (gl, matrix) => {
     gl && matrix; // Unused
   };
-
-  private async loadAndSaveData(): Promise<void> {
-    if (this.indoorMapData) return;
-
-    try {
-      const response = await fetch("assets/geojson/demo-map.geojson");
-      this.indoorMapData = await response.json();
-    } catch (error) {
-      console.error("Failed to load GeoJSON data:", error);
-    }
-  }
 
   setFloorLevel(level: number) {
     if (!this.map || !this.indoorMapData) return;
@@ -56,8 +32,6 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   }
 
   async getAvailableFloors(): Promise<number[]> {
-    await this.loadAndSaveData();
-
     const floors = new Set<number>();
     this.indoorMapData!.features.forEach((feature) => {
       if (feature.properties.level_id !== null) {
@@ -75,7 +49,6 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
   async onAdd(map: Map): Promise<void> {
     this.map = map;
-    await this.loadAndSaveData();
 
     const colors = {
       unit: "#f3f3f3",
