@@ -10,8 +10,8 @@ import Tile3dLayer from "~/layers/tile-3d-layer";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 import DiscoveryPanel from "./discovery-panel/discovery-panel";
-import { FloorSelector } from "./ui/floor-selector";
-import { FloorUpDownControl } from "./ui/floor-up-down-control";
+import { FloorSelector } from "./floor-selector";
+import { FloorUpDownControl } from "./floor-up-down-control";
 import { IndoorMapGeoJSON } from "~/types/geojson";
 
 export default function MapComponent() {
