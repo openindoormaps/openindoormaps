@@ -35,7 +35,7 @@ export default class POIsLayer implements CustomLayerInterface {
       source: "pois",
       layout: {
         "text-field": ["get", "name"],
-        "text-font": ["Inter Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-size": 12,
         "text-offset": [0.8, 0],
         "text-anchor": "left",
