@@ -252,25 +252,6 @@
           "area": 0
         },
         "geometry": {
-          "coordinates": [3.111006411223598, 45.759187029922956],
-          "type": "Point"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
           "coordinates": [
             [
               [3.110510776397619, 45.75900495407497],
@@ -282,26 +263,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": "null",
-          "alt_name": "null",
-          "category": "null",
-          "restriction": "null",
-          "accessibility": "null",
-          "display_point": "null",
-          "feature_type": "unkown",
-          "level_id": "null",
-          "show": "true",
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [3.110519048836336, 45.75901825468585],
-          "type": "Point"
-        }
+        "id": 1
       },
       {
         "type": "Feature",
@@ -331,7 +294,8 @@
             ]
           ],
           "type": "Polygon"
-        }
+        },
+        "id": 2
       },
       {
         "type": "Feature",
@@ -365,189 +329,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111711112900186, 45.75836728532593],
-              [3.111711138445447, 45.7583672432649]
-            ],
-            [
-              [3.111711119786344, 45.758367287584996],
-              [3.111711145331604, 45.75836724552398]
-            ],
-            [
-              [3.111711126672501, 45.75836728984407],
-              [3.111711152217761, 45.75836724778305]
-            ],
-            [
-              [3.111711145331604, 45.75836724552398],
-              [3.111711152217761, 45.75836724778305]
-            ],
-            [
-              [3.111711138445447, 45.7583672432649],
-              [3.111711145331604, 45.75836724552398]
-            ],
-            [
-              [3.111711112900186, 45.75836728532593],
-              [3.111711119786344, 45.758367287584996]
-            ],
-            [
-              [3.111711119786344, 45.758367287584996],
-              [3.111711126672501, 45.75836728984407]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.11093410066699, 45.75914881495373],
-              [3.110934126118907, 45.75914877283419]
-            ],
-            [
-              [3.110934107558323, 45.759148817204505],
-              [3.11093413301024, 45.75914877508496]
-            ],
-            [
-              [3.110934114449655, 45.75914881945528],
-              [3.110934139901572, 45.75914877733574]
-            ],
-            [
-              [3.11093413301024, 45.75914877508496],
-              [3.110934139901572, 45.75914877733574]
-            ],
-            [
-              [3.110934126118907, 45.75914877283419],
-              [3.11093413301024, 45.75914877508496]
-            ],
-            [
-              [3.11093410066699, 45.75914881495373],
-              [3.110934107558323, 45.759148817204505]
-            ],
-            [
-              [3.110934107558323, 45.759148817204505],
-              [3.110934114449655, 45.75914881945528]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110934116838614, 45.75914879501935],
-          "type": "Point"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111732454490137, 45.75843430733202],
-              [3.111732480027495, 45.758434265271674]
-            ],
-            [
-              [3.111732461376631, 45.7584343095905],
-              [3.11173248691399, 45.75843426753016]
-            ],
-            [
-              [3.111732468263126, 45.75843431184898],
-              [3.111732493800485, 45.75843426978865]
-            ],
-            [
-              [3.11173248691399, 45.75843426753016],
-              [3.111732493800485, 45.75843426978865]
-            ],
-            [
-              [3.111732480027495, 45.758434265271674],
-              [3.11173248691399, 45.75843426753016]
-            ],
-            [
-              [3.111732454490137, 45.75843430733202],
-              [3.111732461376631, 45.7584343095905]
-            ],
-            [
-              [3.111732461376631, 45.7584343095905],
-              [3.111732468263126, 45.75843431184898]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111732470702062, 45.758434287431086],
-          "type": "Point"
-        }
+        "id": 3
       },
       {
         "type": "Feature",
@@ -575,93 +358,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [3.1118270050686307, 45.75840262209062],
-          "type": "Point"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111809701790718, 45.75843755209409],
-              [3.111809727327782, 45.758437510038725]
-            ],
-            [
-              [3.111809708677137, 45.758437554352646],
-              [3.111809734214201, 45.758437512297284]
-            ],
-            [
-              [3.111809715563557, 45.75843755661122],
-              [3.11180974110062, 45.75843751455586]
-            ],
-            [
-              [3.111809734214201, 45.758437512297284],
-              [3.11180974110062, 45.75843751455586]
-            ],
-            [
-              [3.111809727327782, 45.758437510038725],
-              [3.111809734214201, 45.758437512297284]
-            ],
-            [
-              [3.111809701790718, 45.75843755209409],
-              [3.111809708677137, 45.758437554352646]
-            ],
-            [
-              [3.111809708677137, 45.758437554352646],
-              [3.111809715563557, 45.75843755661122]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111816101677729, 45.75842810063061],
-          "type": "Point"
-        }
+        "id": 4
       },
       {
         "type": "Feature",
@@ -691,74 +389,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111647644450718, 45.75864963434484],
-              [3.111647669962511, 45.75864959227676]
-            ],
-            [
-              [3.111647651338484, 45.758649636601234],
-              [3.111647676850277, 45.758649594533146]
-            ],
-            [
-              [3.11164765822625, 45.75864963885761],
-              [3.111647683738043, 45.75864959678953]
-            ],
-            [
-              [3.111647676850277, 45.758649594533146],
-              [3.111647683738043, 45.75864959678953]
-            ],
-            [
-              [3.111647669962511, 45.75864959227676],
-              [3.111647676850277, 45.758649594533146]
-            ],
-            [
-              [3.111647644450718, 45.75864963434484],
-              [3.111647651338484, 45.758649636601234]
-            ],
-            [
-              [3.111647651338484, 45.758649636601234],
-              [3.11164765822625, 45.75864963885761]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111647660650497, 45.758649614439],
-          "type": "Point"
-        }
+        "id": 5
       },
       {
         "type": "Feature",
@@ -790,74 +422,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.11160201186766, 45.75872489749971],
-              [3.111602037370497, 45.758724855427886]
-            ],
-            [
-              [3.111602018755889, 45.75872489975534],
-              [3.111602044258727, 45.75872485768352]
-            ],
-            [
-              [3.111602025644119, 45.75872490201097],
-              [3.111602051146956, 45.75872485993914]
-            ],
-            [
-              [3.111602044258727, 45.75872485768352],
-              [3.111602051146956, 45.75872485993914]
-            ],
-            [
-              [3.111602037370497, 45.758724855427886],
-              [3.111602044258727, 45.75872485768352]
-            ],
-            [
-              [3.11160201186766, 45.75872489749971],
-              [3.111602018755889, 45.75872489975534]
-            ],
-            [
-              [3.111602018755889, 45.75872489975534],
-              [3.111602025644119, 45.75872490201097]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111602028063193, 45.75872487759161],
-          "type": "Point"
-        }
+        "id": 6
       },
       {
         "type": "Feature",
@@ -889,74 +455,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111540946936055, 45.75882566552765],
-              [3.111540972426902, 45.75882562345082]
-            ],
-            [
-              [3.111540953824905, 45.75882566778227],
-              [3.111540979315751, 45.758825625705434]
-            ],
-            [
-              [3.111540960713755, 45.758825670036885],
-              [3.1115409862046, 45.75882562796005]
-            ],
-            [
-              [3.111540979315751, 45.758825625705434],
-              [3.1115409862046, 45.75882562796005]
-            ],
-            [
-              [3.111540972426902, 45.75882562345082],
-              [3.111540979315751, 45.758825625705434]
-            ],
-            [
-              [3.111540946936055, 45.75882566552765],
-              [3.111540953824905, 45.75882566778227]
-            ],
-            [
-              [3.111540953824905, 45.75882566778227],
-              [3.111540960713755, 45.758825670036885]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111540963125903, 45.75882564561655],
-          "type": "Point"
-        }
+        "id": 7
       },
       {
         "type": "Feature",
@@ -988,74 +488,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111479528543851, 45.75892707677197],
-              [3.111479554022628, 45.758927034690096]
-            ],
-            [
-              [3.111479535433324, 45.758927079025554],
-              [3.111479560912101, 45.75892703694369]
-            ],
-            [
-              [3.111479542322797, 45.758927081279154],
-              [3.111479567801574, 45.75892703919728]
-            ],
-            [
-              [3.111479560912101, 45.75892703694369],
-              [3.111479567801574, 45.75892703919728]
-            ],
-            [
-              [3.111479554022628, 45.758927034690096],
-              [3.111479560912101, 45.75892703694369]
-            ],
-            [
-              [3.111479528543851, 45.75892707677197],
-              [3.111479535433324, 45.758927079025554]
-            ],
-            [
-              [3.111479535433324, 45.758927079025554],
-              [3.111479542322797, 45.758927081279154]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111479544727975, 45.75892705685783],
-          "type": "Point"
-        }
+        "id": 8
       },
       {
         "type": "Feature",
@@ -1087,74 +521,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111418648575285, 45.759027658409245],
-              [3.111418674042092, 45.759027616322385]
-            ],
-            [
-              [3.111418655465376, 45.75902766066182],
-              [3.111418680932183, 45.75902761857496]
-            ],
-            [
-              [3.111418662355468, 45.759027662914406],
-              [3.111418687822274, 45.759027620827545]
-            ],
-            [
-              [3.111418680932183, 45.75902761857496],
-              [3.111418687822274, 45.759027620827545]
-            ],
-            [
-              [3.111418674042092, 45.759027616322385],
-              [3.111418680932183, 45.75902761857496]
-            ],
-            [
-              [3.111418648575285, 45.759027658409245],
-              [3.111418655465376, 45.75902766066182]
-            ],
-            [
-              [3.111418655465376, 45.75902766066182],
-              [3.111418662355468, 45.759027662914406]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111418664753733, 45.7590276384921],
-          "type": "Point"
-        }
+        "id": 9
       },
       {
         "type": "Feature",
@@ -1186,74 +554,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111372561865091, 45.75910383904718],
-              [3.111372587322831, 45.759103796956545]
-            ],
-            [
-              [3.11137256875565, 45.759103841299],
-              [3.11137259421339, 45.75910379920836]
-            ],
-            [
-              [3.111372575646211, 45.75910384355082],
-              [3.111372601103949, 45.75910380146018]
-            ],
-            [
-              [3.11137259421339, 45.75910379920836],
-              [3.111372601103949, 45.75910380146018]
-            ],
-            [
-              [3.111372587322831, 45.759103796956545],
-              [3.11137259421339, 45.75910379920836]
-            ],
-            [
-              [3.111372561865091, 45.75910383904718],
-              [3.11137256875565, 45.759103841299]
-            ],
-            [
-              [3.11137256875565, 45.759103841299],
-              [3.111372575646211, 45.75910384355082]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.11137257803924, 45.75910381912777],
-          "type": "Point"
-        }
+        "id": 10
       },
       {
         "type": "Feature",
@@ -1283,74 +585,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111342270705661, 45.75915392838371],
-              [3.111342296157439, 45.7591538862906]
-            ],
-            [
-              [3.111342277596528, 45.75915393063503],
-              [3.111342303048305, 45.7591538885419]
-            ],
-            [
-              [3.111342284487395, 45.759153932886335],
-              [3.111342309939172, 45.75915389079322]
-            ],
-            [
-              [3.111342303048305, 45.7591538885419],
-              [3.111342309939172, 45.75915389079322]
-            ],
-            [
-              [3.111342296157439, 45.7591538862906],
-              [3.111342303048305, 45.7591538885419]
-            ],
-            [
-              [3.111342270705661, 45.75915392838371],
-              [3.111342277596528, 45.75915393063503]
-            ],
-            [
-              [3.111342277596528, 45.75915393063503],
-              [3.111342284487395, 45.759153932886335]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111342286876983, 45.759153908462814],
-          "type": "Point"
-        }
+        "id": 11
       },
       {
         "type": "Feature",
@@ -1383,218 +619,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111289221129177, 45.75924356418823],
-              [3.111289246570285, 45.75924352209075]
-            ],
-            [
-              [3.111289228020593, 45.75924356643865],
-              [3.111289253461701, 45.75924352434116]
-            ],
-            [
-              [3.11128923491201, 45.75924356868906],
-              [3.111289260353117, 45.75924352659157]
-            ],
-            [
-              [3.111289253461701, 45.75924352434116],
-              [3.111289260353117, 45.75924352659157]
-            ],
-            [
-              [3.111289246570285, 45.75924352209075],
-              [3.111289253461701, 45.75924352434116]
-            ],
-            [
-              [3.111289221129177, 45.75924356418823],
-              [3.111289228020593, 45.75924356643865]
-            ],
-            [
-              [3.111289228020593, 45.75924356643865],
-              [3.11128923491201, 45.75924356868906]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111289237295439, 45.7592435442647],
-          "type": "Point"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111230533922876, 45.759223895180064],
-              [3.111230559366245, 45.75922385307897]
-            ],
-            [
-              [3.111230540814257, 45.75922389743057],
-              [3.111230566257625, 45.75922385532949]
-            ],
-            [
-              [3.111230547705638, 45.759223899681075],
-              [3.111230573149006, 45.75922385757999]
-            ],
-            [
-              [3.111230566257625, 45.75922385532949],
-              [3.111230573149006, 45.75922385757999]
-            ],
-            [
-              [3.111230559366245, 45.75922385307897],
-              [3.111230566257625, 45.75922385532949]
-            ],
-            [
-              [3.111230533922876, 45.759223895180064],
-              [3.111230540814257, 45.75922389743057]
-            ],
-            [
-              [3.111230540814257, 45.75922389743057],
-              [3.111230547705638, 45.759223899681075]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111006395054137, 45.75918704985531],
-              [3.11100642050161, 45.75918700774007]
-            ],
-            [
-              [3.111006401945589, 45.75918705210584],
-              [3.111006427393062, 45.75918700999059]
-            ],
-            [
-              [3.111006408837041, 45.75918705435637],
-              [3.111006434284514, 45.75918701224112]
-            ],
-            [
-              [3.111006427393062, 45.75918700999059],
-              [3.111006434284514, 45.75918701224112]
-            ],
-            [
-              [3.11100642050161, 45.75918700774007],
-              [3.111006427393062, 45.75918700999059]
-            ],
-            [
-              [3.111006395054137, 45.75918704985531],
-              [3.111006401945589, 45.75918705210584]
-            ],
-            [
-              [3.111006401945589, 45.75918705210584],
-              [3.111006408837041, 45.75918705435637]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110519032657321, 45.75901827463274],
-              [3.110519058124225, 45.759018232487584]
-            ],
-            [
-              [3.110519039548447, 45.75901827688411],
-              [3.110519065015352, 45.75901823473896]
-            ],
-            [
-              [3.110519046439574, 45.75901827913549],
-              [3.110519071906478, 45.759018236990336]
-            ],
-            [
-              [3.110519065015352, 45.75901823473896],
-              [3.110519071906478, 45.759018236990336]
-            ],
-            [
-              [3.110519058124225, 45.759018232487584],
-              [3.110519065015352, 45.75901823473896]
-            ],
-            [
-              [3.110519032657321, 45.75901827463274],
-              [3.110519039548447, 45.75901827688411]
-            ],
-            [
-              [3.110519039548447, 45.75901827688411],
-              [3.110519046439574, 45.75901827913549]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
+        "id": 12
       },
       {
         "type": "Feature",
@@ -1626,74 +652,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110496184425126, 45.75911491632069],
-              [3.110496209880567, 45.75911487417306]
-            ],
-            [
-              [3.110496191316804, 45.75911491857114],
-              [3.110496216772243, 45.75911487642351]
-            ],
-            [
-              [3.110496198208481, 45.7591149208216],
-              [3.11049622366392, 45.75911487867397]
-            ],
-            [
-              [3.110496216772243, 45.75911487642351],
-              [3.11049622366392, 45.75911487867397]
-            ],
-            [
-              [3.110496209880567, 45.75911487417306],
-              [3.110496216772243, 45.75911487642351]
-            ],
-            [
-              [3.110496184425126, 45.75911491632069],
-              [3.110496191316804, 45.75911491857114]
-            ],
-            [
-              [3.110496191316804, 45.75911491857114],
-              [3.110496198208481, 45.7591149208216]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110496200598685, 45.759114896372104],
-          "type": "Point"
-        }
+        "id": 13
       },
       {
         "type": "Feature",
@@ -1721,74 +681,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.11055859268908, 45.75913312546373],
-              [3.110558618142433, 45.75913308331996]
-            ],
-            [
-              [3.11055859958078, 45.7591331277141],
-              [3.110558625034133, 45.75913308557034]
-            ],
-            [
-              [3.11055860647248, 45.75913312996448],
-              [3.110558631925833, 45.759133087820715]
-            ],
-            [
-              [3.110558625034133, 45.75913308557034],
-              [3.110558631925833, 45.759133087820715]
-            ],
-            [
-              [3.110558618142433, 45.75913308331996],
-              [3.110558625034133, 45.75913308557034]
-            ],
-            [
-              [3.11055859268908, 45.75913312546373],
-              [3.11055859958078, 45.7591331277141]
-            ],
-            [
-              [3.11055859958078, 45.7591331277141],
-              [3.11055860647248, 45.75913312996448]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110558608861606, 45.75913310551703],
-          "type": "Point"
-        }
+        "id": 14
       },
       {
         "type": "Feature",
@@ -1816,74 +710,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110615016112064, 45.75915760328714],
-              [3.110615041562582, 45.759157561146786]
-            ],
-            [
-              [3.110615023003829, 45.759157605537375],
-              [3.110615048454347, 45.759157563397025]
-            ],
-            [
-              [3.110615029895594, 45.75915760778761],
-              [3.110615055346113, 45.75915756564726]
-            ],
-            [
-              [3.110615048454347, 45.759157563397025],
-              [3.110615055346113, 45.75915756564726]
-            ],
-            [
-              [3.110615041562582, 45.759157561146786],
-              [3.110615048454347, 45.759157563397025]
-            ],
-            [
-              [3.110615016112064, 45.75915760328714],
-              [3.110615023003829, 45.759157605537375]
-            ],
-            [
-              [3.110615023003829, 45.759157605537375],
-              [3.110615029895594, 45.75915760778761]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110615032283205, 45.75915758334208],
-          "type": "Point"
-        }
+        "id": 15
       },
       {
         "type": "Feature",
@@ -1911,74 +739,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110665462863974, 45.75916802078226],
-              [3.110665488313316, 45.75916797864508]
-            ],
-            [
-              [3.110665469755735, 45.759168023032466],
-              [3.110665495205077, 45.75916798089529]
-            ],
-            [
-              [3.110665476647495, 45.759168025282676],
-              [3.110665502096837, 45.759167983145495]
-            ],
-            [
-              [3.110665495205077, 45.75916798089529],
-              [3.110665502096837, 45.759167983145495]
-            ],
-            [
-              [3.110665488313316, 45.75916797864508],
-              [3.110665495205077, 45.75916798089529]
-            ],
-            [
-              [3.110665462863974, 45.75916802078226],
-              [3.110665469755735, 45.759168023032466]
-            ],
-            [
-              [3.110665469755735, 45.759168023032466],
-              [3.110665476647495, 45.759168025282676]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110665479034525, 45.75916800083878],
-          "type": "Point"
-        }
+        "id": 16
       },
       {
         "type": "Feature",
@@ -2006,74 +768,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110709802029812, 45.75918855072153],
-              [3.110709827476773, 45.759188508587016]
-            ],
-            [
-              [3.110709808921631, 45.759188552971615],
-              [3.110709834368591, 45.7591885108371]
-            ],
-            [
-              [3.110709815813449, 45.7591885552217],
-              [3.110709841260409, 45.75918851308718]
-            ],
-            [
-              [3.110709834368591, 45.7591885108371],
-              [3.110709841260409, 45.75918851308718]
-            ],
-            [
-              [3.110709827476773, 45.759188508587016],
-              [3.110709834368591, 45.7591885108371]
-            ],
-            [
-              [3.110709802029812, 45.75918855072153],
-              [3.110709808921631, 45.759188552971615]
-            ],
-            [
-              [3.110709808921631, 45.759188552971615],
-              [3.110709815813449, 45.7591885552217]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110709818199201, 45.75918853077931],
-          "type": "Point"
-        }
+        "id": 17
       },
       {
         "type": "Feature",
@@ -2104,74 +800,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.11077200814227, 45.759202807131686],
-              [3.110772033587613, 45.75920276500106]
-            ],
-            [
-              [3.110772015034091, 45.759202809381726],
-              [3.110772040479434, 45.75920276725111]
-            ],
-            [
-              [3.110772021925911, 45.75920281163177],
-              [3.110772047371254, 45.759202769501144]
-            ],
-            [
-              [3.110772040479434, 45.75920276725111],
-              [3.110772047371254, 45.759202769501144]
-            ],
-            [
-              [3.110772033587613, 45.75920276500106],
-              [3.110772040479434, 45.75920276725111]
-            ],
-            [
-              [3.11077200814227, 45.759202807131686],
-              [3.110772015034091, 45.759202809381726]
-            ],
-            [
-              [3.110772015034091, 45.759202809381726],
-              [3.110772021925911, 45.75920281163177]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110772024310851, 45.75920278719139],
-          "type": "Point"
-        }
+        "id": 18
       },
       {
         "type": "Feature",
@@ -2199,74 +829,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110873420436318, 45.75923591492164],
-              [3.110873445877857, 45.75923587279726]
-            ],
-            [
-              [3.110873427328195, 45.75923591717152],
-              [3.110873452769733, 45.759235875047146]
-            ],
-            [
-              [3.110873434220073, 45.7592359194214],
-              [3.110873459661611, 45.75923587729703]
-            ],
-            [
-              [3.110873452769733, 45.759235875047146],
-              [3.110873459661611, 45.75923587729703]
-            ],
-            [
-              [3.110873445877857, 45.75923587279726],
-              [3.110873452769733, 45.759235875047146]
-            ],
-            [
-              [3.110873420436318, 45.75923591492164],
-              [3.110873427328195, 45.75923591717152]
-            ],
-            [
-              [3.110873427328195, 45.75923591717152],
-              [3.110873434220073, 45.7592359194214]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110873436603026, 45.75923589498439],
-          "type": "Point"
-        }
+        "id": 19
       },
       {
         "type": "Feature",
@@ -2296,74 +860,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110949881867384, 45.759260875349675],
-              [3.110949907306055, 45.75926083323]
-            ],
-            [
-              [3.110949888759304, 45.75926087759944],
-              [3.110949914197975, 45.759260835479765]
-            ],
-            [
-              [3.110949895651224, 45.75926087984921],
-              [3.110949921089895, 45.75926083772953]
-            ],
-            [
-              [3.110949914197975, 45.759260835479765],
-              [3.110949921089895, 45.75926083772953]
-            ],
-            [
-              [3.110949907306055, 45.75926083323],
-              [3.110949914197975, 45.759260835479765]
-            ],
-            [
-              [3.110949881867384, 45.759260875349675],
-              [3.110949888759304, 45.75926087759944]
-            ],
-            [
-              [3.110949888759304, 45.75926087759944],
-              [3.110949895651224, 45.75926087984921]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110949898032679, 45.759260855414716],
-          "type": "Point"
-        }
+        "id": 20
       },
       {
         "type": "Feature",
@@ -2391,74 +889,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111006012729376, 45.75928524831336],
-              [3.111006038165227, 45.75928520619708]
-            ],
-            [
-              [3.11100601962136, 45.75928525056298],
-              [3.11100604505721, 45.7592852084467]
-            ],
-            [
-              [3.111006026513344, 45.7592852528126],
-              [3.111006051949194, 45.75928521069632]
-            ],
-            [
-              [3.11100604505721, 45.7592852084467],
-              [3.111006051949194, 45.75928521069632]
-            ],
-            [
-              [3.111006038165227, 45.75928520619708],
-              [3.11100604505721, 45.7592852084467]
-            ],
-            [
-              [3.111006012729376, 45.75928524831336],
-              [3.11100601962136, 45.75928525056298]
-            ],
-            [
-              [3.11100601962136, 45.75928525056298],
-              [3.111006026513344, 45.7592852528126]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111006028893293, 45.75928522838003],
-          "type": "Point"
-        }
+        "id": 21
       },
       {
         "type": "Feature",
@@ -2492,74 +924,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111081136229667, 45.75930588695232],
-              [3.11108116166316, 45.759305844840696]
-            ],
-            [
-              [3.111081143121671, 45.75930588920186],
-              [3.111081168555164, 45.75930584709024]
-            ],
-            [
-              [3.111081150013676, 45.7593058914514],
-              [3.111081175447168, 45.759305849339775]
-            ],
-            [
-              [3.111081168555164, 45.75930584709024],
-              [3.111081175447168, 45.759305849339775]
-            ],
-            [
-              [3.11108116166316, 45.759305844840696],
-              [3.111081168555164, 45.75930584709024]
-            ],
-            [
-              [3.111081136229667, 45.75930588695232],
-              [3.111081143121671, 45.75930588920186]
-            ],
-            [
-              [3.111081143121671, 45.75930588920186],
-              [3.111081150013676, 45.7593058914514]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111081152392415, 45.75930586702128],
-          "type": "Point"
-        }
+        "id": 22
       },
       {
         "type": "Feature",
@@ -2589,74 +955,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.11060597595372, 45.759023467396155],
-              [3.110606001420106, 45.7590234252566]
-            ],
-            [
-              [3.11060598284477, 45.75902346964761],
-              [3.110606008311156, 45.759023427508055]
-            ],
-            [
-              [3.11060598973582, 45.759023471899056],
-              [3.110606015202205, 45.7590234297595]
-            ],
-            [
-              [3.110606008311156, 45.759023427508055],
-              [3.110606015202205, 45.7590234297595]
-            ],
-            [
-              [3.110606001420106, 45.7590234252566],
-              [3.110606008311156, 45.759023427508055]
-            ],
-            [
-              [3.11060597595372, 45.759023467396155],
-              [3.11060598284477, 45.75902346964761]
-            ],
-            [
-              [3.11060598284477, 45.75902346964761],
-              [3.11060598973582, 45.759023471899056]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110605992132437, 45.7590234474521],
-          "type": "Point"
-        }
+        "id": 23
       },
       {
         "type": "Feature",
@@ -2684,74 +984,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110660566127093, 45.759035248099366],
-              [3.110660591592146, 45.75903520596323]
-            ],
-            [
-              [3.110660573018141, 45.759035250350784],
-              [3.110660598483193, 45.759035208214655]
-            ],
-            [
-              [3.110660579909189, 45.75903525260221],
-              [3.110660605374241, 45.759035210466074]
-            ],
-            [
-              [3.110660598483193, 45.759035208214655],
-              [3.110660605374241, 45.759035210466074]
-            ],
-            [
-              [3.110660591592146, 45.75903520596323],
-              [3.110660598483193, 45.759035208214655]
-            ],
-            [
-              [3.110660566127093, 45.759035248099366],
-              [3.110660573018141, 45.759035250350784]
-            ],
-            [
-              [3.110660573018141, 45.759035250350784],
-              [3.110660579909189, 45.75903525260221]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110660582305143, 45.75903522815701],
-          "type": "Point"
-        }
+        "id": 24
       },
       {
         "type": "Feature",
@@ -2781,74 +1015,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110708129381583, 45.7590506866384],
-              [3.110708154844861, 45.7590506445052]
-            ],
-            [
-              [3.110708136272657, 45.75905068888976],
-              [3.110708161735935, 45.75905064675655]
-            ],
-            [
-              [3.110708143163731, 45.759050691141105],
-              [3.110708168627009, 45.759050649007904]
-            ],
-            [
-              [3.110708161735935, 45.75905064675655],
-              [3.110708168627009, 45.759050649007904]
-            ],
-            [
-              [3.110708154844861, 45.7590506445052],
-              [3.110708161735935, 45.75905064675655]
-            ],
-            [
-              [3.110708129381583, 45.7590506866384],
-              [3.110708136272657, 45.75905068888976]
-            ],
-            [
-              [3.110708136272657, 45.75905068888976],
-              [3.110708143163731, 45.759050691141105]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110708145558758, 45.75905066669748],
-          "type": "Point"
-        }
+        "id": 25
       },
       {
         "type": "Feature",
@@ -2876,74 +1044,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110755393105579, 45.759066127659636],
-              [3.110755418567082, 45.75906608552934]
-            ],
-            [
-              [3.11075539999668, 45.75906612991091],
-              [3.110755425458183, 45.75906608778062]
-            ],
-            [
-              [3.110755406887781, 45.75906613216218],
-              [3.110755432349284, 45.7590660900319]
-            ],
-            [
-              [3.110755425458183, 45.75906608778062],
-              [3.110755432349284, 45.7590660900319]
-            ],
-            [
-              [3.110755418567082, 45.75906608552934],
-              [3.110755425458183, 45.75906608778062]
-            ],
-            [
-              [3.110755393105579, 45.759066127659636],
-              [3.11075539999668, 45.75906612991091]
-            ],
-            [
-              [3.11075539999668, 45.75906612991091],
-              [3.110755406887781, 45.75906613216218]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110755409281881, 45.75906610772013],
-          "type": "Point"
-        }
+        "id": 26
       },
       {
         "type": "Feature",
@@ -2981,74 +1083,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110826430628418, 45.759089435379316],
-              [3.110826456087242, 45.7590893932534]
-            ],
-            [
-              [3.11082643751956, 45.75908943763048],
-              [3.110826462978383, 45.75908939550456]
-            ],
-            [
-              [3.110826444410701, 45.75908943988164],
-              [3.110826469869524, 45.75908939775572]
-            ],
-            [
-              [3.110826462978383, 45.75908939550456],
-              [3.110826469869524, 45.75908939775572]
-            ],
-            [
-              [3.110826456087242, 45.7590893932534],
-              [3.110826462978383, 45.75908939550456]
-            ],
-            [
-              [3.110826430628418, 45.759089435379316],
-              [3.11082643751956, 45.75908943763048]
-            ],
-            [
-              [3.11082643751956, 45.75908943763048],
-              [3.110826444410701, 45.75908943988164]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.1108264468034, 45.759089415441935],
-          "type": "Point"
-        }
+        "id": 27
       },
       {
         "type": "Feature",
@@ -3078,74 +1114,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110891905782967, 45.75911687639591],
-              [3.110891931238616, 45.75911683427396]
-            ],
-            [
-              [3.110891912674178, 45.759116878646914],
-              [3.110891938129827, 45.75911683652497]
-            ],
-            [
-              [3.110891919565389, 45.75911688089792],
-              [3.110891945021037, 45.759116838775974]
-            ],
-            [
-              [3.110891938129827, 45.75911683652497],
-              [3.110891945021037, 45.759116838775974]
-            ],
-            [
-              [3.110891931238616, 45.75911683427396],
-              [3.110891938129827, 45.75911683652497]
-            ],
-            [
-              [3.110891905782967, 45.75911687639591],
-              [3.110891912674178, 45.759116878646914]
-            ],
-            [
-              [3.110891912674178, 45.759116878646914],
-              [3.110891919565389, 45.75911688089792]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110891921956396, 45.75911685646044],
-          "type": "Point"
-        }
+        "id": 28
       },
       {
         "type": "Feature",
@@ -3173,74 +1143,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110998593325114, 45.75903250174447],
-              [3.11099861879087, 45.75903245963031]
-            ],
-            [
-              [3.11099860021574, 45.75903250399641],
-              [3.110998625681495, 45.75903246188224]
-            ],
-            [
-              [3.110998607106365, 45.75903250624834],
-              [3.11099863257212, 45.75903246413418]
-            ],
-            [
-              [3.110998625681495, 45.75903246188224],
-              [3.11099863257212, 45.75903246413418]
-            ],
-            [
-              [3.11099861879087, 45.75903245963031],
-              [3.110998625681495, 45.75903246188224]
-            ],
-            [
-              [3.110998593325114, 45.75903250174447],
-              [3.11099860021574, 45.75903250399641]
-            ],
-            [
-              [3.11099860021574, 45.75903250399641],
-              [3.110998607106365, 45.75903250624834]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110998609503304, 45.75903248181336],
-          "type": "Point"
-        }
+        "id": 29
       },
       {
         "type": "Feature",
@@ -3268,74 +1172,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111076541797403, 45.75905797541791],
-              [3.111076567260231, 45.75905793330854]
-            ],
-            [
-              [3.111076548688072, 45.75905797766972],
-              [3.111076574150901, 45.75905793556035]
-            ],
-            [
-              [3.111076555578741, 45.75905797992153],
-              [3.11107658104157, 45.759057937812166]
-            ],
-            [
-              [3.111076574150901, 45.75905793556035],
-              [3.11107658104157, 45.759057937812166]
-            ],
-            [
-              [3.111076567260231, 45.75905793330854],
-              [3.111076574150901, 45.75905793556035]
-            ],
-            [
-              [3.111076541797403, 45.75905797541791],
-              [3.111076548688072, 45.75905797766972]
-            ],
-            [
-              [3.111076548688072, 45.75905797766972],
-              [3.111076555578741, 45.75905797992153]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111076557974151, 45.75905795548913],
-          "type": "Point"
-        }
+        "id": 30
       },
       {
         "type": "Feature",
@@ -3363,74 +1201,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111013771804223, 45.759007402075],
-              [3.111013797272967, 45.759007359962084]
-            ],
-            [
-              [3.111013778694694, 45.759007404327185],
-              [3.111013804163438, 45.75900736221427]
-            ],
-            [
-              [3.111013785585166, 45.75900740657938],
-              [3.111013811053909, 45.759007364466456]
-            ],
-            [
-              [3.111013804163438, 45.75900736221427],
-              [3.111013811053909, 45.759007364466456]
-            ],
-            [
-              [3.111013797272967, 45.759007359962084],
-              [3.111013804163438, 45.75900736221427]
-            ],
-            [
-              [3.111013771804223, 45.759007402075],
-              [3.111013778694694, 45.759007404327185]
-            ],
-            [
-              [3.111013778694694, 45.759007404327185],
-              [3.111013785585166, 45.75900740657938]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.11101378798383, 45.75900738214464],
-          "type": "Point"
-        }
+        "id": 31
       },
       {
         "type": "Feature",
@@ -3458,74 +1230,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111091718532187, 45.759032878606526],
-              [3.111091743998004, 45.759032836498406]
-            ],
-            [
-              [3.111091725422702, 45.75903288085859],
-              [3.111091750888518, 45.759032838750464]
-            ],
-            [
-              [3.111091732313217, 45.75903288311065],
-              [3.111091757779033, 45.759032841002536]
-            ],
-            [
-              [3.111091750888518, 45.759032838750464],
-              [3.111091757779033, 45.759032841002536]
-            ],
-            [
-              [3.111091743998004, 45.759032836498406],
-              [3.111091750888518, 45.759032838750464]
-            ],
-            [
-              [3.111091718532187, 45.759032878606526],
-              [3.111091725422702, 45.75903288085859]
-            ],
-            [
-              [3.111091725422702, 45.75903288085859],
-              [3.111091732313217, 45.75903288311065]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111091734710352, 45.759032858678495],
-          "type": "Point"
-        }
+        "id": 32
       },
       {
         "type": "Feature",
@@ -3553,74 +1259,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111029053950811, 45.75898213470042],
-              [3.111029079422562, 45.75898209258876]
-            ],
-            [
-              [3.111029060841128, 45.758982136952866],
-              [3.111029086312878, 45.7589820948412]
-            ],
-            [
-              [3.111029067731443, 45.75898213920531],
-              [3.111029093203193, 45.758982097093636]
-            ],
-            [
-              [3.111029086312878, 45.7589820948412],
-              [3.111029093203193, 45.758982097093636]
-            ],
-            [
-              [3.111029079422562, 45.75898209258876],
-              [3.111029086312878, 45.7589820948412]
-            ],
-            [
-              [3.111029053950811, 45.75898213470042],
-              [3.111029060841128, 45.758982136952866]
-            ],
-            [
-              [3.111029060841128, 45.758982136952866],
-              [3.111029067731443, 45.75898213920531]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111029070131844, 45.75898211477081],
-          "type": "Point"
-        }
+        "id": 33
       },
       {
         "type": "Feature",
@@ -3648,74 +1288,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111106998922563, 45.75900761410906],
-              [3.111107024391386, 45.7590075720022]
-            ],
-            [
-              [3.111107005812923, 45.75900761636137],
-              [3.111107031281746, 45.75900757425451]
-            ],
-            [
-              [3.111107012703283, 45.7590076186137],
-              [3.111107038172106, 45.759007576506825]
-            ],
-            [
-              [3.111107031281746, 45.75900757425451],
-              [3.111107038172106, 45.759007576506825]
-            ],
-            [
-              [3.111107024391386, 45.7590075720022],
-              [3.111107031281746, 45.75900757425451]
-            ],
-            [
-              [3.111106998922563, 45.75900761410906],
-              [3.111107005812923, 45.75900761636137]
-            ],
-            [
-              [3.111107005812923, 45.75900761636137],
-              [3.111107012703283, 45.7590076186137]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111107015102154, 45.75900759418178],
-          "type": "Point"
-        }
+        "id": 34
       },
       {
         "type": "Feature",
@@ -3745,74 +1319,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111044847397921, 45.7589560258697],
-              [3.111044872872779, 45.758955983759336]
-            ],
-            [
-              [3.111044854288076, 45.758956028122405],
-              [3.111044879762934, 45.75895598601204]
-            ],
-            [
-              [3.111044861178232, 45.75895603037512],
-              [3.111044886653089, 45.758955988264745]
-            ],
-            [
-              [3.111044879762934, 45.75895598601204],
-              [3.111044886653089, 45.758955988264745]
-            ],
-            [
-              [3.111044872872779, 45.758955983759336],
-              [3.111044879762934, 45.75895598601204]
-            ],
-            [
-              [3.111044847397921, 45.7589560258697],
-              [3.111044854288076, 45.758956028122405]
-            ],
-            [
-              [3.111044854288076, 45.758956028122405],
-              [3.111044861178232, 45.75895603037512]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111044863580426, 45.75895600594087],
-          "type": "Point"
-        }
+        "id": 35
       },
       {
         "type": "Feature",
@@ -3840,74 +1348,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111122306589001, 45.75898230825751],
-              [3.111122332060836, 45.7589822661519]
-            ],
-            [
-              [3.111122313479206, 45.75898231051008],
-              [3.111122338951041, 45.758982268404466]
-            ],
-            [
-              [3.11112232036941, 45.758982312762654],
-              [3.111122345841244, 45.75898227065704]
-            ],
-            [
-              [3.111122338951041, 45.758982268404466],
-              [3.111122345841244, 45.75898227065704]
-            ],
-            [
-              [3.111122332060836, 45.7589822661519],
-              [3.111122338951041, 45.758982268404466]
-            ],
-            [
-              [3.111122306589001, 45.75898230825751],
-              [3.111122313479206, 45.75898231051008]
-            ],
-            [
-              [3.111122313479206, 45.75898231051008],
-              [3.11112232036941, 45.758982312762654]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.11112232277002, 45.75898228833099],
-          "type": "Point"
-        }
+        "id": 36
       },
       {
         "type": "Feature",
@@ -3935,74 +1377,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111068694058134, 45.75891661147835],
-              [3.111068719537682, 45.75891656936993]
-            ],
-            [
-              [3.111068700948047, 45.75891661373145],
-              [3.111068726427595, 45.75891657162303]
-            ],
-            [
-              [3.11106870783796, 45.758916615984546],
-              [3.111068733317508, 45.758916573876135]
-            ],
-            [
-              [3.111068726427595, 45.75891657162303],
-              [3.111068733317508, 45.758916573876135]
-            ],
-            [
-              [3.111068719537682, 45.75891656936993],
-              [3.111068726427595, 45.75891657162303]
-            ],
-            [
-              [3.111068694058134, 45.75891661147835],
-              [3.111068700948047, 45.75891661373145]
-            ],
-            [
-              [3.111068700948047, 45.75891661373145],
-              [3.11106870783796, 45.758916615984546]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111068710242864, 45.75891659155069],
-          "type": "Point"
-        }
+        "id": 37
       },
       {
         "type": "Feature",
@@ -4030,74 +1406,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111145042340103, 45.75894238467891],
-              [3.111145067816688, 45.75894234257518]
-            ],
-            [
-              [3.111145049230063, 45.75894238693188],
-              [3.111145074706649, 45.75894234482816]
-            ],
-            [
-              [3.111145056120024, 45.75894238918485],
-              [3.111145081596609, 45.75894234708113]
-            ],
-            [
-              [3.111145074706649, 45.75894234482816],
-              [3.111145081596609, 45.75894234708113]
-            ],
-            [
-              [3.111145067816688, 45.75894234257518],
-              [3.111145074706649, 45.75894234482816]
-            ],
-            [
-              [3.111145042340103, 45.75894238467891],
-              [3.111145049230063, 45.75894238693188]
-            ],
-            [
-              [3.111145049230063, 45.75894238693188],
-              [3.111145056120024, 45.75894238918485]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111145058523375, 45.75894236475353],
-          "type": "Point"
-        }
+        "id": 38
       },
       {
         "type": "Feature",
@@ -4125,74 +1435,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111145881845562, 45.7587890957263],
-              [3.111145907340287, 45.75878905362421]
-            ],
-            [
-              [3.111145888734691, 45.75878909798068],
-              [3.111145914229416, 45.758789055878594]
-            ],
-            [
-              [3.11114589562382, 45.75878910023507],
-              [3.111145921118545, 45.75878905813299]
-            ],
-            [
-              [3.111145914229416, 45.758789055878594],
-              [3.111145921118545, 45.75878905813299]
-            ],
-            [
-              [3.111145907340287, 45.75878905362421],
-              [3.111145914229416, 45.758789055878594]
-            ],
-            [
-              [3.111145881845562, 45.7587890957263],
-              [3.111145888734691, 45.75878909798068]
-            ],
-            [
-              [3.111145888734691, 45.75878909798068],
-              [3.11114589562382, 45.75878910023507]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111145898037488, 45.75878907580245],
-          "type": "Point"
-        }
+        "id": 39
       },
       {
         "type": "Feature",
@@ -4224,74 +1468,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111223596712352, 45.75881495494056],
-              [3.111223622204105, 45.758814912843256]
-            ],
-            [
-              [3.111223603601527, 45.75881495719482],
-              [3.11122362909328, 45.75881491509751]
-            ],
-            [
-              [3.111223610490703, 45.758814959449076],
-              [3.111223635982455, 45.75881491735177]
-            ],
-            [
-              [3.11122362909328, 45.75881491509751],
-              [3.111223635982455, 45.75881491735177]
-            ],
-            [
-              [3.111223622204105, 45.758814912843256],
-              [3.11122362909328, 45.75881491509751]
-            ],
-            [
-              [3.111223596712352, 45.75881495494056],
-              [3.111223603601527, 45.75881495719482]
-            ],
-            [
-              [3.111223603601527, 45.75881495719482],
-              [3.111223610490703, 45.758814959449076]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111223612902815, 45.75881493501903],
-          "type": "Point"
-        }
+        "id": 40
       },
       {
         "type": "Feature",
@@ -4319,74 +1497,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111177796126638, 45.75889060718183],
-              [3.111177821609387, 45.75889056508077]
-            ],
-            [
-              [3.111177803016279, 45.758890609435326],
-              [3.111177828499028, 45.75889056733426]
-            ],
-            [
-              [3.111177809905919, 45.75889061168882],
-              [3.111177835388668, 45.75889056958776]
-            ],
-            [
-              [3.111177828499028, 45.75889056733426],
-              [3.111177835388668, 45.75889056958776]
-            ],
-            [
-              [3.111177821609387, 45.75889056508077],
-              [3.111177828499028, 45.75889056733426]
-            ],
-            [
-              [3.111177796126638, 45.75889060718183],
-              [3.111177803016279, 45.758890609435326]
-            ],
-            [
-              [3.111177803016279, 45.758890609435326],
-              [3.111177809905919, 45.75889061168882]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111177812312832, 45.758890587258044],
-          "type": "Point"
-        }
+        "id": 41
       },
       {
         "type": "Feature",
@@ -4422,74 +1534,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111362465616913, 45.75867406465967],
-              [3.111362491125492, 45.75867402257283]
-            ],
-            [
-              [3.111362472505157, 45.75867406691542],
-              [3.111362498013735, 45.75867402482859]
-            ],
-            [
-              [3.1113624793934, 45.75867406917118],
-              [3.111362504901979, 45.75867402708434]
-            ],
-            [
-              [3.111362498013735, 45.75867402482859],
-              [3.111362504901979, 45.75867402708434]
-            ],
-            [
-              [3.111362491125492, 45.75867402257283],
-              [3.111362498013735, 45.75867402482859]
-            ],
-            [
-              [3.111362465616913, 45.75867406465967],
-              [3.111362472505157, 45.75867406691542]
-            ],
-            [
-              [3.111362472505157, 45.75867406691542],
-              [3.1113624793934, 45.75867406917118]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111362481815323, 45.758674044744126],
-          "type": "Point"
-        }
+        "id": 42
       },
       {
         "type": "Feature",
@@ -4517,74 +1563,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111331878041045, 45.75867322829556],
-              [3.111331903549688, 45.75867318620674]
-            ],
-            [
-              [3.111331884929321, 45.758673230551274],
-              [3.111331910437964, 45.75867318846246]
-            ],
-            [
-              [3.111331891817598, 45.75867323280699],
-              [3.11133191732624, 45.758673190718184]
-            ],
-            [
-              [3.111331910437964, 45.75867318846246],
-              [3.11133191732624, 45.758673190718184]
-            ],
-            [
-              [3.111331903549688, 45.75867318620674],
-              [3.111331910437964, 45.75867318846246]
-            ],
-            [
-              [3.111331878041045, 45.75867322829556],
-              [3.111331884929321, 45.758673230551274]
-            ],
-            [
-              [3.111331884929321, 45.758673230551274],
-              [3.111331891817598, 45.75867323280699]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111331894239504, 45.75867320837901],
-          "type": "Point"
-        }
+        "id": 43
       },
       {
         "type": "Feature",
@@ -4614,74 +1594,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111308704042418, 45.758656609855606],
-              [3.111308729553001, 45.758656567765456]
-            ],
-            [
-              [3.111308710930632, 45.758656612111444],
-              [3.111308736441215, 45.758656570021294]
-            ],
-            [
-              [3.111308717818846, 45.758656614367275],
-              [3.111308743329428, 45.75865657227713]
-            ],
-            [
-              [3.111308736441215, 45.758656570021294],
-              [3.111308743329428, 45.75865657227713]
-            ],
-            [
-              [3.111308729553001, 45.758656567765456],
-              [3.111308736441215, 45.758656570021294]
-            ],
-            [
-              [3.111308704042418, 45.758656609855606],
-              [3.111308710930632, 45.758656612111444]
-            ],
-            [
-              [3.111308710930632, 45.758656612111444],
-              [3.111308717818846, 45.758656614367275]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111308720241816, 45.75865658993845],
-          "type": "Point"
-        }
+        "id": 44
       },
       {
         "type": "Feature",
@@ -4717,74 +1631,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111230592635018, 45.75862192174523],
-              [3.111230618149617, 45.75862187965038]
-            ],
-            [
-              [3.111230599523139, 45.758621924001275],
-              [3.111230625037737, 45.75862188190642]
-            ],
-            [
-              [3.111230606411259, 45.75862192625731],
-              [3.111230631925858, 45.758621884162466]
-            ],
-            [
-              [3.111230625037737, 45.75862188190642],
-              [3.111230631925858, 45.758621884162466]
-            ],
-            [
-              [3.111230618149617, 45.75862187965038],
-              [3.111230625037737, 45.75862188190642]
-            ],
-            [
-              [3.111230592635018, 45.75862192174523],
-              [3.111230599523139, 45.758621924001275]
-            ],
-            [
-              [3.111230599523139, 45.758621924001275],
-              [3.111230606411259, 45.75862192625731]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111230608836377, 45.758621901825826],
-          "type": "Point"
-        }
+        "id": 45
       },
       {
         "type": "Feature",
@@ -4820,74 +1668,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111281261738062, 45.758538346540185],
-              [3.111281287262605, 45.75853830444949]
-            ],
-            [
-              [3.111281268625668, 45.75853834879707],
-              [3.11128129415021, 45.75853830670638]
-            ],
-            [
-              [3.111281275513273, 45.75853835105395],
-              [3.111281301037816, 45.75853830896327]
-            ],
-            [
-              [3.11128129415021, 45.75853830670638],
-              [3.111281301037816, 45.75853830896327]
-            ],
-            [
-              [3.111281287262605, 45.75853830444949],
-              [3.11128129415021, 45.75853830670638]
-            ],
-            [
-              [3.111281261738062, 45.758538346540185],
-              [3.111281268625668, 45.75853834879707]
-            ],
-            [
-              [3.111281268625668, 45.75853834879707],
-              [3.111281275513273, 45.75853835105395]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111281277944136, 45.75853832662328],
-          "type": "Point"
-        }
+        "id": 46
       },
       {
         "type": "Feature",
@@ -4915,74 +1697,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111284057946385, 45.758502783497526],
-              [3.111284083475138, 45.75850274140738]
-            ],
-            [
-              [3.111284064833794, 45.758502785754736],
-              [3.111284090362547, 45.75850274366459]
-            ],
-            [
-              [3.111284071721204, 45.75850278801195],
-              [3.111284097249956, 45.75850274592181]
-            ],
-            [
-              [3.111284090362547, 45.75850274366459],
-              [3.111284097249956, 45.75850274592181]
-            ],
-            [
-              [3.111284083475138, 45.75850274140738],
-              [3.111284090362547, 45.75850274366459]
-            ],
-            [
-              [3.111284057946385, 45.758502783497526],
-              [3.111284064833794, 45.758502785754736]
-            ],
-            [
-              [3.111284064833794, 45.758502785754736],
-              [3.111284071721204, 45.75850278801195]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111284074154466, 45.758502763581056],
-          "type": "Point"
-        }
+        "id": 47
       },
       {
         "type": "Feature",
@@ -5012,74 +1728,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111318239287905, 45.7584773803642],
-              [3.111318264819702, 45.75847733827653]
-            ],
-            [
-              [3.111318246175135, 45.75847738262169],
-              [3.111318271706931, 45.758477340534036]
-            ],
-            [
-              [3.111318253062365, 45.75847738487919],
-              [3.111318278594161, 45.75847734279154]
-            ],
-            [
-              [3.111318271706931, 45.758477340534036],
-              [3.111318278594161, 45.75847734279154]
-            ],
-            [
-              [3.111318264819702, 45.75847733827653],
-              [3.111318271706931, 45.758477340534036]
-            ],
-            [
-              [3.111318239287905, 45.7584773803642],
-              [3.111318246175135, 45.75847738262169]
-            ],
-            [
-              [3.111318246175135, 45.75847738262169],
-              [3.111318253062365, 45.75847738487919]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111318255497418, 45.75847736044911],
-          "type": "Point"
-        }
+        "id": 48
       },
       {
         "type": "Feature",
@@ -5109,74 +1759,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111413072552594, 45.758508539353734],
-              [3.111413098080811, 45.75850849727191]
-            ],
-            [
-              [3.111413079439878, 45.758508541611086],
-              [3.111413104968095, 45.75850849952925]
-            ],
-            [
-              [3.111413086327163, 45.75850854386843],
-              [3.111413111855379, 45.7585085017866]
-            ],
-            [
-              [3.111413104968095, 45.75850849952925],
-              [3.111413111855379, 45.7585085017866]
-            ],
-            [
-              [3.111413098080811, 45.75850849727191],
-              [3.111413104968095, 45.75850849952925]
-            ],
-            [
-              [3.111413072552594, 45.758508539353734],
-              [3.111413079439878, 45.758508541611086]
-            ],
-            [
-              [3.111413079439878, 45.758508541611086],
-              [3.111413086327163, 45.75850854386843]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111413088760343, 45.75850851944149],
-          "type": "Point"
-        }
+        "id": 49
       },
       {
         "type": "Feature",
@@ -5210,74 +1794,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111458563008274, 45.758523600180766],
-              [3.11145858853476, 45.758523558101736]
-            ],
-            [
-              [3.111458569895585, 45.75852360243804],
-              [3.111458595422071, 45.758523560359]
-            ],
-            [
-              [3.111458576782896, 45.75852360469531],
-              [3.111458602309382, 45.75852356261628]
-            ],
-            [
-              [3.111458595422071, 45.758523560359],
-              [3.111458602309382, 45.75852356261628]
-            ],
-            [
-              [3.11145858853476, 45.758523558101736],
-              [3.111458595422071, 45.758523560359]
-            ],
-            [
-              [3.111458563008274, 45.758523600180766],
-              [3.111458569895585, 45.75852360243804]
-            ],
-            [
-              [3.111458569895585, 45.75852360243804],
-              [3.111458576782896, 45.75852360469531]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111458579215172, 45.75852358026989],
-          "type": "Point"
-        }
+        "id": 50
       },
       {
         "type": "Feature",
@@ -5333,74 +1851,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111385333616498, 45.75858150173557],
-              [3.111385359136052, 45.758581459651175]
-            ],
-            [
-              [3.111385340504211, 45.758581503992204],
-              [3.111385366023766, 45.758581461907816]
-            ],
-            [
-              [3.111385347391925, 45.75858150624884],
-              [3.11138537291148, 45.75858146416445]
-            ],
-            [
-              [3.111385366023766, 45.758581461907816],
-              [3.11138537291148, 45.75858146416445]
-            ],
-            [
-              [3.111385359136052, 45.758581459651175],
-              [3.111385366023766, 45.758581461907816]
-            ],
-            [
-              [3.111385333616498, 45.75858150173557],
-              [3.111385340504211, 45.758581503992204]
-            ],
-            [
-              [3.111385340504211, 45.758581503992204],
-              [3.111385347391925, 45.75858150624884]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111385349820131, 45.758581481821686],
-          "type": "Point"
-        }
+        "id": 51
       },
       {
         "type": "Feature",
@@ -5438,74 +1890,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110351692747448, 45.759026067411945],
-              [3.110351718213246, 45.75902602525584]
-            ],
-            [
-              [3.110351699638818, 45.759026069663015],
-              [3.110351725104616, 45.759026027506906]
-            ],
-            [
-              [3.110351706530188, 45.75902607191407],
-              [3.110351731995985, 45.75902602975797]
-            ],
-            [
-              [3.110351725104616, 45.759026027506906],
-              [3.110351731995985, 45.75902602975797]
-            ],
-            [
-              [3.110351718213246, 45.75902602525584],
-              [3.110351725104616, 45.759026027506906]
-            ],
-            [
-              [3.110351692747448, 45.759026067411945],
-              [3.110351699638818, 45.759026069663015]
-            ],
-            [
-              [3.110351699638818, 45.759026069663015],
-              [3.110351706530188, 45.75902607191407]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110351708926032, 45.75902604745943],
-          "type": "Point"
-        }
+        "id": 52
       },
       {
         "type": "Feature",
@@ -5539,74 +1925,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110280665110699, 45.75906896041674],
-              [3.110280690571342, 45.75906891825557]
-            ],
-            [
-              [3.110280672002387, 45.75906896266731],
-              [3.110280697463029, 45.759068920506145]
-            ],
-            [
-              [3.110280678894074, 45.75906896491787],
-              [3.110280704354716, 45.759068922756704]
-            ],
-            [
-              [3.110280697463029, 45.759068920506145],
-              [3.110280704354716, 45.759068922756704]
-            ],
-            [
-              [3.110280690571342, 45.75906891825557],
-              [3.110280697463029, 45.759068920506145]
-            ],
-            [
-              [3.110280665110699, 45.75906896041674],
-              [3.110280672002387, 45.75906896266731]
-            ],
-            [
-              [3.110280672002387, 45.75906896266731],
-              [3.110280678894074, 45.75906896491787]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110280681286863, 45.75906894046145],
-          "type": "Point"
-        }
+        "id": 53
       },
       {
         "type": "Feature",
@@ -5640,74 +1960,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110187748685337, 45.75914091523687],
-              [3.11018777413736, 45.75914087306893]
-            ],
-            [
-              [3.110187755577526, 45.75914091748664],
-              [3.110187781029548, 45.7591408753187]
-            ],
-            [
-              [3.110187762469714, 45.75914091973641],
-              [3.110187787921737, 45.75914087756847]
-            ],
-            [
-              [3.110187781029548, 45.7591408753187],
-              [3.110187787921737, 45.75914087756847]
-            ],
-            [
-              [3.11018777413736, 45.75914087306893],
-              [3.110187781029548, 45.7591408753187]
-            ],
-            [
-              [3.110187748685337, 45.75914091523687],
-              [3.110187755577526, 45.75914091748664]
-            ],
-            [
-              [3.110187755577526, 45.75914091748664],
-              [3.110187762469714, 45.75914091973641]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110187764857442, 45.75914089527778],
-          "type": "Point"
-        }
+        "id": 54
       },
       {
         "type": "Feature",
@@ -5747,122 +2001,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110347197639946, 45.759190181315816],
-              [3.110347223086311, 45.75919013915773]
-            ],
-            [
-              [3.110347204532209, 45.75919018356536],
-              [3.110347229978575, 45.759190141407274]
-            ],
-            [
-              [3.110347211424473, 45.75919018581491],
-              [3.110347236870838, 45.759190143656824]
-            ],
-            [
-              [3.110347229978575, 45.759190141407274],
-              [3.110347236870838, 45.759190143656824]
-            ],
-            [
-              [3.110347223086311, 45.75919013915773],
-              [3.110347229978575, 45.759190141407274]
-            ],
-            [
-              [3.110347197639946, 45.759190181315816],
-              [3.110347204532209, 45.75919018356536]
-            ],
-            [
-              [3.110347204532209, 45.75919018356536],
-              [3.110347211424473, 45.75919018581491]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.11034721380926, 45.759190161361545],
-          "type": "Point"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110391119920616, 45.75909593660342],
-              [3.110391145378187, 45.75909589444915]
-            ],
-            [
-              [3.110391126812317, 45.759095938853896],
-              [3.110391152269887, 45.759095896699634]
-            ],
-            [
-              [3.110391133704018, 45.75909594110438],
-              [3.110391159161588, 45.759095898950115]
-            ],
-            [
-              [3.110391152269887, 45.759095896699634],
-              [3.110391159161588, 45.759095898950115]
-            ],
-            [
-              [3.110391145378187, 45.75909589444915],
-              [3.110391152269887, 45.759095896699634]
-            ],
-            [
-              [3.110391119920616, 45.75909593660342],
-              [3.110391126812317, 45.759095938853896]
-            ],
-            [
-              [3.110391126812317, 45.759095938853896],
-              [3.110391133704018, 45.75909594110438]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
+        "id": 55
       },
       {
         "type": "Feature",
@@ -5898,74 +2038,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.111258304440125, 45.75857620796872],
-              [3.111258329960163, 45.75857616587614]
-            ],
-            [
-              [3.111258311327964, 45.75857621022523],
-              [3.111258336848002, 45.75857616813265]
-            ],
-            [
-              [3.111258318215803, 45.75857621248173],
-              [3.11125834373584, 45.75857617038915]
-            ],
-            [
-              [3.111258336848002, 45.75857616813265],
-              [3.11125834373584, 45.75857617038915]
-            ],
-            [
-              [3.111258329960163, 45.75857616587614],
-              [3.111258336848002, 45.75857616813265]
-            ],
-            [
-              [3.111258304440125, 45.75857620796872],
-              [3.111258311327964, 45.75857621022523]
-            ],
-            [
-              [3.111258311327964, 45.75857621022523],
-              [3.111258318215803, 45.75857621248173]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.111258320644063, 45.75857618805069],
-          "type": "Point"
-        }
+        "id": 56
       },
       {
         "type": "Feature",
@@ -5995,74 +2069,8 @@
             ]
           ],
           "type": "Polygon"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
         },
-        "geometry": {
-          "coordinates": [
-            [
-              [3.110827508023282, 45.759220926346565],
-              [3.110827533466543, 45.75922088421936]
-            ],
-            [
-              [3.110827514915134, 45.75922092859652],
-              [3.110827540358394, 45.759220886469315]
-            ],
-            [
-              [3.110827521806985, 45.759220930846475],
-              [3.110827547250246, 45.75922088871927]
-            ],
-            [
-              [3.110827540358394, 45.759220886469315],
-              [3.110827547250246, 45.75922088871927]
-            ],
-            [
-              [3.110827533466543, 45.75922088421936],
-              [3.110827540358394, 45.759220886469315]
-            ],
-            [
-              [3.110827508023282, 45.759220926346565],
-              [3.110827514915134, 45.75922092859652]
-            ],
-            [
-              [3.110827514915134, 45.75922092859652],
-              [3.110827521806985, 45.759220930846475]
-            ]
-          ],
-          "type": "MultiLineString"
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {
-          "name": null,
-          "alt_name": null,
-          "category": null,
-          "restriction": null,
-          "accessibility": null,
-          "display_point": null,
-          "feature_type": "unit",
-          "level_id": null,
-          "show": true,
-          "area": 0
-        },
-        "geometry": {
-          "coordinates": [3.110827524190838, 45.75922090640794],
-          "type": "Point"
-        }
+        "id": 57
       }
     ]
   },
