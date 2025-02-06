@@ -1,5 +1,5 @@
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 
@@ -10,6 +10,7 @@ import { Card, CardContent } from "../ui/card";
 import DiscoveryView from "./discovery-view";
 import LocationDetail from "./location-detail";
 import NavigationView from "./navigation-view";
+import poiMap from "~/utils/poi-map";
 
 type UIMode = "discovery" | "detail" | "navigation";
 
@@ -53,7 +54,6 @@ export default function DiscoveryPanel() {
 
   function handleSelectPOI(poi: POI) {
     setSelectedPOI(poi);
-    console.log("Selected POI", poi);
     setMode("detail");
   }
 
@@ -62,6 +62,27 @@ export default function DiscoveryPanel() {
     setSelectedPOI(null);
     indoorDirections?.clear();
   }
+
+  useEffect(() => {
+    map?.on("click", "indoor-map-extrusion", (event) => {
+      const { features } = event;
+      if (!features?.length) return;
+
+      const clickedFeature = features[0];
+      const unitId = Number(clickedFeature.id);
+      const relatedPOIs = poiMap.get(unitId);
+      console.log(relatedPOIs);
+
+      if (relatedPOIs && relatedPOIs[0]) {
+        const firstPOI = relatedPOIs[0];
+        const poi: POI = {
+          name: firstPOI.properties?.name as string,
+          coordinates: firstPOI.geometry.coordinates,
+        };
+        handleSelectPOI(poi);
+      }
+    });
+  }, [map]);
 
   return (
     <Card className="z-10 w-full max-w-[23.5rem] rounded-xl bg-white shadow-lg md:absolute md:left-4 md:top-4">
