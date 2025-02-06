@@ -1,13 +1,12 @@
 import { ArrowLeft, Search, SlidersVertical } from "lucide-react";
 import { useEffect, useState } from "react";
 import topLocations from "~/mock/top-locations";
-import useMapStore from "~/stores/use-map-store";
 import { POI } from "~/types/poi";
 import { IndoorGeocoder } from "~/utils/indoor-geocoder";
-import NavigationSettings from "./navigation-settings";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Toggle } from "../ui/toggle";
+import NavigationSettings from "./navigation-settings";
 import SuggestionsList from "./suggestions-list";
 
 interface DiscoveryViewProps {
@@ -19,8 +18,6 @@ export default function DiscoveryView({
   indoorGeocoder,
   onSelectPOI,
 }: DiscoveryViewProps) {
-  const map = useMapStore((state) => state.mapInstance);
-
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [suggestions, setSuggestions] = useState<Array<POI>>([]);
@@ -36,21 +33,11 @@ export default function DiscoveryView({
     setSuggestions(newSuggestions);
   }, [searchQuery, indoorGeocoder]);
 
-  function navigateToPOI(coordinates: [number, number]) {
-    map?.flyTo({
-      center: coordinates,
-      zoom: 20,
-      duration: 1000,
-    });
-  }
-
   function handleSuggestionClick(suggestion: POI) {
     setSearchQuery(suggestion.name);
     setIsSearching(false);
 
     onSelectPOI(suggestion);
-
-    navigateToPOI([suggestion.coordinates[0], suggestion.coordinates[1]]);
   }
 
   function handleTopLocationsClick(topLocationName: string) {
@@ -59,7 +46,6 @@ export default function DiscoveryView({
     const poi = indoorGeocoder.indoorGeocodeInput(topLocationName);
 
     onSelectPOI(poi);
-    navigateToPOI(poi.coordinates);
   }
 
   return (

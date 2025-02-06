@@ -52,10 +52,17 @@ export default function DiscoveryPanel() {
       console.error("Error during routing:", error);
     }
       */
-
+  function navigateToPOI(coordinates: GeoJSON.Position) {
+    map?.flyTo({
+      center: coordinates as [number, number],
+      zoom: 20,
+      duration: 1000,
+    });
+  }
   function handleSelectPOI(poi: POI) {
     setSelectedPOI(poi);
     setMode("detail");
+    navigateToPOI(poi.coordinates);
   }
 
   function handleBackClick() {
@@ -84,9 +91,11 @@ export default function DiscoveryPanel() {
           coordinates: firstPOI.geometry.coordinates,
         };
         setSelectedPOI(poi);
-
-        if (mode === "discovery") {
-          setMode("detail");
+        if (mode === "discovery" || mode === "detail") {
+          navigateToPOI(poi.coordinates);
+          if (mode === "discovery") {
+            setMode("detail");
+          }
         }
       }
     };
@@ -95,7 +104,7 @@ export default function DiscoveryPanel() {
     return () => {
       map?.off("click", "indoor-map-extrusion", handleMapClick);
     };
-  }, [map, mode]);
+  }, [map, mode, navigateToPOI]);
 
   return (
     <Card className="z-10 w-full max-w-[23.5rem] rounded-xl bg-white shadow-lg md:absolute md:left-4 md:top-4">

@@ -1,5 +1,5 @@
 export interface POI {
   name: string;
-  coordinates: [number, number] | GeoJSON.Position;
+  coordinates: GeoJSON.Position;
   // add any additional properties as needed
 }
