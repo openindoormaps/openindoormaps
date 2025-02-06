@@ -28,6 +28,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script async src="https://tally.so/widgets/embed.js"></script>
         <Meta />
         <Links />
       </head>

@@ -13,6 +13,7 @@ import DiscoveryPanel from "./discovery-panel/discovery-panel";
 import { FloorSelector } from "./floor-selector";
 import { FloorUpDownControl } from "./floor-up-down-control";
 import { IndoorMapGeoJSON } from "~/types/geojson";
+import DemoBanner from "./demo-banner";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -65,6 +66,7 @@ export default function MapComponent() {
       <FloorSelector indoorMapLayer={indoorMapLayer} />
       <FloorUpDownControl indoorMapLayer={indoorMapLayer} />
       <div ref={mapContainer} className="size-full" />
+      <DemoBanner />
     </div>
   );
 }
