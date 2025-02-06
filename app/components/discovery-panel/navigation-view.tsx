@@ -74,8 +74,6 @@ export default function NavigationView({
       indoorDirections.setWaypoints([departureCoord, destinationCoord]);
     }
 
-    map?.setPitch(0);
-
     const coordinates = indoorDirections.routelinesCoordinates[0][0].geometry
       .coordinates as [number, number][];
 
@@ -83,9 +81,10 @@ export default function NavigationView({
     for (const coord of coordinates) {
       bounds = bounds.extend(coord);
     }
+
     map?.fitBounds(bounds, {
-      padding: 50,
-      speed: 0.8,
+      padding: 200,
+      speed: 0.5,
     });
   }
 
@@ -121,7 +120,6 @@ export default function NavigationView({
             <Input
               type="text"
               placeholder="Choose starting point"
-              className="grow text-sm focus:ring-0"
               value={departureLocation}
               onChange={(e) => setDepartureLocation(e.target.value)}
               onFocus={() => setActiveInput("departure")}
