@@ -210,7 +210,7 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
    *
    * @param waypoints The coordinates at which the waypoints should be added
    */
-  public setWaypoints(waypoints: [number, number][]) {
+  public setWaypoints(waypoints: [number, number][] | GeoJSON.Position[]) {
     // this.abortController?.abort();
 
     this._waypoints = waypoints.map((coord) => buildPoint(coord, "WAYPOINT"));

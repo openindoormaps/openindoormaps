@@ -11,6 +11,7 @@ import DiscoveryView from "./discovery-view";
 import LocationDetail from "./location-detail";
 import NavigationView from "./navigation-view";
 import poiMap from "~/utils/poi-map";
+import { MapGeoJSONFeature, MapMouseEvent } from "maplibre-gl";
 
 type UIMode = "discovery" | "detail" | "navigation";
 
@@ -64,14 +65,17 @@ export default function DiscoveryPanel() {
   }
 
   useEffect(() => {
-    map?.on("click", "indoor-map-extrusion", (event) => {
+    const handleMapClick = (
+      event: MapMouseEvent & {
+        features?: MapGeoJSONFeature[];
+      },
+    ) => {
       const { features } = event;
       if (!features?.length) return;
 
       const clickedFeature = features[0];
       const unitId = Number(clickedFeature.id);
       const relatedPOIs = poiMap.get(unitId);
-      console.log(relatedPOIs);
 
       if (relatedPOIs && relatedPOIs[0]) {
         const firstPOI = relatedPOIs[0];
@@ -79,10 +83,19 @@ export default function DiscoveryPanel() {
           name: firstPOI.properties?.name as string,
           coordinates: firstPOI.geometry.coordinates,
         };
-        handleSelectPOI(poi);
+        setSelectedPOI(poi);
+
+        if (mode === "discovery") {
+          setMode("detail");
+        }
       }
-    });
-  }, [map]);
+    };
+
+    map?.on("click", "indoor-map-extrusion", handleMapClick);
+    return () => {
+      map?.off("click", "indoor-map-extrusion", handleMapClick);
+    };
+  }, [map, mode]);
 
   return (
     <Card className="z-10 w-full max-w-[23.5rem] rounded-xl bg-white shadow-lg md:absolute md:left-4 md:top-4">
