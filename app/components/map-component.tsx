@@ -14,6 +14,7 @@ import { FloorSelector } from "./floor-selector";
 import { FloorUpDownControl } from "./floor-up-down-control";
 import { IndoorMapGeoJSON } from "~/types/geojson";
 import DemoBanner from "./demo-banner";
+import OIMLogo from "../controls/oim-logo";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -54,6 +55,7 @@ export default function MapComponent() {
       }),
       "bottom-right",
     );
+    map.addControl(new OIMLogo());
 
     return () => {
       map.remove();
