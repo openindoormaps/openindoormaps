@@ -19,7 +19,7 @@ export default function SuggestionsList({
           key={index}
           variant="ghost"
           className="w-full justify-start text-left text-gray-700 hover:bg-gray-100"
-          onClick={() => onSuggestionClick(suggestion)}
+          onMouseDown={() => onSuggestionClick(suggestion)}
         >
           {suggestion.name}
         </Button>

@@ -1,4 +1,3 @@
-import { Separator } from "@radix-ui/react-dropdown-menu";
 import { ArrowLeft, ArrowUpDown, Circle, Dot, MapPin } from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
 import { useEffect, useState } from "react";
@@ -123,10 +122,10 @@ export default function NavigationView({
               value={departureLocation}
               onChange={(e) => setDepartureLocation(e.target.value)}
               onFocus={() => setActiveInput("departure")}
+              onBlur={() => setActiveInput(null)}
             />
           </div>
-          <Separator />
-          <div className="flex items-center space-x-4">
+          <div className="mb-2 flex items-center space-x-4">
             <div className="w-4">
               <MapPin size={16} className="text-red-600" />
             </div>
@@ -136,6 +135,7 @@ export default function NavigationView({
               value={destinationLocation}
               onChange={(e) => setDestinationLocation(e.target.value)}
               onFocus={() => setActiveInput("destination")}
+              onBlur={() => setActiveInput(null)}
             />
           </div>
         </div>
@@ -145,10 +145,10 @@ export default function NavigationView({
           </Button>
         </div>
       </div>
-      <div className="my-4 h-px w-full bg-gray-300" />
 
       {activeInput && (
         <>
+          <div className="mt-4 h-px w-full bg-gray-300" />
           <SuggestionsList
             suggestions={suggestions}
             searchQuery={activeQuery}
