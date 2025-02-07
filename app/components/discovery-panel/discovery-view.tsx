@@ -96,7 +96,7 @@ export default function DiscoveryView({
           onSuggestionClick={handleSuggestionClick}
         />
       ) : (
-        <div className="grid grid-cols-4 justify-items-center gap-1">
+        <div className="hidden lg:grid lg:grid-cols-4 lg:justify-items-center lg:gap-1">
           {topLocations.map((topLocation, index) => (
             <div className="flex flex-col items-center" key={index}>
               <Button
