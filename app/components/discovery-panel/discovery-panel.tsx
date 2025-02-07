@@ -1,5 +1,5 @@
 import "@maplibre/maplibre-gl-geocoder/dist/maplibre-gl-geocoder.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 
@@ -52,13 +52,17 @@ export default function DiscoveryPanel() {
       console.error("Error during routing:", error);
     }
       */
-  function navigateToPOI(coordinates: GeoJSON.Position) {
-    map?.flyTo({
-      center: coordinates as [number, number],
-      zoom: 20,
-      duration: 1000,
-    });
-  }
+  const navigateToPOI = useCallback(
+    (coordinates: GeoJSON.Position) => {
+      map?.flyTo({
+        center: coordinates as [number, number],
+        zoom: 20,
+        duration: 1000,
+      });
+    },
+    [map],
+  );
+
   function handleSelectPOI(poi: POI) {
     setSelectedPOI(poi);
     setMode("detail");

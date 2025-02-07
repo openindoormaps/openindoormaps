@@ -131,7 +131,7 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
       );
 
       return this.buildPoint(
-        nearest || waypoint.geometry.coordinates,
+        (nearest as [number, number]) || waypoint.geometry.coordinates,
         "SNAPPOINT",
       );
     });
@@ -210,7 +210,7 @@ export default class IndoorDirections extends IndoorDirectionsEvented {
    *
    * @param waypoints The coordinates at which the waypoints should be added
    */
-  public setWaypoints(waypoints: [number, number][] | GeoJSON.Position[]) {
+  public setWaypoints(waypoints: [number, number][]) {
     // this.abortController?.abort();
 
     this._waypoints = waypoints.map((coord) => buildPoint(coord, "WAYPOINT"));

@@ -30,7 +30,7 @@ export function buildConfiguration(
  * coordinate.
  */
 export function buildPoint(
-  coordinate: [number, number] | GeoJSON.Position,
+  coordinate: [number, number],
   type: PointType,
   properties?: Record<string, unknown>,
 ): GeoJSON.Feature<GeoJSON.Point> {
