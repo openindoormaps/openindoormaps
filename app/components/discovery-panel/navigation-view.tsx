@@ -64,10 +64,11 @@ export default function NavigationView({
 
   function handleRouting(departureValue: string, destinationValue: string) {
     if (!departureValue || !destinationValue) return;
-    const departureCoord =
-      indoorGeocoder.indoorGeocodeInput(departureValue).coordinates;
-    const destinationCoord =
-      indoorGeocoder.indoorGeocodeInput(destinationValue).coordinates;
+    const departureGeo = indoorGeocoder.indoorGeocodeInput(departureValue);
+    const destinationGeo = indoorGeocoder.indoorGeocodeInput(destinationValue);
+
+    const departureCoord = departureGeo.coordinates as [number, number];
+    const destinationCoord = destinationGeo.coordinates as [number, number];
 
     if (departureCoord && destinationCoord) {
       indoorDirections.setWaypoints([departureCoord, destinationCoord]);
