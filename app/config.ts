@@ -1,10 +1,12 @@
+const isMobile = globalThis.innerWidth < 640;
+
 const config = {
   geoCodingApi: "https://nominatim.openstreetmap.org",
   routingApi: "https://router.project-osrm.org/route/v1",
   mapConfig: {
     style: "https://tiles.openfreemap.org/styles/bright",
     center: [3.110_97, 45.758_887],
-    zoom: 19,
+    zoom: isMobile ? 17 : 18.5,
     bearing: 60,
     pitch: 40,
     maxBounds: [
