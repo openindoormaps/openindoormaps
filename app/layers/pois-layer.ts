@@ -1,4 +1,4 @@
-import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
+import { CustomLayerInterface, Map } from "maplibre-gl";
 
 export default class POIsLayer implements CustomLayerInterface {
   id: string = "pois";
@@ -10,9 +10,10 @@ export default class POIsLayer implements CustomLayerInterface {
     console.log("POIsLayer constructor");
   }
 
-  render: CustomRenderMethod = (gl, matrix) => {
-    gl && matrix; // Unused
+  render = () => {
+    // Rendering is handled by maplibre's internal renderer for geojson sources
   };
+
   onAdd?(map: Map): void {
     map.addSource("pois", {
       type: "geojson",

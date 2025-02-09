@@ -1,12 +1,13 @@
-import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
+import { CustomLayerInterface, Map } from "maplibre-gl";
 
 export default class Tile3dLayer implements CustomLayerInterface {
   id: string = "tile-3d-layer";
   type = "custom" as const;
 
-  render: CustomRenderMethod = (gl, matrix) => {
-    gl && matrix; // Unused
+  render = () => {
+    // Rendering is handled by maplibre's internal renderer for geojson sources
   };
+
   onAdd?(map: Map): void {
     map.addLayer({
       id: "3d-buildings",

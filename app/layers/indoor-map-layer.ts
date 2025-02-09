@@ -1,4 +1,4 @@
-import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
+import { CustomLayerInterface, Map } from "maplibre-gl";
 import { IndoorFeature, IndoorMapGeoJSON } from "~/types/geojson";
 
 export default class IndoorMapLayer implements CustomLayerInterface {
@@ -11,8 +11,8 @@ export default class IndoorMapLayer implements CustomLayerInterface {
     this.indoorMapData = indoorMapData;
   }
 
-  render: CustomRenderMethod = (gl, matrix) => {
-    gl && matrix; // Unused
+  render = () => {
+    // Rendering is handled by maplibre's internal renderer for geojson sources
   };
 
   setFloorLevel(level: number) {
