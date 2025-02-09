@@ -1,9 +1,19 @@
 import building from "~/mock/building.json";
 import { booleanPointInPolygon } from "@turf/boolean-point-in-polygon";
 
-const unitFeatures = (
-  building.indoor_map.features as GeoJSON.Feature<GeoJSON.Polygon>[]
-).filter((feature) => feature.properties?.feature_type === "unit");
+function isPolygonFeature(
+  feature: GeoJSON.Feature,
+): feature is GeoJSON.Feature<GeoJSON.Polygon> {
+  return (
+    feature?.geometry?.type === "Polygon" &&
+    feature?.properties?.feature_type === "unit"
+  );
+}
+
+const indoorMap = building.indoor_map as GeoJSON.FeatureCollection;
+const unitFeatures = indoorMap.features.filter((element) =>
+  isPolygonFeature(element),
+);
 const poiMap = new Map<number, GeoJSON.Feature<GeoJSON.Point>[]>();
 
 unitFeatures.forEach((unitFeature) => {

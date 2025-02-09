@@ -29,7 +29,7 @@ export class IndoorGeocoder {
     this.cutoffThreshold = cutoffThreshold;
     this.miniSearch = new MiniSearch({
       fields: ["name"],
-      storeFields: ["name", "type", "geometry"],
+      storeFields: ["name", "type", "geometry", "id"],
     });
 
     const flattenPOIs = pois.map((feature: POIFeature) => ({
@@ -54,6 +54,7 @@ export class IndoorGeocoder {
     }
     const topResult = results[0];
     return {
+      id: topResult.id,
       name: topResult.name,
       coordinates: topResult.geometry.coordinates,
     };
@@ -89,6 +90,7 @@ export class IndoorGeocoder {
 
     return relevantResults
       .map((result) => ({
+        id: result.id,
         name: result.name,
         coordinates: result.geometry.coordinates,
       }))
