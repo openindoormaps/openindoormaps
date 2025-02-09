@@ -13,7 +13,7 @@ interface NavigationViewProps {
   handleBackClick: () => void;
   selectedPOI: POI | null;
   indoorGeocoder: IndoorGeocoder;
-  indoorDirections: IndoorDirections;
+  indoorDirections: IndoorDirections | null;
 }
 
 export default function NavigationView({
@@ -58,34 +58,46 @@ export default function NavigationView({
     setSuggestions([]);
     setActiveInput(null);
 
-    console.log(newDeparture, newDestination);
     handleRouting(newDeparture, newDestination);
   };
 
   function handleRouting(departureValue: string, destinationValue: string) {
     if (!departureValue || !destinationValue) return;
-    const departureGeo = indoorGeocoder.indoorGeocodeInput(departureValue);
-    const destinationGeo = indoorGeocoder.indoorGeocodeInput(destinationValue);
+    try {
+      const departureGeo = indoorGeocoder.indoorGeocodeInput(departureValue);
+      const destinationGeo =
+        indoorGeocoder.indoorGeocodeInput(destinationValue);
 
-    const departureCoord = departureGeo.coordinates as [number, number];
-    const destinationCoord = destinationGeo.coordinates as [number, number];
+      if (!departureGeo?.coordinates || !destinationGeo?.coordinates) {
+        throw new Error("Invalid geocoding results");
+      }
 
-    if (departureCoord && destinationCoord) {
-      indoorDirections.setWaypoints([departureCoord, destinationCoord]);
+      const departureCoord = departureGeo.coordinates as [number, number];
+      const destinationCoord = destinationGeo.coordinates as [number, number];
+
+      indoorDirections?.setWaypoints([departureCoord, destinationCoord]);
+
+      const routeGeometry =
+        indoorDirections?.routelinesCoordinates[0]?.[0]?.geometry;
+      if (!routeGeometry?.coordinates?.length) {
+        throw new Error("No route found");
+      }
+
+      const coordinates = routeGeometry.coordinates as [number, number][];
+
+      let bounds = new LngLatBounds(coordinates[0], coordinates[0]);
+      for (const coord of coordinates) {
+        bounds = bounds.extend(coord);
+      }
+
+      map?.fitBounds(bounds, {
+        padding: 200,
+        speed: 0.5,
+      });
+    } catch (error) {
+      console.error("Error during routing:", error);
+      // TODO: Show error message to user
     }
-
-    const coordinates = indoorDirections.routelinesCoordinates[0][0].geometry
-      .coordinates as [number, number][];
-
-    let bounds = new LngLatBounds(coordinates[0], coordinates[0]);
-    for (const coord of coordinates) {
-      bounds = bounds.extend(coord);
-    }
-
-    map?.fitBounds(bounds, {
-      padding: 200,
-      speed: 0.5,
-    });
   }
 
   function handleSwapLocations() {
