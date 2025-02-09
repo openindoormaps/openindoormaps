@@ -1,47 +1,45 @@
-import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
-import { useEffect, useRef } from "react";
-import config from "~/config";
-import IndoorDirections from "~/indoor-directions/directions/main";
-import IndoorMapLayer from "~/layers/indoor-map-layer";
-import Tile3dLayer from "~/layers/tile-3d-layer";
-import useMapStore from "~/stores/use-map-store";
-import NavigationInput from "./navigation-input";
 import MaplibreInspect from "@maplibre/maplibre-gl-inspect";
 import "@maplibre/maplibre-gl-inspect/dist/maplibre-gl-inspect.css";
-import { FloorSelector } from "./ui/floor-selector";
-import { FloorUpDownControl } from "./ui/floor-up-down-control";
+import maplibregl, { FullscreenControl, NavigationControl } from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+import { useEffect, useMemo, useRef } from "react";
+import config from "~/config";
+import IndoorMapLayer from "~/layers/indoor-map-layer";
+import POIsLayer from "~/layers/pois-layer";
+import Tile3dLayer from "~/layers/tile-3d-layer";
+import building from "~/mock/building.json";
+import useMapStore from "~/stores/use-map-store";
+import DiscoveryPanel from "./discovery-panel/discovery-panel";
+import { FloorSelector } from "./floor-selector";
+import { FloorUpDownControl } from "./floor-up-down-control";
+import { IndoorMapGeoJSON } from "~/types/geojson";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
+
   const setMapInstance = useMapStore((state) => state.setMapInstance);
-  const indoorMapLayer = new IndoorMapLayer();
+  const indoorMapLayer = useMemo(
+    () => new IndoorMapLayer(building.indoor_map as IndoorMapGeoJSON),
+    [],
+  );
 
   useEffect(() => {
+    if (!mapContainer.current) return;
+
     const map = new maplibregl.Map({
       ...config.mapConfig,
-      container: mapContainer.current!,
+      container: mapContainer.current,
     });
     setMapInstance(map);
 
     map.on("load", () => {
-      map.addLayer(new Tile3dLayer());
-      map.addLayer(indoorMapLayer);
-
-      setTimeout(() => {
-        const indoorDirections = new IndoorDirections(map);
-        indoorDirections.loadMapData("assets/geojson/indoor-routes.geojson");
-
-        const start: [number, number] = [
-          3.110_255_339_660_966_5, 45.759_180_103_714_186,
-        ];
-        const end: [number, number] = [
-          3.111_802_160_097_454_4, 45.758_458_704_536_62,
-        ];
-        setTimeout(() => {
-          indoorDirections.setWaypoints([start, end]);
-        }, 1050);
-      }, 1);
+      try {
+        map.addLayer(new Tile3dLayer());
+        map.addLayer(indoorMapLayer);
+        map.addLayer(new POIsLayer(building.pois as GeoJSON.GeoJSON));
+      } catch (error) {
+        console.error("Failed to initialize map layers:", error);
+      }
     });
 
     map.addControl(new NavigationControl(), "bottom-right");
@@ -59,12 +57,11 @@ export default function MapComponent() {
     return () => {
       map.remove();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [indoorMapLayer, setMapInstance]);
 
   return (
     <div className="flex size-full flex-col">
-      <NavigationInput />
+      <DiscoveryPanel />
       <FloorSelector indoorMapLayer={indoorMapLayer} />
       <FloorUpDownControl indoorMapLayer={indoorMapLayer} />
       <div ref={mapContainer} className="size-full" />

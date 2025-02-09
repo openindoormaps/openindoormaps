@@ -96,3 +96,25 @@ export function buildRouteLines(
     },
   ];
 }
+
+export function buildSnaplines(
+  waypointsCoordinates: [number, number][],
+  snappointsCoordinates: [number, number][],
+): GeoJSON.Feature<GeoJSON.LineString>[] {
+  const snaplines = waypointsCoordinates.map((waypointCoordinates, index) => {
+    return {
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [waypointCoordinates[0], waypointCoordinates[1]],
+          [snappointsCoordinates[index][0], snappointsCoordinates[index][1]],
+        ],
+      },
+      properties: {
+        type: "SNAPLINE",
+      },
+    } as GeoJSON.Feature<GeoJSON.LineString>;
+  });
+  return snaplines;
+}

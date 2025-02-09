@@ -1,11 +1,19 @@
-import { Building2, Map } from "lucide-react";
+import { Accessibility, Building2, Map } from "lucide-react";
 import { useState } from "react";
-
+import { Toggle } from "../ui/toggle";
+//TODO: improve ui
 export default function NavigationSettings() {
   const [includeOutdoor, setIncludeOutdoor] = useState(false);
+  const [isAccessibleRoute, setIsAccessibleRoute] = useState(false);
 
   return (
     <div className="flex flex-col gap-2 rounded-lg bg-white py-4">
+      <Toggle
+        variant="outline"
+        onClick={() => setIsAccessibleRoute(!isAccessibleRoute)}
+      >
+        <Accessibility /> Accessibility
+      </Toggle>
       <span className="text-sm font-medium text-gray-700">Navigation Type</span>
       <div className="flex gap-2">
         <button
@@ -35,7 +43,10 @@ export default function NavigationSettings() {
         </button>
       </div>
       <span className="text-sm font-medium text-gray-700">Language</span>
-      <select className="w-full rounded-md bg-gray-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none">
+      <select
+        className="w-full rounded-md bg-gray-100 px-4 py-2 text-sm focus:border-blue-500 focus:outline-none"
+        disabled
+      >
         <option value="en">English</option>
         <option value="de">Deutsch</option>
         <option value="es">Español</option>

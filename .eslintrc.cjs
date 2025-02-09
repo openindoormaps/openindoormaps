@@ -84,6 +84,7 @@ module.exports = {
         "unicorn/no-null": "off",
         "no-nested-ternary": "error",
         "unicorn/prefer-module": "off",
+        "react/prop-types": "off",
       },
     },
   ],

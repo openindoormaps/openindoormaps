@@ -1,45 +1,25 @@
-import { CustomLayerInterface, CustomRenderMethod, Map } from "maplibre-gl";
-
-interface IndoorFeatureProperties {
-  level_id: number | null;
-  [key: string]: unknown;
-}
-
-interface IndoorFeature extends GeoJSON.Feature {
-  properties: IndoorFeatureProperties;
-}
-
-interface GeoJSONData {
-  type: "FeatureCollection";
-  features: IndoorFeature[];
-}
+import { CustomLayerInterface, Map } from "maplibre-gl";
+import { IndoorFeature, IndoorMapGeoJSON } from "~/types/geojson";
 
 export default class IndoorMapLayer implements CustomLayerInterface {
-  id: string = "geojson";
+  id: string = "indoor-map";
   type = "custom" as const;
   private map: Map | null = null;
-  private savedData: GeoJSONData | null = null;
+  private indoorMapData: IndoorMapGeoJSON;
 
-  render: CustomRenderMethod = (gl, matrix) => {
-    gl && matrix; // Unused
-  };
-
-  private async loadAndSaveData(): Promise<void> {
-    if (this.savedData) return;
-
-    try {
-      const response = await fetch("assets/geojson/demo-map.geojson");
-      this.savedData = await response.json();
-    } catch (error) {
-      console.error("Failed to load GeoJSON data:", error);
-    }
+  constructor(indoorMapData: IndoorMapGeoJSON) {
+    this.indoorMapData = indoorMapData;
   }
 
+  render = () => {
+    // Rendering is handled by maplibre's internal renderer for geojson sources
+  };
+
   setFloorLevel(level: number) {
-    if (!this.map || !this.savedData) return;
+    if (!this.map || !this.indoorMapData) return;
 
     const source = this.map.getSource("indoor-map") as maplibregl.GeoJSONSource;
-    const filteredFeatures = this.savedData.features.filter(
+    const filteredFeatures = this.indoorMapData.features.filter(
       (feature: IndoorFeature) =>
         feature.properties.level_id === level ||
         feature.properties.level_id === null,
@@ -52,10 +32,8 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   }
 
   async getAvailableFloors(): Promise<number[]> {
-    await this.loadAndSaveData();
-
     const floors = new Set<number>();
-    this.savedData!.features.forEach((feature) => {
+    this.indoorMapData!.features.forEach((feature) => {
       if (feature.properties.level_id !== null) {
         floors.add(feature.properties.level_id);
       }
@@ -71,7 +49,6 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
   async onAdd(map: Map): Promise<void> {
     this.map = map;
-    await this.loadAndSaveData();
 
     const colors = {
       unit: "#f3f3f3",
@@ -81,7 +58,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     map.addSource("indoor-map", {
       type: "geojson",
-      data: this.savedData || "assets/geojson/demo-map.geojson",
+      data: this.indoorMapData,
     });
 
     map.addLayer({
