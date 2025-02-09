@@ -11,10 +11,14 @@ export function useIndoorGeocoder() {
     );
   }
 
-  // Optionally load data if necessary after instantiation
   useEffect(() => {
-    // Example: geocoderRef.current.loadData();
-    // If the load method is asynchronous, you can handle it here.
+    // TODO: Implement data loading when API is ready
+    // const loadData = async () => {
+    //   if (geocoderRef.current) {
+    //     await geocoderRef.current.loadData();
+    //   }
+    // };
+    // loadData();
   }, []);
 
   return geocoderRef.current;
