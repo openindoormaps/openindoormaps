@@ -14,9 +14,9 @@ export default function SuggestionsList({
 }: SuggestionsListProps) {
   return (
     <div className="space-y-2">
-      {suggestions.map((suggestion, index) => (
+      {suggestions.map((suggestion) => (
         <Button
-          key={index}
+          key={suggestion.id}
           variant="ghost"
           className="w-full justify-start text-left text-gray-700 hover:bg-gray-100"
           onMouseDown={() => onSuggestionClick(suggestion)}
