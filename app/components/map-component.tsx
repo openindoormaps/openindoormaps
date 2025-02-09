@@ -6,7 +6,6 @@ import { useEffect, useMemo, useRef } from "react";
 import config from "~/config";
 import IndoorMapLayer from "~/layers/indoor-map-layer";
 import POIsLayer from "~/layers/pois-layer";
-import Tile3dLayer from "~/layers/tile-3d-layer";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 import DiscoveryPanel from "./discovery-panel/discovery-panel";
@@ -36,7 +35,7 @@ export default function MapComponent() {
 
     map.on("load", () => {
       try {
-        map.addLayer(new Tile3dLayer());
+        // map.addLayer(new Tile3dLayer());
         map.addLayer(indoorMapLayer);
         map.addLayer(new POIsLayer(building.pois as GeoJSON.GeoJSON));
       } catch (error) {
