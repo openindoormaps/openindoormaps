@@ -26,38 +26,12 @@ export default function DiscoveryPanel() {
     building.indoor_routes as GeoJSON.FeatureCollection,
   );
 
-  /* 
-  * Code for outdoor routing
-    if (!departure || !destination) return;
-    try {
-      const [departureCoord, destinationCoord] = await Promise.all([
-        geocodeInput(departure),
-        geocodeInput(destination),
-      ]);
-
-      if (departureCoord && destinationCoord) {
-        directions.current?.setWaypoints([departureCoord, destinationCoord]);
-
-        if (map) {
-          const bounds = new LngLatBounds();
-          bounds.extend(departureCoord);
-          bounds.extend(destinationCoord);
-
-          map.fitBounds(bounds, {
-            padding: 20,
-          });
-        }
-      }
-    } catch (error) {
-      console.error("Error during routing:", error);
-    }
-      */
   const navigateToPOI = useCallback(
     (coordinates: GeoJSON.Position) => {
       map?.flyTo({
         center: coordinates as [number, number],
         zoom: 20,
-        duration: 1000,
+        duration: 1300,
       });
     },
     [map],
@@ -90,7 +64,10 @@ export default function DiscoveryPanel() {
 
       if (relatedPOIs && relatedPOIs[0]) {
         const firstPOI = relatedPOIs[0];
+
+        //TODO: find cleaner way to convert GeoJSON.Feature to POI
         const poi: POI = {
+          id: firstPOI.properties?.id as number,
           name: firstPOI.properties?.name as string,
           coordinates: firstPOI.geometry.coordinates,
         };
@@ -131,7 +108,7 @@ export default function DiscoveryPanel() {
             handleBackClick={handleBackClick}
             selectedPOI={selectedPOI}
             indoorGeocoder={indoorGeocoder}
-            indoorDirections={indoorDirections!}
+            indoorDirections={indoorDirections}
           />
         )}
       </CardContent>
