@@ -23,6 +23,7 @@ export default function LocationDetail({
       <div className="mb-4 flex items-center justify-between">
         <div>
           <h2 className="text-xl font-semibold">{selectedPOI.name}</h2>
+          {/*TODO: add floor to poi properties and use it here */}
           <p className="text-xs text-gray-600">1st Floor</p>
         </div>
         <div className="flex space-x-2">
@@ -38,11 +39,11 @@ export default function LocationDetail({
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {/*TODO: add logic*/}
-              <DropdownMenuItem onClick={() => console.log("QR Code")}>
+              <DropdownMenuItem onClick={() => console.log("TODO: QR Code")}>
                 <QrCode className="mr-2 size-4" />
                 <span>QR Code</span>
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => console.log("Copy Link")}>
+              <DropdownMenuItem onClick={() => console.log("TODO: Copy Link")}>
                 <Link className="mr-2 size-4" />
                 <span>Copy Link</span>
               </DropdownMenuItem>
