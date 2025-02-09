@@ -1,3 +1,4 @@
+import { MessageSquare } from "lucide-react";
 import { Alert, AlertDescription } from "./ui/alert";
 import { Button } from "./ui/button";
 
@@ -23,7 +24,7 @@ export default function DemoBanner() {
             data-tally-open="3EZr0o"
             className="h-6 bg-blue-200 px-2 text-xs text-blue-800 hover:bg-blue-300 dark:bg-blue-800 dark:text-blue-200 dark:hover:bg-blue-700"
           >
-            Provide Feedback
+            Provide Feedback <MessageSquare size={14} />
           </Button>
           <a
             href="https://github.com/openindoormap/openindoormaps"
