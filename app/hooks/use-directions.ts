@@ -26,6 +26,8 @@ function useDirections(map: maplibregl.Map | null) {
 
     return () => {
       map.off("load", handleLoad);
+      directionsRef.current = null;
+      indoorDirectionsRef.current = null;
     };
   }, [map]);
 
