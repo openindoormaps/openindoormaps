@@ -33,9 +33,13 @@ export default function MapComponent() {
     setMapInstance(map);
 
     map.on("load", () => {
-      map.addLayer(new Tile3dLayer());
-      map.addLayer(indoorMapLayer);
-      map.addLayer(new POIsLayer(building.pois as GeoJSON.GeoJSON));
+      try {
+        map.addLayer(new Tile3dLayer());
+        map.addLayer(indoorMapLayer);
+        map.addLayer(new POIsLayer(building.pois as GeoJSON.GeoJSON));
+      } catch (error) {
+        console.error("Failed to initialize map layers:", error);
+      }
     });
 
     map.addControl(new NavigationControl(), "bottom-right");

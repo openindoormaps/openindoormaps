@@ -42,10 +42,16 @@ export default function DiscoveryView({
 
   function handleTopLocationsClick(topLocationName: string) {
     setSearchQuery(topLocationName);
-
-    const poi = indoorGeocoder.indoorGeocodeInput(topLocationName);
-
-    onSelectPOI(poi);
+    try {
+      const poi = indoorGeocoder.indoorGeocodeInput(topLocationName);
+      if (!poi) {
+        console.error(`Location "${topLocationName}" not found`);
+        return;
+      }
+      onSelectPOI(poi);
+    } catch (error) {
+      console.error("Failed to geocode location:", error);
+    }
   }
 
   return (
