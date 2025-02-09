@@ -82,6 +82,8 @@ export default function DiscoveryView({
             size="icon"
             pressed={isSettingsOpen}
             onPressedChange={setIsSettingsOpen}
+            disabled
+            title="Settings (coming soon)"
             className="ml-2 rounded-full border border-gray-300"
           >
             <SlidersVertical size={16} />

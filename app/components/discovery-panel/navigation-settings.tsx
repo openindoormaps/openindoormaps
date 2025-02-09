@@ -11,7 +11,6 @@ export default function NavigationSettings() {
       <Toggle
         variant="outline"
         onClick={() => setIsAccessibleRoute(!isAccessibleRoute)}
-        disabled
       >
         <Accessibility /> Accessibility
       </Toggle>
@@ -38,7 +37,6 @@ export default function NavigationSettings() {
               : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           }`}
           title="Include outdoor navigation"
-          disabled
         >
           <Map size={18} />
           <span>Outdoor</span>
