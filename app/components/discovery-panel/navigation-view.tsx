@@ -159,7 +159,7 @@ export default function NavigationView({
         </div>
       </div>
 
-      {activeInput && (
+      {activeInput && activeQuery && (
         <>
           <div className="mt-4 h-px w-full bg-gray-300" />
           <SuggestionsList
