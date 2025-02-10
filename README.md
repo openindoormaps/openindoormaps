@@ -30,6 +30,9 @@ We are actively working on expanding the project. The next major steps include:
 
 Stay tuned for upcoming updates, and feel free to contribute, provide feedback, or report issues.
 
+## Join Our Community
+We have an active Discord channel for discussions and collaboration. Join us [here](https://discord.gg/znGgpCGDGQ).
+
 ## Why OpenIndoorMaps?
 
 Many current indoor navigation solutions lack the flexibility and adaptability needed for diverse environments. Often, they are limited in functionality, difficult to customize, or locked behind proprietary systems that restrict user control. Smaller projects, while free, frequently lack the support, scalability, or customization options needed for real-world applications.
@@ -67,11 +70,9 @@ Many current indoor navigation solutions lack the flexibility and adaptability n
 - **Parking Garages**: Direct drivers to available spaces and exits.
 
 ## Contributing
-
-We are about to start development soon, and we welcome anyone who is interested or has great ideas! If you have suggestions, feel free to:
-
-1. **Create an Issue**: Share your thoughts or feature ideas by opening an issue and describing your concept.
-2. **Join the Discussion**: Engage with the community, suggest improvements, or ask questions.
+We are about to start development soon, and we welcome anyone who is interested or has great ideas! If you have suggestions, feel free to: 
+1. **Create an Issue**: Share your thoughts or feature ideas by opening an issue and describing your concept. 
+2. **Join Our Community**: We have a Discord channel for discussions and collaboration. Please join us [here](https://discord.gg/znGgpCGDGQ).
 
 ## License
 
