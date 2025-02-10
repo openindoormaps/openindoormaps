@@ -15,6 +15,7 @@ import { IndoorMapGeoJSON } from "~/types/geojson";
 import DemoBanner from "./demo-banner";
 import OIMLogo from "../controls/oim-logo";
 import { Theme, useTheme } from "remix-themes";
+import "~/maplibre.css";
 
 export default function MapComponent() {
   const mapContainer = useRef<HTMLDivElement>(null);
