@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1353 266.2">
+
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+
+      .st0, .st1, .st2, .st3 {
+        opacity: .5;
+      }
+
+      .st1 {
+        fill: #1d9bf0;
+      }
+
+      .st2 {
+        font-family: Helvetica-Bold, Helvetica;
+        font-size: 164px;
+        font-weight: 700;
+      }
+
+      .st4 {
+        fill: #2f855a;
+      }
+    </style>
+  </defs>
+  <text class="st2" transform="translate(0 180.2)"><tspan x="0" y="0">OpenIndoorMaps</tspan></text>
+  <text/>
+  <text/>
+</svg>

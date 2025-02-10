@@ -6,9 +6,11 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   type = "custom" as const;
   private map: Map | null = null;
   private indoorMapData: IndoorMapGeoJSON;
+  private theme;
 
-  constructor(indoorMapData: IndoorMapGeoJSON) {
+  constructor(indoorMapData: IndoorMapGeoJSON, theme: string = "light") {
     this.indoorMapData = indoorMapData;
+    this.theme = theme;
   }
 
   render = () => {
@@ -50,11 +52,21 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   async onAdd(map: Map): Promise<void> {
     this.map = map;
 
-    const colors = {
+    const lightColor = {
       unit: "#f3f3f3",
       corridor: "#d6d5d1",
       outline: "#a6a5a2",
     };
+
+    const darkColor = {
+      unit: "#1f2937",
+      corridor: "#030712",
+      outline: "#1f2937",
+    };
+
+    console.log();
+
+    const colors = this.theme === "dark" ? darkColor : lightColor;
 
     map.addSource("indoor-map", {
       type: "geojson",

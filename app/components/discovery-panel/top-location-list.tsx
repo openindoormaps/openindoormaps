@@ -30,7 +30,7 @@ export function TopLocationsList({
           >
             <location.icon size={16} />
           </Button>
-          <span className="mt-1 max-w-[80px] hyphens-auto break-words text-center text-xs text-gray-600">
+          <span className="mt-1 max-w-[80px] hyphens-auto break-words text-center text-xs text-gray-600 dark:text-gray-300">
             {location.name}
           </span>
         </div>

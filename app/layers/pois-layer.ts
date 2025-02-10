@@ -4,10 +4,11 @@ export default class POIsLayer implements CustomLayerInterface {
   id: string = "pois";
   type = "custom" as const;
   private POIs: GeoJSON.GeoJSON;
+  private theme;
 
-  constructor(POIs: GeoJSON.GeoJSON) {
+  constructor(POIs: GeoJSON.GeoJSON, theme: string = "light") {
     this.POIs = POIs;
-    console.log("POIsLayer constructor");
+    this.theme = theme;
   }
 
   render = () => {
@@ -15,6 +16,18 @@ export default class POIsLayer implements CustomLayerInterface {
   };
 
   onAdd?(map: Map): void {
+    const lightColor = {
+      text: "#404040",
+      halo: "#ffffff",
+    };
+
+    const darkColor = {
+      text: "#ffffff",
+      halo: "#404040",
+    };
+
+    const color = this.theme === "light" ? lightColor : darkColor;
+
     map.addSource("pois", {
       type: "geojson",
       data: this.POIs,
@@ -43,8 +56,8 @@ export default class POIsLayer implements CustomLayerInterface {
         "text-max-width": 12,
       },
       paint: {
-        "text-color": "#404040",
-        "text-halo-color": "#ffffff",
+        "text-color": color.text,
+        "text-halo-color": color.halo,
         "text-halo-width": 1.5,
       },
     });

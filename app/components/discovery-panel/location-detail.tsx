@@ -24,7 +24,7 @@ export default function LocationDetail({
         <div>
           <h2 className="text-xl font-semibold">{selectedPOI.name}</h2>
           {/*TODO: add floor to poi properties and use it here */}
-          <p className="text-xs text-gray-600">1st Floor</p>
+          <p className="text-xs text-gray-600 dark:text-gray-400">1st Floor</p>
         </div>
         <div className="flex space-x-2">
           <DropdownMenu>
@@ -32,7 +32,7 @@ export default function LocationDetail({
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-full p-2 hover:bg-gray-200"
+                className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
               >
                 <Share2 size={16} />
               </Button>
@@ -53,7 +53,7 @@ export default function LocationDetail({
             variant="ghost"
             onClick={handleBackClick}
             size="icon"
-            className="rounded-full p-2 hover:bg-gray-200"
+            className="rounded-full p-2 hover:bg-gray-200 dark:hover:bg-gray-700"
           >
             <X size={16} />
           </Button>

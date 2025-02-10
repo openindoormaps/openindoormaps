@@ -40,7 +40,7 @@ export default function SearchBar({
         value={searchQuery}
         onChange={onChange}
         onFocus={onFocus}
-        className="h-10 w-full min-w-72 rounded-full border-gray-300 px-10 py-4 text-lg shadow-sm"
+        className="h-10 w-full min-w-72 rounded-full px-10 py-4 text-lg shadow-sm"
       />
     </div>
   );

@@ -88,7 +88,7 @@ export default function DiscoveryPanel() {
   }, [map, mode, navigateToPOI]);
 
   return (
-    <Card className="absolute z-10 w-full rounded-xl bg-white shadow-lg md:absolute md:left-4 md:top-4 md:max-w-[23.5rem]">
+    <Card className="absolute z-10 w-full rounded-xl shadow-lg md:absolute md:left-4 md:top-4 md:max-w-[23.5rem]">
       <CardContent className="p-4">
         {mode === "discovery" && (
           <DiscoveryView

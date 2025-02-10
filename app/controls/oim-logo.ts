@@ -15,12 +15,10 @@ export default class OIMLogo implements IControl {
     <a 
       href="https://github.com/openindoormap/openindoormaps" 
       target="_blank" 
-      class="flex space-x-2 p-2"
+      class="flex items-center space-x-2 p-2"
       aria-label="OpenIndoorMaps">
-      <picture>
-        <source media="(max-width: 640px)" srcset="/assets/oim-ctrl-logo-sm.svg">
-        <img src="/assets/oim-ctrl-logo.svg" alt="OpenIndoorMaps" class="h-7 w-auto" />
-      </picture>
+      <img src="/assets/oim-ctrl-logo.svg" alt="OpenIndoorMaps" class="h-7 w-auto" />
+      <img src="/assets/oim-ctrl-logo-text.svg" alt="OpenIndoorMaps" class="hidden h-7 w-auto dark:invert md:block" />
     </a>
     `;
     return this.container;

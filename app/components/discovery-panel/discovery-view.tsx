@@ -79,7 +79,7 @@ export default function DiscoveryView({
             size="icon"
             pressed={isSettingsOpen}
             onPressedChange={setIsSettingsOpen}
-            className="ml-2 rounded-full border border-gray-300"
+            className="ml-2 rounded-full"
           >
             <SlidersVertical size={16} />
           </Toggle>
