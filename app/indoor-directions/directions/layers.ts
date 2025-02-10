@@ -2,7 +2,7 @@ import type { LayerSpecification, LineLayerSpecification } from "maplibre-gl";
 import type { CircleLayerSpecification } from "@maplibre/maplibre-gl-style-spec";
 
 export const colors = {
-  snapline: "#34343f",
+  snapline: "#85858B",
   altRouteline: "#9e91be",
   routelineFoot: "#3665ff",
   routelineBike: "#63c4ff",

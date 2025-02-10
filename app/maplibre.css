@@ -4,6 +4,7 @@
 .maplibregl-ctrl-group {
   @apply dark:bg-[#030712] !important;
   @apply dark:border dark:border-gray-500;
+  @apply rounded-full p-1;
 }
 
 button.maplibregl-ctrl-compass .maplibregl-ctrl-icon {

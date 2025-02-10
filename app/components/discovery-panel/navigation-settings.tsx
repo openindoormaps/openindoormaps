@@ -14,7 +14,7 @@ export default function NavigationSettings() {
   };
 
   return (
-    <div className="mt-4 flex flex-col gap-2 rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
+    <div className="mt-4 flex flex-col gap-2 rounded-lg bg-gray-100 p-4 dark:bg-gray-900">
       <span className="text-sm font-medium dark:text-gray-200">Theme</span>
       <select
         className="w-full rounded-md bg-white px-4 py-2 text-sm focus:border-blue-500 focus:outline-none dark:bg-gray-700 dark:text-gray-200"
