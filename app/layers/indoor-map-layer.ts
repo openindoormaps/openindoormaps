@@ -64,8 +64,6 @@ export default class IndoorMapLayer implements CustomLayerInterface {
       outline: "#1f2937",
     };
 
-    console.log();
-
     const colors = this.theme === "dark" ? darkColor : lightColor;
 
     map.addSource("indoor-map", {
