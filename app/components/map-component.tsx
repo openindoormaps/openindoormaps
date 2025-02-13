@@ -55,15 +55,19 @@ export default function MapComponent() {
 
     map.addControl(new NavigationControl(), "bottom-right");
     map.addControl(new FullscreenControl(), "bottom-right");
-    map.addControl(
-      new MaplibreInspect({
-        popup: new maplibregl.Popup({
-          closeOnClick: false,
+
+    if (process.env.NODE_ENV === "development") {
+      map.addControl(
+        new MaplibreInspect({
+          popup: new maplibregl.Popup({
+            closeOnClick: false,
+          }),
+          blockHoverPopupOnClick: true,
         }),
-        blockHoverPopupOnClick: true,
-      }),
-      "bottom-right",
-    );
+        "bottom-right",
+      );
+    }
+
     map.addControl(new OIMLogo());
 
     return () => {
