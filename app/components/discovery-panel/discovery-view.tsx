@@ -63,7 +63,7 @@ export default function DiscoveryView({
 
   return (
     <>
-      <div className="relative mb-6 flex items-center">
+      <div className="relative flex items-center md:mb-6">
         <div className="relative grow">
           <SearchBar
             isSearching={isSearching}

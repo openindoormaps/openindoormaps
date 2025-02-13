@@ -9,7 +9,7 @@ export default function DemoBanner() {
         <div className="flex items-center space-x-2">
           <span className="font-semibold">
             Demo Release
-            <span className="hidden sm:inline">: Indoor Map Viewer</span>
+            <span className="hidden md:inline">: Indoor Map Viewer</span>
           </span>
           <span className="hidden sm:inline">
             Under Active Development - We welcome your bug reports and feature
