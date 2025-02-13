@@ -19,11 +19,13 @@ export default class POIsLayer implements CustomLayerInterface {
     const lightColor = {
       text: "#404040",
       halo: "#ffffff",
+      circle: "#695f58",
     };
 
     const darkColor = {
       text: "#ffffff",
       halo: "#404040",
+      circle: "#9ca3af",
     };
 
     const color = this.theme === "light" ? lightColor : darkColor;
@@ -40,7 +42,7 @@ export default class POIsLayer implements CustomLayerInterface {
       minzoom: 16,
       paint: {
         "circle-radius": 4,
-        "circle-color": "#695f58",
+        "circle-color": color.circle,
       },
     });
 
