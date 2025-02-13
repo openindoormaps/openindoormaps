@@ -17,8 +17,8 @@ export default class OIMLogo implements IControl {
       target="_blank" 
       class="flex items-center space-x-1 p-2"
       aria-label="OpenIndoorMaps">
-      <img src="/assets/oim-ctrl-logo.svg" alt="OpenIndoorMaps" class="h-7 w-auto" />
-      <img src="/assets/oim-ctrl-logo-text.svg" alt="OpenIndoorMaps" class="hidden h-7 w-auto dark:invert md:block" />
+      <img src="/images/oim-ctrl-logo.svg" alt="OpenIndoorMaps" class="h-7 w-auto" />
+      <img src="/images/oim-ctrl-logo-text.svg" alt="OpenIndoorMaps" class="hidden h-7 w-auto dark:invert md:block" />
     </a>
     `;
     return this.container;

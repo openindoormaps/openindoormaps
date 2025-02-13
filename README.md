@@ -1,5 +1,5 @@
 <div align=center>
-<img align="center" src="assets/logo.svg" alt="openindoormaps" width="100"/>
+<img align="center" src="public/images/logo.svg" alt="openindoormaps" width="100"/>
 <h1 style="font-family: 'Arial', sans-serif; font-size: 48px; margin: 20px 0; color: #2c3e50;"> OpenIndoorMaps</h1>
 <p>
 <img src="https://img.shields.io/badge/version-Pre--Alpha_Dev_Release-green" alt="Pre-Alpha Dev Release"/>

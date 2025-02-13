@@ -74,8 +74,13 @@ export default function MapComponent() {
   return (
     <div className="flex size-full flex-col">
       <DiscoveryPanel />
-      <FloorSelector indoorMapLayer={indoorMapLayer} />
-      <FloorUpDownControl indoorMapLayer={indoorMapLayer} />
+      {process.env.NODE_ENV === "development" && (
+        <>
+          <FloorSelector indoorMapLayer={indoorMapLayer} />
+          <FloorUpDownControl indoorMapLayer={indoorMapLayer} />
+        </>
+      )}
+
       <div ref={mapContainer} className="size-full" />
       <DemoBanner />
     </div>
