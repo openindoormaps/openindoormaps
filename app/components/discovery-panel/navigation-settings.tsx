@@ -1,7 +1,7 @@
-import { Building2, Map } from "lucide-react";
+import { Building2, Map as MapIcon } from "lucide-react";
 import { useState } from "react";
 import { Theme, useTheme } from "remix-themes/build/theme-provider";
-//TODO: improve ui
+
 export default function NavigationSettings() {
   const [includeOutdoor, setIncludeOutdoor] = useState(false);
   const [theme, setTheme] = useTheme();
@@ -51,7 +51,7 @@ export default function NavigationSettings() {
           title="Include outdoor navigation"
           disabled
         >
-          <Map size={18} />
+          <MapIcon size={18} />
           <span>Outdoor</span>
         </button>
       </div>

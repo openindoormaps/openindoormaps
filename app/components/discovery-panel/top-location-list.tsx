@@ -19,8 +19,8 @@ export function TopLocationsList({
 }: TopLocationsListProps) {
   return (
     <div className="hidden md:grid md:grid-cols-4 md:justify-items-center md:gap-1">
-      {locations.map((location, index) => (
-        <div className="flex flex-col items-center" key={index}>
+      {locations.map((location) => (
+        <div className="flex flex-col items-center" key={location.name}>
           <Button
             className={`rounded-full shadow-sm ${location.colors} transition-shadow duration-200 hover:shadow-md`}
             variant="ghost"

@@ -1,4 +1,5 @@
-const isMobile = globalThis.innerWidth < 640;
+const isMobile =
+  typeof globalThis === "undefined" ? false : globalThis.innerWidth < 640;
 
 const config = {
   geoCodingApi: "https://nominatim.openstreetmap.org",

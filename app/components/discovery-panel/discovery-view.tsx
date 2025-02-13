@@ -29,13 +29,6 @@ export default function DiscoveryView({
   };
 
   useEffect(() => {
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setIsSearching(false);
-        setSearchQuery("");
-      }
-    }
-    handleKeyDown;
     const newSuggestions = indoorGeocoder.getAutocompleteResults(searchQuery);
     setSuggestions(newSuggestions);
   }, [searchQuery, indoorGeocoder]);
