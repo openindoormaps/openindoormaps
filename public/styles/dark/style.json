@@ -1184,44 +1184,6 @@
       }
     },
     {
-      "id": "poi_r7",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "filter": [
-        "all",
-        ["match", ["geometry-type"], ["MultiPoint", "Point"], true, false],
-        [">=", ["get", "rank"], 7],
-        ["<", ["get", "rank"], 20]
-      ],
-      "layout": {
-        "icon-image": [
-          "match",
-          ["get", "subclass"],
-          ["florist", "furniture"],
-          ["get", "subclass"],
-          ["get", "class"]
-        ],
-        "text-anchor": "top",
-        "text-field": [
-          "case",
-          ["has", "name:nonlatin"],
-          ["concat", ["get", "name:latin"], "\n", ["get", "name:nonlatin"]],
-          ["coalesce", ["get", "name_en"], ["get", "name"]]
-        ],
-        "text-font": ["Noto Sans Italic"],
-        "text-max-width": 9,
-        "text-offset": [0, 0.6],
-        "text-size": 12
-      },
-      "paint": {
-        "text-color": "#91a3b0",
-        "text-halo-blur": 0.5,
-        "text-halo-width": 1
-      }
-    },
-    {
       "id": "water_name_point_label",
       "type": "symbol",
       "source": "openmaptiles",
@@ -1437,6 +1399,44 @@
         "text-font": ["Noto Sans Regular"],
         "text-rotation-alignment": "map",
         "text-size": ["interpolate", ["linear"], ["zoom"], 13, 12, 14, 13]
+      },
+      "paint": {
+        "text-color": "#91a3b0",
+        "text-halo-blur": 0.5,
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi_r7",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "filter": [
+        "all",
+        ["match", ["geometry-type"], ["MultiPoint", "Point"], true, false],
+        [">=", ["get", "rank"], 7],
+        ["<", ["get", "rank"], 20]
+      ],
+      "layout": {
+        "icon-image": [
+          "match",
+          ["get", "subclass"],
+          ["florist", "furniture"],
+          ["get", "subclass"],
+          ["get", "class"]
+        ],
+        "text-anchor": "top",
+        "text-field": [
+          "case",
+          ["has", "name:nonlatin"],
+          ["concat", ["get", "name:latin"], "\n", ["get", "name:nonlatin"]],
+          ["coalesce", ["get", "name_en"], ["get", "name"]]
+        ],
+        "text-font": ["Noto Sans Italic"],
+        "text-max-width": 9,
+        "text-offset": [0, 0.6],
+        "text-size": 12
       },
       "paint": {
         "text-color": "#91a3b0",
