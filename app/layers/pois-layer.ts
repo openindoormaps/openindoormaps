@@ -37,6 +37,7 @@ export default class POIsLayer implements CustomLayerInterface {
       id: "point",
       type: "circle",
       source: "pois",
+      minzoom: 16,
       paint: {
         "circle-radius": 4,
         "circle-color": "#695f58",
@@ -47,6 +48,7 @@ export default class POIsLayer implements CustomLayerInterface {
       id: "point-label",
       type: "symbol",
       source: "pois",
+      minzoom: 16,
       layout: {
         "text-field": ["get", "name"],
         "text-font": ["Noto Sans Regular"],
