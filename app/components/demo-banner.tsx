@@ -22,6 +22,9 @@ export default function DemoBanner() {
             variant="outline"
             size="sm"
             data-tally-open="3EZr0o"
+            data-tally-layout="modal"
+            data-tally-width="400"
+            data-tally-emoji-animation="none"
             className="h-6 border-0 bg-blue-200 px-2 text-xs text-blue-800 hover:bg-blue-300 dark:bg-blue-700 dark:text-blue-100 dark:hover:bg-blue-700"
           >
             Provide Feedback <MessageSquare size={14} />
