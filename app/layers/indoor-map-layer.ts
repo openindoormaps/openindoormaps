@@ -52,13 +52,15 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     const colors = {
       unit: "#f3f3f3",
+      unit_hovered: "red", // TODO: Change this color to whatever u want
       corridor: "#d6d5d1",
       outline: "#a6a5a2",
     };
-
+    // TODO: remove the generateID option once we have a proper id for the source
     map.addSource("indoor-map", {
       type: "geojson",
       data: this.indoorMapData,
+      generateId: true, // Auto generated the `id` property based on the feature's index of the source
     });
 
     map.addLayer({
@@ -89,7 +91,12 @@ export default class IndoorMapLayer implements CustomLayerInterface {
       source: "indoor-map",
       filter: ["all", ["==", "feature_type", "unit"]],
       paint: {
-        "fill-extrusion-color": colors.unit,
+        "fill-extrusion-color": [
+          "case",
+          ["boolean", ["feature-state", "hover"], false],
+          colors.unit_hovered,
+          colors.unit,
+        ],
         "fill-extrusion-height": 2.5,
         "fill-extrusion-opacity": 1,
       },
