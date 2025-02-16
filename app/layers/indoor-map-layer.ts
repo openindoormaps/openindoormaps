@@ -6,6 +6,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   type = "custom" as const;
   private map: Map | null = null;
   private indoorMapData: IndoorMapGeoJSON;
+  private hoveredRoomId: number | null = null;
 
   constructor(indoorMapData: IndoorMapGeoJSON) {
     this.indoorMapData = indoorMapData;
@@ -52,6 +53,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     const colors = {
       unit: "#f3f3f3",
+      unit_hovered: "#e0e0e0",
       corridor: "#d6d5d1",
       outline: "#a6a5a2",
     };
@@ -89,7 +91,12 @@ export default class IndoorMapLayer implements CustomLayerInterface {
       source: "indoor-map",
       filter: ["all", ["==", "feature_type", "unit"]],
       paint: {
-        "fill-extrusion-color": colors.unit,
+        "fill-extrusion-color": [
+          "case",
+          ["boolean", ["feature-state", "hover"], false],
+          colors.unit_hovered,
+          colors.unit,
+        ],
         "fill-extrusion-height": 2.5,
         "fill-extrusion-opacity": 1,
       },
@@ -105,6 +112,33 @@ export default class IndoorMapLayer implements CustomLayerInterface {
         "fill-extrusion-height": 0.2,
         "fill-extrusion-opacity": 1,
       },
+    });
+
+    map.on("mousemove", "indoor-map-extrusion", (e) => {
+      if (e.features && e.features.length > 0) {
+        // Clear previous hover state if needed
+        if (this.hoveredRoomId !== null) {
+          map.setFeatureState(
+            { source: "indoor-map", id: this.hoveredRoomId },
+            { hover: false },
+          );
+        }
+        this.hoveredRoomId = e.features[0].id as number;
+        map.setFeatureState(
+          { source: "indoor-map", id: this.hoveredRoomId },
+          { hover: true },
+        );
+      }
+    });
+
+    map.on("mouseleave", "indoor-map-extrusion", () => {
+      if (this.hoveredRoomId !== null) {
+        map.setFeatureState(
+          { source: "indoor-map", id: this.hoveredRoomId },
+          { hover: false },
+        );
+        this.hoveredRoomId = null;
+      }
     });
   }
 }
