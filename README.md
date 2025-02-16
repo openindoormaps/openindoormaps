@@ -4,10 +4,10 @@
 <p>
 <img src="https://img.shields.io/badge/version-Pre--Alpha_Dev_Release-green" alt="Pre-Alpha Dev Release"/>
 </p>
-<img alt="License badge" src="https://img.shields.io/github/license/KnotzerIO/openindoormaps"/>
-<img alt="GitHub last commit badge" src="https://img.shields.io/github/last-commit/KnotzerIO/openindoormaps"/>
-<img alt="GitHub commit activity badge" src="https://img.shields.io/github/commit-activity/m/KnotzerIO/openindoormaps"/>
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/KnotzerIO/openindoormaps"/>
+<img alt="License badge" src="https://img.shields.io/github/license/openindoormaps/openindoormaps"/>
+<img alt="GitHub last commit badge" src="https://img.shields.io/github/last-commit/openindoormaps/openindoormaps"/>
+<img alt="GitHub commit activity badge" src="https://img.shields.io/github/commit-activity/m/openindoormaps/openindoormaps"/>
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/openindoormaps/openindoormaps"/>
 </p>
 </div>
 

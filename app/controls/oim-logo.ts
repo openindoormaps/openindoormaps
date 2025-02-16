@@ -13,7 +13,7 @@ export default class OIMLogo implements IControl {
     this.container.style.pointerEvents = "auto";
     this.container.innerHTML = `
     <a 
-      href="https://github.com/openindoormap/openindoormaps" 
+      href="https://github.com/openindoormaps/openindoormaps" 
       target="_blank" 
       class="flex items-center space-x-1 p-2"
       aria-label="OpenIndoorMaps">
