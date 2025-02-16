@@ -10,7 +10,6 @@ import Tile3dLayer from "~/layers/tile-3d-layer";
 import building from "~/mock/building.json";
 import useMapStore from "~/stores/use-map-store";
 import DiscoveryPanel from "./discovery-panel/discovery-panel";
-import IndoorHoverEffect from "~/layers/indoor-room-hovering";
 import { FloorSelector } from "./floor-selector";
 import { FloorUpDownControl } from "./floor-up-down-control";
 import { IndoorMapGeoJSON } from "~/types/geojson";
@@ -63,7 +62,6 @@ export default function MapComponent() {
   return (
     <div className="flex size-full flex-col">
       <DiscoveryPanel />
-      <IndoorHoverEffect />
       <FloorSelector indoorMapLayer={indoorMapLayer} />
       <FloorUpDownControl indoorMapLayer={indoorMapLayer} />
       <div ref={mapContainer} className="size-full" />
