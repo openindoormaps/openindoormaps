@@ -7,6 +7,7 @@ export default class IndoorMapLayer implements CustomLayerInterface {
   private map: Map | null = null;
   private indoorMapData: IndoorMapGeoJSON;
   private theme;
+  private hoveredRoomId: number | null = null;
 
   constructor(indoorMapData: IndoorMapGeoJSON, theme: string = "light") {
     this.indoorMapData = indoorMapData;
@@ -41,7 +42,6 @@ export default class IndoorMapLayer implements CustomLayerInterface {
       }
     });
 
-    // Always include ground floor
     const uniqueFloors = [...floors];
     if (!uniqueFloors.includes(0)) {
       uniqueFloors.push(0);
@@ -54,12 +54,14 @@ export default class IndoorMapLayer implements CustomLayerInterface {
 
     const lightColor = {
       unit: "#f3f3f3",
+      unit_hovered: "#e0e0e0",
       corridor: "#d6d5d1",
       outline: "#a6a5a2",
     };
 
     const darkColor = {
       unit: "#1f2937",
+      unit_hovered: "#374151",
       corridor: "#030712",
       outline: "#1f2937",
     };
@@ -99,7 +101,12 @@ export default class IndoorMapLayer implements CustomLayerInterface {
       source: "indoor-map",
       filter: ["all", ["==", "feature_type", "unit"]],
       paint: {
-        "fill-extrusion-color": colors.unit,
+        "fill-extrusion-color": [
+          "case",
+          ["boolean", ["feature-state", "hover"], false],
+          colors.unit_hovered,
+          colors.unit,
+        ],
         "fill-extrusion-height": 2.5,
         "fill-extrusion-opacity": 1,
       },
@@ -115,6 +122,33 @@ export default class IndoorMapLayer implements CustomLayerInterface {
         "fill-extrusion-height": 0.2,
         "fill-extrusion-opacity": 1,
       },
+    });
+
+    map.on("mousemove", "indoor-map-extrusion", (e) => {
+      if (e.features && e.features.length > 0) {
+        // Clear previous hover state if needed
+        if (this.hoveredRoomId !== null) {
+          map.setFeatureState(
+            { source: "indoor-map", id: this.hoveredRoomId },
+            { hover: false },
+          );
+        }
+        this.hoveredRoomId = e.features[0].id as number;
+        map.setFeatureState(
+          { source: "indoor-map", id: this.hoveredRoomId },
+          { hover: true },
+        );
+      }
+    });
+
+    map.on("mouseleave", "indoor-map-extrusion", () => {
+      if (this.hoveredRoomId !== null) {
+        map.setFeatureState(
+          { source: "indoor-map", id: this.hoveredRoomId },
+          { hover: false },
+        );
+        this.hoveredRoomId = null;
+      }
     });
   }
 }
