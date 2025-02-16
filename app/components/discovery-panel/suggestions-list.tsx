@@ -18,14 +18,16 @@ export default function SuggestionsList({
         <Button
           key={suggestion.id}
           variant="ghost"
-          className="w-full justify-start text-left text-gray-700 hover:bg-gray-100"
+          className="w-full justify-start text-left text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
           onMouseDown={() => onSuggestionClick(suggestion)}
         >
           {suggestion.name}
         </Button>
       ))}
       {suggestions.length === 0 && searchQuery && (
-        <p className="p-2 text-sm text-gray-500">No results found</p>
+        <p className="p-2 text-sm text-gray-500 dark:text-gray-300">
+          No results found
+        </p>
       )}
     </div>
   );

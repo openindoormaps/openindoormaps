@@ -23,7 +23,8 @@ export function FloorUpDownControl({
     map?.addControl(floorControl, "bottom-right");
 
     const upButton = document.createElement("button");
-    upButton.className = "maplibregl-ctrl-icon maplibregl-ctrl-floor-up";
+    upButton.className =
+      "maplibregl-ctrl-icon maplibregl-ctrl-floor-up dark:text-black";
     upButton.innerHTML = "&#8593;"; // Up arrow
     upButton.addEventListener("click", () => {
       const nextFloor = currentFloor + 1;
@@ -34,12 +35,14 @@ export function FloorUpDownControl({
     });
 
     const downButton = document.createElement("button");
-    downButton.className = "maplibregl-ctrl-icon maplibregl-ctrl-floor-down";
+    downButton.className =
+      "maplibregl-ctrl-icon maplibregl-ctrl-floor-down dark:text-black";
     downButton.innerHTML = "&#8595;"; // Down arrow
     downButton.addEventListener("click", () => {
-      //const nextFloor = currentFloor - 1;
-      setCurrentFloor(0);
-      indoorMapLayer.setFloorLevel(0);
+      const nextFloor = currentFloor - 1;
+      if (nextFloor >= 0) {
+        setCurrentFloor(nextFloor);
+      }
     });
 
     floorControl._container.append(upButton);

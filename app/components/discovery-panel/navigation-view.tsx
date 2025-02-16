@@ -1,4 +1,10 @@
-import { ArrowLeft, ArrowUpDown, Circle, Dot, MapPin } from "lucide-react";
+import {
+  Accessibility,
+  ArrowLeft,
+  ArrowUpDown,
+  Dot,
+  MapPin,
+} from "lucide-react";
 import { LngLatBounds } from "maplibre-gl";
 import { useEffect, useState } from "react";
 import IndoorDirections from "~/indoor-directions/directions/main";
@@ -8,6 +14,7 @@ import { IndoorGeocoder } from "~/utils/indoor-geocoder";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import SuggestionsList from "./suggestions-list";
+import { Toggle } from "../ui/toggle";
 
 interface NavigationViewProps {
   handleBackClick: () => void;
@@ -30,6 +37,7 @@ export default function NavigationView({
     selectedPOI?.name || "",
   );
   const [suggestions, setSuggestions] = useState<POI[]>([]);
+  const [isAccessibleRoute, setIsAccessibleRoute] = useState(false);
   const map = useMapStore((state) => state.mapInstance);
 
   const activeQuery =
@@ -107,21 +115,26 @@ export default function NavigationView({
 
   return (
     <>
-      <Button
-        size="sm"
-        variant="ghost"
-        className="mb-2"
-        onClick={handleBackClick}
-      >
-        <ArrowLeft size={20} className="mr-2" />
-        Back
-      </Button>
+      <div className="mb-2 flex items-center justify-between">
+        <Button size="sm" variant="ghost" onClick={handleBackClick}>
+          <ArrowLeft size={20} className="mr-2" />
+          Back
+        </Button>
+        <Toggle
+          variant="outline"
+          pressed={isAccessibleRoute}
+          size="icon"
+          onClick={() => setIsAccessibleRoute(!isAccessibleRoute)}
+        >
+          <Accessibility size={18} />
+        </Toggle>
+      </div>
       <div className="flex space-x-2">
         <div className="w-full space-y-4">
           <div className="flex items-center space-x-4">
             <div className="relative">
               <div className="flex h-full w-4 items-center justify-center">
-                <Circle size={12} />
+                <div className="size-3 rounded-full border-2 border-white bg-[#1d9bf0] ring-4 ring-blue-100 dark:ring-0" />
               </div>
               <div className="absolute left-1/2 top-full mt-1 flex -translate-x-1/2 flex-col items-center">
                 <Dot size={12} />
@@ -140,7 +153,7 @@ export default function NavigationView({
           </div>
           <div className="mb-2 flex items-center space-x-4">
             <div className="w-4">
-              <MapPin size={16} className="text-red-600" />
+              <MapPin size={16} className="text-red-600 dark:text-red-300" />
             </div>
             <Input
               type="text"
@@ -161,7 +174,7 @@ export default function NavigationView({
 
       {activeInput && activeQuery && (
         <>
-          <div className="mt-4 h-px w-full bg-gray-300" />
+          <div className="mt-4 h-px w-full bg-gray-300 dark:bg-gray-800" />
           <SuggestionsList
             suggestions={suggestions}
             searchQuery={activeQuery}

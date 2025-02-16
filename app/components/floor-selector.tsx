@@ -28,7 +28,7 @@ export function FloorSelector({ indoorMapLayer }: FloorSelectorProps) {
       <select
         value={currentFloor}
         onChange={handleFloorChange}
-        className="rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:outline-none"
+        className="rounded-md border bg-white px-3 py-2 text-sm shadow-sm focus:border-indigo-500 focus:outline-none dark:bg-gray-900"
       >
         {availableFloors.map((floor) => (
           <option key={floor} value={floor}>

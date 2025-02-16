@@ -4,10 +4,11 @@ export default class POIsLayer implements CustomLayerInterface {
   id: string = "pois";
   type = "custom" as const;
   private POIs: GeoJSON.GeoJSON;
+  private theme;
 
-  constructor(POIs: GeoJSON.GeoJSON) {
+  constructor(POIs: GeoJSON.GeoJSON, theme: string = "light") {
     this.POIs = POIs;
-    console.log("POIsLayer constructor");
+    this.theme = theme;
   }
 
   render = () => {
@@ -15,6 +16,20 @@ export default class POIsLayer implements CustomLayerInterface {
   };
 
   onAdd?(map: Map): void {
+    const lightColor = {
+      text: "#404040",
+      halo: "#ffffff",
+      circle: "#695f58",
+    };
+
+    const darkColor = {
+      text: "#ffffff",
+      halo: "#404040",
+      circle: "#9ca3af",
+    };
+
+    const color = this.theme === "light" ? lightColor : darkColor;
+
     map.addSource("pois", {
       type: "geojson",
       data: this.POIs,
@@ -24,9 +39,10 @@ export default class POIsLayer implements CustomLayerInterface {
       id: "point",
       type: "circle",
       source: "pois",
+      minzoom: 16,
       paint: {
         "circle-radius": 4,
-        "circle-color": "#695f58",
+        "circle-color": color.circle,
       },
     });
 
@@ -34,6 +50,7 @@ export default class POIsLayer implements CustomLayerInterface {
       id: "point-label",
       type: "symbol",
       source: "pois",
+      minzoom: 16,
       layout: {
         "text-field": ["get", "name"],
         "text-font": ["Noto Sans Regular"],
@@ -43,8 +60,8 @@ export default class POIsLayer implements CustomLayerInterface {
         "text-max-width": 12,
       },
       paint: {
-        "text-color": "#404040",
-        "text-halo-color": "#ffffff",
+        "text-color": color.text,
+        "text-halo-color": color.halo,
         "text-halo-width": 1.5,
       },
     });

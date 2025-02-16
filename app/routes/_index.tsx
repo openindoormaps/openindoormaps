@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import MapComponent from "~/components/map-component";
-
+import { Analytics } from "@vercel/analytics/remix";
 export const meta: MetaFunction = () => {
   return [
     { title: "OpenIndoorMaps" },
@@ -15,6 +15,8 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div className="flex h-screen items-center justify-center">
+      <Analytics />
+
       <MapComponent />
     </div>
   );
