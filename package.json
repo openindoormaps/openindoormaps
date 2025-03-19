@@ -13,7 +13,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@maplibre/maplibre-gl-directions": "^0.7.1",
+    "@maplibre/maplibre-gl-directions": "^0.8.0",
     "@maplibre/maplibre-gl-geocoder": "^1.7.0",
     "@maplibre/maplibre-gl-inspect": "^1.7.0",
     "@radix-ui/react-dropdown-menu": "^2.1.5",
