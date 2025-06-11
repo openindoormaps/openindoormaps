@@ -50,7 +50,7 @@
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.0.0",
     "eslint-import-resolver-typescript": "^4.0.0",
-    "eslint-plugin-check-file": "^2.8.0",
+    "eslint-plugin-check-file": "^3.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^5.2.1",
