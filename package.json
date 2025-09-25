@@ -26,7 +26,7 @@
     "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "isbot": "^4.1.0",
+    "isbot": "^5.0.0",
     "lucide-react": "^0.513.0",
     "maplibre-gl": "^4.7.1",
     "minisearch": "^7.1.1",
