@@ -1,0 +1,28 @@
+# Dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+
+# Production
+/build
+/dist
+
+# Environment variables
+.env
+.env.*.local
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lock
+
+# Log files
+logs
+*.log
+
+# TypeScript
+*.tsbuildinfo
+*.d.ts

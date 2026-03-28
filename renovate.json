@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "group:all"],
+  "baseBranchPatterns": ["master", "v15", "v14"],
+  "timezone": "Asia/Jakarta",
+  "schedule": ["before 8am on the first day of the month"],
+  "minimumReleaseAge": "2 days",
+  "major": {
+    "enabled": true,
+    "separateMajorMinor": true,
+    "separateMultipleMajor": true
+  },
+  "rangeStrategy": "bump",
+  "updatePinnedDependencies": false,
+  "ignoreDeps": ["node"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["next", "@next/bundle-analyzer", "eslint-config-next"],
+      "matchBaseBranches": ["v15"],
+      "allowedVersions": "15.x"
+    },
+    {
+      "matchPackageNames": ["next", "@next/bundle-analyzer", "eslint-config-next"],
+      "matchBaseBranches": ["v14"],
+      "allowedVersions": "14.x"
+    },
+    {
+      "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
+      "matchBaseBranches": ["v14"],
+      "allowedVersions": "18.x"
+    },
+    {
+      "matchPackageNames": ["eslint"],
+      "matchBaseBranches": ["master", "v15"],
+      "allowedVersions": "9.x"
+    },
+    {
+      "matchPackageNames": ["eslint"],
+      "matchBaseBranches": ["v14"],
+      "allowedVersions": "8.x"
+    },
+    {
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "5.x"
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "24.x"
+    }
+  ]
+}

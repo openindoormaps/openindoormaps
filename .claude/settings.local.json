@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /Users/User/Projekte/OIM/openindoormaps/*.config.* /Users/User/Projekte/OIM/openindoormaps/post*)",
+      "Bash(npx:*)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
