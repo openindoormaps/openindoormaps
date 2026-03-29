@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import nextVitals from 'eslint-config-next/core-web-vitals';
 import nextTs from 'eslint-config-next/typescript';
 import prettier from 'eslint-plugin-prettier/recommended';
+import noRelativeImportPaths from 'eslint-plugin-no-relative-import-paths';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 const eslintConfig = defineConfig([
@@ -10,12 +11,19 @@ const eslintConfig = defineConfig([
   ...nextTs,
   prettier,
   {
+    plugins: {
+      'no-relative-import-paths': noRelativeImportPaths,
+    },
     rules: {
       'prettier/prettier': [
         'error',
         {
           endOfLine: 'auto',
         },
+      ],
+      'no-relative-import-paths/no-relative-import-paths': [
+        'error',
+        { allowSameFolder: true, rootDir: 'src', prefix: '@' },
       ],
     },
   },
