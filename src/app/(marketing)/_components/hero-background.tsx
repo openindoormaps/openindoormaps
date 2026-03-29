@@ -32,7 +32,7 @@ function DesktopMap() {
           strokeWidth="2"
         />
 
-        {/* Main horizontal corridor — y 480–580 */}
+        {/* Main horizontal corridor*/}
         <rect
           x="140"
           y="480"
@@ -42,7 +42,7 @@ function DesktopMap() {
           strokeWidth="1"
         />
 
-        {/* Vertical corridor — x 900–1000 */}
+        {/* Vertical corridor*/}
         <rect
           x="900"
           y="110"
@@ -239,9 +239,6 @@ function DesktopMap() {
 
 function MobileMap() {
   return (
-    // viewBox 0 0 100 200 — normalised coordinate space so all values are
-    // effectively percentages. preserveAspectRatio="xMidYMid slice" ensures
-    // the SVG covers the full viewport on any screen size.
     <svg
       className="absolute inset-0 block h-full w-full md:hidden"
       xmlns="http://www.w3.org/2000/svg"
