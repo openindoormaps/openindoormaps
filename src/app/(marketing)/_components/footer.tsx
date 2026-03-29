@@ -21,6 +21,7 @@ export default function Footer() {
           .
         </p>
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          {/* TODO: update link */}
           <Link href="#" className="hover:text-foreground transition-colors">
             Docs
           </Link>

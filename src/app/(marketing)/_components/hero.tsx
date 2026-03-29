@@ -37,6 +37,7 @@ function Hero() {
           </p>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            {/* TODO: update link */}
             <Button size="lg" className="h-auto px-8 py-3">
               Get Started
               <ArrowRight className="ml-2" />

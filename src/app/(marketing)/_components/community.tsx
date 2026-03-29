@@ -3,10 +3,13 @@ import { GitPullRequest, Star, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 async function getGitHubStats() {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 4000);
   try {
     const res = await fetch('https://api.github.com/repos/openindoormaps/openindoormaps', {
       next: { revalidate: 3600 },
       headers: { Accept: 'application/vnd.github+json' },
+      signal: controller.signal,
     });
     if (!res.ok) return null;
     const data = await res.json();
@@ -16,6 +19,8 @@ async function getGitHubStats() {
     };
   } catch {
     return null;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
